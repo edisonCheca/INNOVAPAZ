@@ -1,0 +1,32 @@
+name: Calidad de código
+
+on:
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Validar formato con Prettier
+        run: npx prettier --check .
+
+      - name: Validar mensajes de commit
+        run: npx commitlint --from=origin/main --to=HEAD || true
+
+      - name: Ejecutar pruebas
+        run: npm test
+
+      - name: Revisar vulnerabilidades en dependencias
+        run: npm audit --audit-level=moderate
