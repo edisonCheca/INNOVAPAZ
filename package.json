@@ -1,0 +1,29 @@
+{
+  "name": "innovapaz",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install",
+    "format": "npx prettier --config .prettierc --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edisonCheca/INNOVAPAZ.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edisonCheca/INNOVAPAZ/issues"
+  },
+  "homepage": "https://github.com/edisonCheca/INNOVAPAZ#readme",
+  "description": "",
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.5",
+    "prettier": "^3.6.2"
+  }
+}
