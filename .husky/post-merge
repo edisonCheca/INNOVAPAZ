@@ -1,0 +1,13 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Hook post-merge: actualiza dependencias si cambió package.json o package-lock.json
+echo "🔀 Merge completado en: $(git branch --show-current)"
+
+if git diff HEAD@{1} --name-only | grep -Eq 'package(-lock)?\.json'; then
+  echo "📦 Cambios detectados en dependencias. Ejecutando npm install..."
+  npm install
+  echo "✅ Dependencias actualizadas."
+else
+  echo "ℹ️ No hay cambios en dependencias."
+fi
