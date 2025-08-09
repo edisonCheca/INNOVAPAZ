@@ -20,7 +20,7 @@ jobs:
         run: npm install
 
       - name: Validar formato con Prettier
-        run: npx prettier --config .prettierrc.json --check .
+        run: npx prettier --check .
 
       - name: Validar mensajes de commit
         run: npx commitlint --from=origin/main --to=HEAD || true
