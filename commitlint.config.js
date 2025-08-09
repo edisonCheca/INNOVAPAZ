@@ -28,6 +28,3 @@ module.exports = {
     'body-max-line-length': [2, 'always', 100],
   },
 };
-
-//ejemplo de un commit valido: feat(login): add user authentication
-//ejemplo de un commit invalido: fixed bug in login function
