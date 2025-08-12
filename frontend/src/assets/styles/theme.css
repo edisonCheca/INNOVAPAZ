@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Colors */
+  /* Primary */
+  --pri-900: #242231;
+  --pri-800: #322f44;
+  --pri-700: #39364e;
+  --pri-600: #403d58;
+  --pri-500: #8d89ad;
+  --pri-400: #a3a0bd;
+  --pri-300: #bab8ce;
+  --pri-200: #d1d0de;
+  --pri-100: #f0f0f5;
+
+  /* Secondary */
+  --sec-900: #2ca8a1;
+  --sec-800: #33c3bc;
+  --sec-700: #4ad0c9;
+  --sec-600: #66d7d1;
+  --sec-500: #aae9e5;
+  --sec-400: #bbedeb;
+  --sec-300: #ccf2f0;
+  --sec-200: #ddf6f5;
+  --sec-100: #eafaf9;
+
+  /* Accent */
+  --acc-900: #b72903;
+  --acc-800: #dc3204;
+  --acc-700: #fb3d0a;
+  --acc-600: #fb5a2e;
+  --acc-500: #fc7753;
+  --acc-400: #fdb39f;
+  --acc-300: #fec3b3;
+  --acc-200: #fed2c6;
+  --acc-100: #fee1d9;
+  --acc-50: #ffebe5;
+
+  /* Background */
+  --bg-900: #a18b67;
+  --bg-800: #b5a488;
+  --bg-700: #cabda9;
+  --bg-600: #ded6c9;
+  --bg-500: #f2efea;
+  --bg-400: #f8f6f3;
+  --bg-300: #f9f8f6;
+  --bg-200: #fbfaf8;
+  --bg-100: #fcfbfa;
+  --bg-50: #fefdfd;
+
+  /* Variable */
+  --var-900: #928c24;
+  --var-800: #b0a82c;
+  --var-700: #ccc433;
+  --var-600: #d4cd51;
+  --var-500: #dbd56e;
+  --var-400: #ebe8ae;
+  --var-300: #efecbf;
+  --var-200: #f3f1cf;
+  --var-100: #f7f6df;
+  --var-50: #faf9eb;
+
+  /* Typography */
+  --font: 'Inter', sans-serif;
+
+  /* Font presets (size + family) */
+  --font-61: 61px/1.1 var(--font);
+  --font-49: 49px/1.1 var(--font);
+  --font-39: 39px/1.1 var(--font);
+  --font-31: 31px/1.1 var(--font);
+  --font-25: 25px/1.1 var(--font);
+  --font-20: 20px/1.1 var(--font);
+  --font-16: 16px/1.1 var(--font);
+  --font-13: 13px/1.1 var(--font);
+  --font-10: 10px/1.1 var(--font);
+}
