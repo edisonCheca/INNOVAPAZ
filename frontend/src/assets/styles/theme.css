@@ -80,6 +80,11 @@ body {
   --font-13: 13px/1.1 var(--font);
   --font-10: 10px/1.1 var(--font);
 
+  /* Basic colors */
+  --black: #000;
+  --white: #fff;
+  --transparent: transparent;
+
   /* Responsive container max-widths */
   --container-max-mobile-xs: 288px;
   --container-max-mobile: 380px;
