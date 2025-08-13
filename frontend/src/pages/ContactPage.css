@@ -177,6 +177,13 @@
   color: var(--pri-900);
 }
 
+.contact-social-link {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
 .contact-form-box {
   background: #fff;
   border-radius: 12px;
