@@ -25,4 +25,5 @@
   font: var(--font-16);
   color: var(--pri-600);
   line-height: 1.5;
+  font-weight: 300;
 }
