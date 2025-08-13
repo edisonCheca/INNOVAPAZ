@@ -2,9 +2,6 @@
   background: none;
   border: none;
   cursor: pointer;
-  font-family: var(--font);
-  font-style: normal;
-  font-weight: 400;
   color: var(--pri-600);
   transition: all 0.2s ease;
 }
