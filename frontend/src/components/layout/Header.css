@@ -29,6 +29,10 @@
   height: 30px;
 }
 
+.header__nav {
+  display: none;
+}
+
 .header__actions {
   display: none;
 }
