@@ -20,7 +20,7 @@ const PricingSection = () => {
         <div className="pricing__cards">
           <PricingCard
             title="Básico"
-            price="$20"
+            price="Bs. 50"
             comment="Perfecto para empresas pequeñas"
             features={[
               'Hasta 10 usuarios',
@@ -33,24 +33,9 @@ const PricingSection = () => {
             icons={[<img src={basic} alt="Hand" />]}
           />
           <PricingCard
-            title="Empresarial"
-            comment="Ideal para empresas en crecimiento"
-            price="$199"
-            features={[
-              'Usuarios ilimitados',
-              'Todas las funcionalidades',
-              'Facturación simple',
-              'Soporte 24/7 dedicado',
-              'Almacenamiento ilimitado',
-              'Personalización completa',
-            ]}
-            buttonText="Comenzar Ahora"
-            icons={[<img src={bussines} alt="Bookmark" />]}
-          />
-          <PricingCard
             title="Profesional"
             comment="Para grandes organizaciones"
-            price="$99"
+            price="Bs. 100"
             features={[
               'Hasta 50 usuarios',
               'Gestión de inventario avanzada',
@@ -61,6 +46,21 @@ const PricingSection = () => {
             ]}
             buttonText="Comenzar Ahora"
             icons={[<img src={professional} alt="Grid" />]}
+          />
+          <PricingCard
+            title="Empresarial"
+            comment="Ideal para empresas en crecimiento"
+            price="Bs. 200"
+            features={[
+              'Usuarios ilimitados',
+              'Todas las funcionalidades',
+              'Facturación simple',
+              'Soporte 24/7 dedicado',
+              'Almacenamiento ilimitado',
+              'Personalización completa',
+            ]}
+            buttonText="Comenzar Ahora"
+            icons={[<img src={bussines} alt="Bookmark" />]}
           />
         </div>
       </div>
