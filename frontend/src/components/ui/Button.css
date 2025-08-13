@@ -2,11 +2,7 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-family: var(--font);
-  font-style: normal;
-  font-weight: 300;
-  font-size: 13px;
-  line-height: 16px;
+  font: var(--font-13);
   text-align: center;
   transition: all 0.2s ease;
   box-sizing: border-box;
