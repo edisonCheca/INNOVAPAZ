@@ -1,7 +1,6 @@
 import React from 'react';
 import TermsSection from './TermsSection';
 import TermsSubSection from './TermsSubSection';
-import './TermsContent.css';
 
 const TermsContent = () => {
   return (
