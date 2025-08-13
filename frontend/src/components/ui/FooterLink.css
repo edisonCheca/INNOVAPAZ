@@ -1,8 +1,8 @@
 .footer-link {
   display: block;
-  font: var(--font-20);
+  font: var(--font-16);
   font-weight: 200;
-  color: #FFFFFF;
+  color: var(--bg-50);
   text-decoration: none;
   transition: all 0.2s ease;
   cursor: pointer;
@@ -16,13 +16,13 @@
 @media (max-width: 480px) {
   .footer-link {
     font: var(--font-20);
-    line-height: 24px;
+    font-weight: 200;
   }
 }
 
 @media (min-width: 1025px) {
   .footer-link {
     font: var(--font-16);
-    line-height: 19px;
+    font-weight: 200;
   }
 }
