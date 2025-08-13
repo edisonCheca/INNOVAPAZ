@@ -20,15 +20,9 @@ const Logo: React.FC<LogoProps> = ({
   return (
     <div className={`logo logo--${size} logo--${variant}`} onClick={onClick}>
       <div className="logo__icon">
-        <img
-          src={LogoSvg}
-          alt="Logo"
-          className="logo__image"
-        />
+        <img src={LogoSvg} alt="Logo" className="logo__image" />
       </div>
-      {showText && (
-        <span className="logo__text">{text}</span>
-      )}
+      {showText && <span className="logo__text">{text}</span>}
     </div>
   );
 };

@@ -7,19 +7,10 @@ interface OverlayProps {
   className?: string;
 }
 
-const Overlay: React.FC<OverlayProps> = ({
-  isVisible,
-  onClick,
-  className = '',
-}) => {
+const Overlay: React.FC<OverlayProps> = ({ isVisible, onClick, className = '' }) => {
   if (!isVisible) return null;
 
-  return (
-    <div
-      className={`overlay ${className}`}
-      onClick={onClick}
-    />
-  );
+  return <div className={`overlay ${className}`} onClick={onClick} />;
 };
 
 export default Overlay;

@@ -7,11 +7,7 @@ interface ContactItemProps {
   onClick?: () => void;
 }
 
-const ContactItem: React.FC<ContactItemProps> = ({
-  icon,
-  text,
-  onClick,
-}) => {
+const ContactItem: React.FC<ContactItemProps> = ({ icon, text, onClick }) => {
   return (
     <div className="contact-item" onClick={onClick}>
       <span className={`contact-item__icon contact-item__icon--${icon}`}></span>

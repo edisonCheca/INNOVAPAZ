@@ -10,55 +10,31 @@ interface MobileMenuProps {
   onNavigate: (section: string) => void;
 }
 
-const MobileMenu: React.FC<MobileMenuProps> = ({
-  isOpen,
-  onClose,
-  onNavigate,
-}) => {
+const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavigate }) => {
   return (
     <div className={`mobile-menu ${isOpen ? 'mobile-menu--open' : ''}`}>
       <Overlay isVisible={isOpen} onClick={onClose} />
       <div className="mobile-menu__content">
         <nav className="mobile-menu__nav">
-          <NavLink
-            variant="mobile"
-            onClick={() => onNavigate('inicio')}
-          >
+          <NavLink variant="mobile" onClick={() => onNavigate('inicio')}>
             Inicio
           </NavLink>
-          <NavLink
-            variant="mobile"
-            onClick={() => onNavigate('sobre-nosotros')}
-          >
+          <NavLink variant="mobile" onClick={() => onNavigate('sobre-nosotros')}>
             Sobre Nosotros
           </NavLink>
-          <NavLink
-            variant="mobile"
-            onClick={() => onNavigate('documentacion')}
-          >
+          <NavLink variant="mobile" onClick={() => onNavigate('documentacion')}>
             Documentación
           </NavLink>
-          <NavLink
-            variant="mobile"
-            onClick={() => onNavigate('contacto')}
-          >
+          <NavLink variant="mobile" onClick={() => onNavigate('contacto')}>
             Contacto
           </NavLink>
         </nav>
 
         <div className="mobile-menu__actions">
-          <Button
-            variant="primary"
-            size="medium"
-            onClick={() => onNavigate('login')}
-          >
+          <Button variant="primary" size="medium" onClick={() => onNavigate('login')}>
             Iniciar Sesión
           </Button>
-          <Button
-            variant="outline"
-            size="medium"
-            onClick={() => onNavigate('register')}
-          >
+          <Button variant="outline" size="medium" onClick={() => onNavigate('register')}>
             Registrarse
           </Button>
         </div>

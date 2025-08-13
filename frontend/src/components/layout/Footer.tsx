@@ -25,7 +25,8 @@ const Footer: React.FC = () => {
 
             <div className="footer__description-wrapper">
               <p className="footer__description">
-                La plataforma de gestión empresarial más completa del mercado. Diseñada para hacer crecer tu negocio de forma inteligente.
+                La plataforma de gestión empresarial más completa del mercado. Diseñada para hacer
+                crecer tu negocio de forma inteligente.
               </p>
             </div>
 
@@ -53,9 +54,7 @@ const Footer: React.FC = () => {
               <div className="footer__sitemap-section">
                 <SectionTitle>Sitio</SectionTitle>
                 <div className="footer__sitemap-links">
-                  <FooterLink onClick={() => handleNavigationClick('inicio')}>
-                    Inicio
-                  </FooterLink>
+                  <FooterLink onClick={() => handleNavigationClick('inicio')}>Inicio</FooterLink>
                   <FooterLink onClick={() => handleNavigationClick('sobre-nosotros')}>
                     Sobre Nosotros
                   </FooterLink>
@@ -74,9 +73,7 @@ const Footer: React.FC = () => {
                   <FooterLink onClick={() => handleNavigationClick('funcionalidades')}>
                     Funcionalidades
                   </FooterLink>
-                  <FooterLink onClick={() => handleNavigationClick('precios')}>
-                    Precios
-                  </FooterLink>
+                  <FooterLink onClick={() => handleNavigationClick('precios')}>Precios</FooterLink>
                   <FooterLink onClick={() => handleNavigationClick('integracion')}>
                     Integración
                   </FooterLink>
@@ -89,9 +86,7 @@ const Footer: React.FC = () => {
               <div className="footer__support-section">
                 <SectionTitle>Soporte</SectionTitle>
                 <div className="footer__support-links">
-                  <FooterLink onClick={() => handleNavigationClick('ayuda')}>
-                    Ayuda
-                  </FooterLink>
+                  <FooterLink onClick={() => handleNavigationClick('ayuda')}>Ayuda</FooterLink>
                   <FooterLink onClick={() => handleNavigationClick('documentacion')}>
                     Documentación
                   </FooterLink>
@@ -106,9 +101,7 @@ const Footer: React.FC = () => {
 
         <div className="footer__bottom">
           <div className="footer__divider"></div>
-          <p className="footer__copyright">
-            © 2025 ERP Solutions. Todos los derechos reservados.
-          </p>
+          <p className="footer__copyright">© 2025 ERP Solutions. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

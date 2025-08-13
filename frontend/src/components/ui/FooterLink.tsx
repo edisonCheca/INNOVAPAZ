@@ -11,8 +11,8 @@ interface FooterLinkProps {
 const FooterLink: React.FC<FooterLinkProps> = ({
   children,
   onClick,
-  href = "#",
-  className = "",
+  href = '#',
+  className = '',
 }) => {
   return (
     <a
