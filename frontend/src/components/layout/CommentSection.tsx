@@ -36,17 +36,17 @@ const defaultComments: Comment[] = [
   {
     id: 2,
     message:
-      'Antes de implementar el ERP, llevaba el control de inventario y ventas mediante hojas de Excel, lo que me generaba muchos errores y pérdida de tiempo. Ahora con el sistema puedo saber en tiempo real qué productos se están agotando, cuáles son los más vendidos y generar reportes automáticos para mis proveedores.',
-    userName: 'María Becerra Gutierrez',
-    userPosition: 'Llanterías del Sur',
+      'La gestión de proyectos se ha simplificado enormemente. Podemos asignar tareas, seguir el progreso y colaborar de manera más eficiente. ¡Un cambio radical para nuestra productividad!',
+    userName: 'Juan Carlos Bodoque',
+    userPosition: 'Constructora El Cemento',
     rating: 5,
   },
   {
     id: 3,
     message:
-      'Antes de implementar el ERP, llevaba el control de inventario y ventas mediante hojas de Excel, lo que me generaba muchos errores y pérdida de tiempo. Ahora con el sistema puedo saber en tiempo real qué productos se están agotando, cuáles son los más vendidos y generar reportes automáticos para mis proveedores.',
-    userName: 'María Becerra Gutierrez',
-    userPosition: 'Llanterías del Sur',
+      'El soporte al cliente es excepcional. Siempre están dispuestos a ayudar y resuelven nuestros problemas rápidamente. Nos sentimos muy respaldados con su servicio.',
+    userName: 'Ana Sofía Rinaldi',
+    userPosition: 'Ferretería El Tornillo Feliz',
     rating: 5,
   },
 ];
