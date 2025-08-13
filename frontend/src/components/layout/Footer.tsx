@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Logo from '../ui/Logo';
 import FooterLink from '../ui/FooterLink';
 import SectionTitle from '../ui/SectionTitle';
@@ -6,8 +7,46 @@ import ContactItem from '../ui/ContactItem';
 import './Footer.css';
 
 const Footer: React.FC = () => {
+  const navigate = useNavigate();
+
   const handleNavigationClick = (section: string) => {
-    console.log(`Navigating to ${section}`);
+    switch (section) {
+      case 'inicio':
+        navigate('/');
+        break;
+      case 'sobre-nosotros':
+        navigate('/about');
+        break;
+      case 'login':
+        navigate('/login');
+        break;
+      case 'register':
+        navigate('/register');
+        break;
+      case 'funcionalidades':
+        navigate('/funcionalidades');
+        break;
+      case 'precios':
+        navigate('/precios');
+        break;
+      case 'integracion':
+        navigate('/integracion');
+        break;
+      case 'seguridad':
+        navigate('/seguridad');
+        break;
+      case 'ayuda':
+        navigate('/ayuda');
+        break;
+      case 'documentacion':
+        navigate('/documentacion');
+        break;
+      case 'contacto':
+        navigate('/contacto');
+        break;
+      default:
+        break;
+    }
   };
 
   const handleLogoClick = () => {

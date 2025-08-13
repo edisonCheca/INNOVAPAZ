@@ -45,16 +45,20 @@ const DocumentsPage: React.FC = () => {
   ];
 
   return (
+    // El div principal solo se encarga del fondo de página completo
     <div className="documentsPage">
-      <header className="documentsPage__header">
-        <h1 className="documentsPage__title">Documentación del usuario</h1>
-        <p className="documentsPage__lastUpdate">Última actualización: 9 de agosto de 2025</p>
-      </header>
-      <main className="documentsPage__contentGrid">
-        {documentationSections.map((section) => (
-          <DocumentationCard key={section.title} title={section.title} items={section.items} />
-        ))}
-      </main>
+      {/* ===== CAMBIO CLAVE: Contenedor para alinear todo el contenido ===== */}
+      <div className="documentsPage__container">
+        <header className="documentsPage__header">
+          <h1 className="documentsPage__title">Documentación del usuario</h1>
+          <p className="documentsPage__lastUpdate">Última actualización: 9 de agosto de 2025</p>
+        </header>
+        <main className="documentsPage__contentGrid">
+          {documentationSections.map((section) => (
+            <DocumentationCard key={section.title} title={section.title} items={section.items} />
+          ))}
+        </main>
+      </div>
     </div>
   );
 };

@@ -3,9 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
+import AboutPage from './pages/AboutPage';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import TermsPage from './pages/TermsPage';
+import ContactPage from './pages/ContactPage';
 import PrivacyPage from './pages/PrivacyPage';
 
 const App: React.FC = () => {
@@ -18,6 +20,8 @@ const App: React.FC = () => {
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contacto" element={<ContactPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
         </Routes>
       </div>

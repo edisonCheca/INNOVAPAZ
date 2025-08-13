@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from '../common/ButtonExtra';
 import Logo from '../ui/Logo';
 import NavLink from '../ui/NavLink';
@@ -8,11 +9,32 @@ import './Header.css';
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('inicio');
-
+  const navigate = useNavigate();
   const handleNavigationClick = (section: string) => {
-    console.log(`Navigating to ${section}`);
     setActiveSection(section);
     setIsMobileMenuOpen(false);
+    switch (section) {
+      case 'inicio':
+        navigate('/');
+        break;
+      case 'sobre-nosotros':
+        navigate('/about');
+        break;
+      case 'documentacion':
+        navigate('/documentacion');
+        break;
+      case 'contacto':
+        navigate('/contacto');
+        break;
+      case 'login':
+        navigate('/login');
+        break;
+      case 'register':
+        navigate('/register');
+        break;
+      default:
+        break;
+    }
   };
 
   const handleLogoClick = () => {
