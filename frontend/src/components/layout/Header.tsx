@@ -8,7 +8,7 @@ import './Header.css';
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('inicio');
+  const [activeSection, setActiveSection] = useState('home');
   const navigate = useNavigate();
   const handleNavigationClick = (section: string) => {
     setActiveSection(section);
@@ -59,8 +59,8 @@ const Header: React.FC = () => {
 
           <nav className="header__nav">
             <NavLink
-              onClick={() => handleNavigationClick('inicio')}
-              isActive={activeSection === 'inicio'}
+              onClick={() => handleNavigationClick('home')}
+              isActive={activeSection === 'home'}
             >
               Inicio
             </NavLink>
