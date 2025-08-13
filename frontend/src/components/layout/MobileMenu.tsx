@@ -16,7 +16,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavigate }) 
       <Overlay isVisible={isOpen} onClick={onClose} />
       <div className="mobile-menu__content">
         <nav className="mobile-menu__nav">
-          <NavLink variant="mobile" onClick={() => onNavigate('inicio')}>
+          <NavLink variant="mobile" onClick={() => onNavigate('home')}>
             Inicio
           </NavLink>
           <NavLink variant="mobile" onClick={() => onNavigate('sobre-nosotros')}>
