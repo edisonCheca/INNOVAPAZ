@@ -24,7 +24,7 @@
   border-radius: 12px;
   border: 2px solid #e0e0e0;
   padding: 15px;
-  background: #ece6db;
+  background: var(--pri-50);
 }
 
 .contact-info-card--phone .contact-info-icon-box {
@@ -77,14 +77,14 @@
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
-  color: #2d2d2d;
+  color: var(--pri-900);
 }
 
 .contact-subtitle {
   text-align: center;
   font-size: 1.1rem;
   margin-bottom: 2rem;
-  color: #444;
+  color: var(--pri-900);
 }
 
 .contact-header-row {
@@ -136,6 +136,7 @@
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
+  color: var(--pri-900);
 }
 
 .contact-info-item {
@@ -146,12 +147,25 @@
 
 .contact-info-label {
   font-size: 0.95rem;
-  color: #888;
+  color: var(--pri-900);
+}
+
+.contact-form .input__wrapper {
+  background: var(--pri-50);
+  border: 2px solid var(--pri-900);
+}
+
+.contact-form .input__label {
+  color: var(--pri-900) !important; /* Elige el color que prefieras */
+}
+
+.contact-form .input__field {
+  color: var(--pri-900);
 }
 
 .contact-info-value {
   font-size: 1.05rem;
-  color: #222;
+  color: var(--pri-900);
   font-weight: 500;
 }
 
@@ -160,7 +174,7 @@
   justify-content: center;
   gap: 0.7rem;
   font-size: 2rem;
-  color: #4b4b4b;
+  color: var(--pri-900);
 }
 
 .contact-form-box {
@@ -183,6 +197,7 @@
 .contact-form {
   display: flex;
   flex-direction: column;
+  color: var(--pri-900);
   gap: 0.8rem;
 }
 
@@ -219,10 +234,10 @@
 }
 
 .contact-faq-box {
-  width: 1120px;
+  max-width: 1120px;
+  width: 100%;
   margin: 0 auto;
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
   padding: 1.5rem 2rem;
 }
 
