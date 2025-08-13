@@ -72,3 +72,11 @@
   color: var(--pri-700);
   transition: color 0.2s ease;
 }
+
+.logo--white .logo__text {
+  color: #FFFFFF;
+}
+
+.logo--white:hover .logo__text {
+  color: var(--sec-300);
+}

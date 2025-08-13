@@ -7,6 +7,7 @@ interface LogoProps {
   onClick?: () => void;
   showText?: boolean;
   size?: 'small' | 'medium' | 'large';
+  variant?: 'default' | 'white';
 }
 
 const Logo: React.FC<LogoProps> = ({
@@ -14,9 +15,10 @@ const Logo: React.FC<LogoProps> = ({
   onClick,
   showText = true,
   size = 'medium',
+  variant = 'default',
 }) => {
   return (
-    <div className={`logo logo--${size}`} onClick={onClick}>
+    <div className={`logo logo--${size} logo--${variant}`} onClick={onClick}>
       <div className="logo__icon">
         <img
           src={LogoSvg}
