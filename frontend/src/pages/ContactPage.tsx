@@ -12,6 +12,7 @@ import {
 import { TbBrandTelegram } from 'react-icons/tb';
 import './ContactPage.css';
 import contact from '../assets/icons/contact.svg';
+import Input from '@/components/common/Input';
 
 const ContactPage: React.FC = () => {
   return (
@@ -69,10 +70,30 @@ const ContactPage: React.FC = () => {
         <div className="contact-form-box">
           <h2 className="contact-form-title">Envíanos un mensaje</h2>
           <form className="contact-form">
-            <input type="text" placeholder="Nombre completo" className="contact-input" />
-            <input type="email" placeholder="Correo electrónico" className="contact-input" />
-            <input type="tel" placeholder="Número de teléfono" className="contact-input" />
-            <textarea placeholder="Mensaje" className="contact-textarea" />
+            <Input
+              placeholder="Ingrese su nombre completo"
+              label="Nombre completo"
+              name="nombre"
+              className="contact-input"
+            />
+            <Input
+              type="email"
+              placeholder="Ingrese su correo electrónico"
+              label="Correo electrónico"
+              name="correo"
+              className="contact-input"
+            />
+            <Input
+              type="tel"
+              placeholder="Ingrese su número de teléfono"
+              label="Número de teléfono"
+              name="telefono"
+              className="contact-input"
+            />
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              <label className="input__label">Mensaje</label>
+              <textarea placeholder="Mensaje" className="contact-textarea" />
+            </div>
             <button type="submit" className="contact-submit-btn">
               Enviar
             </button>
@@ -83,15 +104,28 @@ const ContactPage: React.FC = () => {
         <h2 className="contact-faq-title">Preguntas frecuentes</h2>
         <details className="contact-faq-item">
           <summary>¿Cómo creo una cuenta?</summary>
-          <p>Puedes crear una cuenta desde la página de registro completando el formulario.</p>
+          <p>
+            Puedes crear una cuenta desde la página de registro completando el formulario con tus
+            datos personales y de contacto. Una vez completado, recibirás un correo de confirmación
+            para activar tu cuenta.
+          </p>
         </details>
         <details className="contact-faq-item">
           <summary>¿Qué métodos de pago aceptan?</summary>
-          <p>Aceptamos pagos por transferencia bancaria, tarjeta y otros métodos digitales.</p>
+          <p>
+            Aceptamos diversos métodos de pago para tu comodidad, incluyendo transferencia bancaria,
+            tarjetas de crédito/débito (Visa, MasterCard, American Express), PayPal, y otros métodos
+            de pago digitales populares en Bolivia.
+          </p>
         </details>
         <details className="contact-faq-item">
           <summary>¿Cómo puedo comenzar a usar el ERP?</summary>
-          <p>Una vez registrado, accede con tus credenciales y sigue la guía de inicio rápido.</p>
+          <p>
+            Una vez que hayas registrado tu cuenta y accedido con tus credenciales, encontrarás una
+            guía de inicio rápido en tu panel de control. Esta guía te ayudará a configurar tu
+            perfil, familiarizarte con las funciones principales y comenzar a utilizar las
+            herramientas disponibles en nuestro sistema.
+          </p>
         </details>
       </div>
     </div>

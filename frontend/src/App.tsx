@@ -9,6 +9,7 @@ import Footer from './components/layout/Footer';
 import TermsPage from './pages/TermsPage';
 import ContactPage from './pages/ContactPage';
 import PrivacyPage from './pages/PrivacyPage';
+import DocumentsPage from './pages/DocumentsPage'; // <-- Importa DocumentsPage
 
 const App: React.FC = () => {
   return (
@@ -23,6 +24,7 @@ const App: React.FC = () => {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contacto" element={<ContactPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/documentacion" element={<DocumentsPage />} /> {/* <-- Nueva ruta */}
         </Routes>
       </div>
       <Footer />
