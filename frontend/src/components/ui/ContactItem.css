@@ -42,9 +42,8 @@
 
 .contact-item__text {
   font: var(--font-16);
-  font-weight: 300;
-  line-height: 19px;
-  color: #FFFFFF;
+  font-weight: 200;
+  color: var(--bg-50);
   flex: 1;
 }
 
