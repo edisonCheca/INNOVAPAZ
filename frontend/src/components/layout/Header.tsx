@@ -20,8 +20,8 @@ const Header: React.FC = () => {
       case 'sobre-nosotros':
         navigate('/about');
         break;
-      case 'documentacion':
-        navigate('/documentacion');
+      case 'politicas':
+        navigate('/privacy');
         break;
       case 'contacto':
         navigate('/contacto');
@@ -71,10 +71,10 @@ const Header: React.FC = () => {
               Sobre Nosotros
             </NavLink>
             <NavLink
-              onClick={() => handleNavigationClick('documentacion')}
-              isActive={activeSection === 'documentacion'}
+              onClick={() => handleNavigationClick('politicas')}
+              isActive={activeSection === 'politicas'}
             >
-              Documentación
+              Privacidad
             </NavLink>
             <NavLink
               onClick={() => handleNavigationClick('contacto')}
