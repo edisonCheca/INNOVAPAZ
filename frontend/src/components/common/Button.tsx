@@ -1,6 +1,6 @@
 import React from 'react';
 import type { IconType } from 'react-icons';
-import styles from './Button.module.css';
+import './Button.css';
 
 interface ButtonProps {
   // Texto del botón
@@ -68,7 +68,7 @@ const Button: React.FC<ButtonProps> = ({
       <>
         {parts[0]}
         <span
-          className={styles.gradientText}
+          className="button-gradient-text"
           style={{ background: gradientColors, WebkitBackgroundClip: 'text' }}
         >
           {gradientText}
@@ -86,28 +86,37 @@ const Button: React.FC<ButtonProps> = ({
     height: size === 'custom' ? height : undefined,
   };
 
-  const buttonClasses = [styles.button, styles[size], disabled ? styles.disabled : '', className]
+  const buttonClasses = [
+    'custom-button',
+    `custom-button--${size}`,
+    disabled ? 'custom-button--disabled' : '',
+    className,
+  ]
     .filter(Boolean)
     .join(' ');
 
   return (
     <button className={buttonClasses} style={buttonStyle} onClick={onClick} disabled={disabled}>
-      <div className={styles.content}>
-        {Icon && iconPosition === 'left' && <Icon className={styles.iconLeft} size={iconSize} />}
+      <div className="custom-button__content">
+        {Icon && iconPosition === 'left' && (
+          <Icon className="custom-button__icon custom-button__icon--left" size={iconSize} />
+        )}
 
-        <div className={styles.textContent}>
-          <h3 className={styles.title} style={{ fontWeight: titleFontWeight }}>
+        <div className="custom-button__text-content">
+          <h3 className="custom-button__title" style={{ fontWeight: titleFontWeight }}>
             {processTitle()}
           </h3>
 
           {description && (
-            <p className={styles.description} style={{ fontWeight: descriptionFontWeight }}>
+            <p className="custom-button__description" style={{ fontWeight: descriptionFontWeight }}>
               {description}
             </p>
           )}
         </div>
 
-        {Icon && iconPosition === 'right' && <Icon className={styles.iconRight} size={iconSize} />}
+        {Icon && iconPosition === 'right' && (
+          <Icon className="custom-button__icon custom-button__icon--right" size={iconSize} />
+        )}
       </div>
     </button>
   );
