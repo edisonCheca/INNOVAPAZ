@@ -87,8 +87,7 @@ body {
   --container-max-laptop: 1120px;
 }
 
-/* Responsive container class */
-.container {
+#root {
   width: 100%;
   max-width: var(--container-max-mobile);
   margin-left: auto;
@@ -98,19 +97,32 @@ body {
 }
 
 @media (max-width: 411px) {
-  .container {
-    max-width: var(--container-max-mobile-xs);
+  #root {
+    max-width: none;
+    width: calc(100% - 32px);
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
-@media (min-width: 481px) {
-  .container {
+@media (min-width: 412px) {
+  #root {
+    max-width: var(--container-max-mobile);
+  }
+}
+
+@media (min-width: 768px) {
+  #root {
     max-width: var(--container-max-tablet);
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
 
-@media (min-width: 1025px) {
-  .container {
+@media (min-width: 1440px) {
+  #root {
     max-width: var(--container-max-laptop);
+    padding-left: 32px;
+    padding-right: 32px;
   }
 }
