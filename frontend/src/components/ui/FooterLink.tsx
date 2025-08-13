@@ -15,7 +15,7 @@ const FooterLink: React.FC<FooterLinkProps> = ({
   className = "",
 }) => {
   return (
-    <a 
+    <a
       href={href}
       className={`footer-link ${className}`}
       onClick={(e) => {
