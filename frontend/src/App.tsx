@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import DocumentsPage from './pages/DocumentsPage';
+import HomePage from './pages/HomePage';
+import LoginPage from './pages/LoginPage';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 
@@ -10,7 +11,8 @@ const App: React.FC = () => {
       <Header />
       <div className="app">
         <Routes>
-          <Route path="/documents-page" element={<DocumentsPage />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </div>
       <Footer />
