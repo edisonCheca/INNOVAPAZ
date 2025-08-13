@@ -1,6 +1,6 @@
 import React from 'react';
-import TermsSection from './TermsSection';
-import TermsSubSection from './TermsSubSection';
+import TermsSection from '../common/TermsSection';
+import TermsSubSection from '../common/TermsSubSection';
 
 const PrivacyContent = () => {
   return (
