@@ -20,25 +20,25 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
       <Overlay isVisible={isOpen} onClick={onClose} />
       <div className="mobile-menu__content">
         <nav className="mobile-menu__nav">
-          <NavLink 
+          <NavLink
             variant="mobile"
             onClick={() => onNavigate('inicio')}
           >
             Inicio
           </NavLink>
-          <NavLink 
+          <NavLink
             variant="mobile"
             onClick={() => onNavigate('sobre-nosotros')}
           >
             Sobre Nosotros
           </NavLink>
-          <NavLink 
+          <NavLink
             variant="mobile"
             onClick={() => onNavigate('documentacion')}
           >
             Documentación
           </NavLink>
-          <NavLink 
+          <NavLink
             variant="mobile"
             onClick={() => onNavigate('contacto')}
           >
@@ -47,14 +47,14 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
         </nav>
 
         <div className="mobile-menu__actions">
-          <Button 
+          <Button
             variant="primary"
             size="medium"
             onClick={() => onNavigate('login')}
           >
             Iniciar Sesión
           </Button>
-          <Button 
+          <Button
             variant="outline"
             size="medium"
             onClick={() => onNavigate('register')}

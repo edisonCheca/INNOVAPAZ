@@ -49,7 +49,7 @@ const Header: React.FC = () => {
           </nav>
 
           <div className="header__actions">
-            <Button 
+            <Button
               variant="primary"
               size="small"
               onClick={() => handleNavigationClick('login')}
@@ -57,7 +57,7 @@ const Header: React.FC = () => {
             >
               Iniciar Sesión
             </Button>
-            <Button 
+            <Button
               variant="outline"
               size="small"
               onClick={() => handleNavigationClick('register')}
@@ -67,7 +67,7 @@ const Header: React.FC = () => {
             </Button>
           </div>
 
-          <button 
+          <button
             className={`header__menu-toggle ${isMobileMenuOpen ? 'header__menu-toggle--active' : ''}`}
             onClick={toggleMobileMenu}
           >
@@ -78,7 +78,7 @@ const Header: React.FC = () => {
         </div>
       </header>
 
-      <MobileMenu 
+      <MobileMenu
         isOpen={isMobileMenuOpen}
         onClose={closeMobileMenu}
         onNavigate={handleNavigationClick}
