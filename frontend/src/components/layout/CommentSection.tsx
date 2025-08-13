@@ -4,7 +4,6 @@ import CommentCard from '../common/CommentCard';
 import Button from '../common/Button';
 import './CommentSection.css';
 
-// Interfaces y tipos
 interface Comment {
   id: number;
   message: string;
@@ -59,10 +58,9 @@ const CommentSection: React.FC<CommentSectionProps> = ({
   comments = defaultComments,
   showMoreButton = true,
   maxCommentsToShow,
-  onViewMore,
   className = '',
 }) => {
-  const [visibleComments, setVisibleComments] = React.useState<Comment[]>(() => {
+  const [visibleComments] = React.useState<Comment[]>(() => {
     if (maxCommentsToShow && maxCommentsToShow < comments.length) {
       return comments.slice(0, maxCommentsToShow);
     }
@@ -70,14 +68,8 @@ const CommentSection: React.FC<CommentSectionProps> = ({
   });
 
   const handleViewMore = (): void => {
-    if (onViewMore) {
-      onViewMore();
-    } else {
-      setVisibleComments(comments);
-    }
+    console.log('Botón "ver más" clickeado');
   };
-
-  const hasMoreComments: boolean = visibleComments.length < comments.length;
 
   return (
     <section className={`comment-section ${className}`}>
@@ -90,7 +82,7 @@ const CommentSection: React.FC<CommentSectionProps> = ({
           descripcionStyle="body-large"
           tituloSize={39}
           descripcionSize={20}
-          descripcionMaxWidth="600px"
+          descripcionMaxWidth="500px"
         />
 
         <div className="comment-section__grid">
@@ -106,14 +98,14 @@ const CommentSection: React.FC<CommentSectionProps> = ({
           ))}
         </div>
 
-        {showMoreButton && hasMoreComments && (
+        {showMoreButton && (
           <div className="comment-section__action">
             <Button
               title="ver más"
               hasBackground={true}
               backgroundColor="var(--acc-600)"
               textColor="var(--white)"
-              size="medium"
+              size="small"
               onClick={handleViewMore}
               className="comment-section__button"
             />

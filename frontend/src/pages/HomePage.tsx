@@ -1,4 +1,5 @@
 import React from 'react';
+import CommentSection from '../components/layout/CommentSection';
 
 const HomePage: React.FC = () => {
   return (
@@ -33,6 +34,7 @@ const HomePage: React.FC = () => {
             </div>
           </div>
         </section>
+        <CommentSection />
       </main>
     </div>
   );
