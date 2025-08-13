@@ -1,20 +1,27 @@
-/* ===== BASE: Mobile First (Menos de 480px) ===== */
+/* ===== BASE: Mobile first (menos de 480px) ===== */
 .documentsPage {
-  background-color: var(--bg-500);
-  font-family: var(--font);
-  padding: 24px 32px;
-  overflow: hidden;
+  background-color: #f2f0ea;
+  font-family: sans-serif;
+  padding: 24px 0;
+}
+
+.documentsPage__container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 12px; /* Espacio lateral para móviles pequeños */
 }
 
 .documentsPage__header {
   margin-bottom: 32px;
   text-align: left;
-  max-width: 1200px; /* Igual que el grid */
-  margin: 0 auto 32px auto;
+  max-width: 1200px; /* Igual que el grid y el footer */
+  margin: 0 auto 32px auto; /* Centrado horizontal y espacio abajo */
+  padding-left: 20px; /* Igual que el container en mobile */
+  padding-right: 20px;
 }
 
 .documentsPage__title {
-  font-size: 1.5rem; /* Un poco más pequeño en móviles */
+  font-size: 2rem;
   font-weight: 700;
   margin: 0 0 8px 0;
 }
@@ -29,60 +36,41 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
-  max-width: 1200px; /* Ajusta según tu diseño */
-  margin: 0 auto; /* Centra el grid */
+  max-width: 100%;
 }
 
-/* ===== Mobile: ≤480px ===== */
-@media (max-width: 480px) {
-  .documentsPage {
-    padding: 12px 8px;
-  }
-
+/* ===== 480px y más ===== */
+@media (min-width: 480px) {
   .documentsPage__header {
-    padding: 0 4px;
-    max-width: 100%;
-  }
-
-  .documentsPage__title {
-    font-size: 1.2rem;
-  }
-
-  .documentsPage__contentGrid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    max-width: 100%;
-    margin: 0;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
-/* ===== Tablet: ≥768px ===== */
+
+/* ===== 768px y más ===== */
 @media (min-width: 768px) {
-  .documentsPage__contentGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-    max-width: 1200px;
-    margin: 0 auto;
+  .documentsPage__container {
+    padding: 0 40px;
   }
-
-  .documentsPage__title {
-    font-size: 2rem;
-  }
-
   .documentsPage__contentGrid {
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
   }
 }
 
-/* ===== Desktop: ≥1440px ===== */
+/* ===== 1440px y más ===== */
 @media (min-width: 1440px) {
+  .documentsPage__container {
+    max-width: 1200px;
+    padding: 0; /* El centrado lo hace el max-width y margin:auto */
+  }
   .documentsPage__contentGrid {
     grid-template-columns: repeat(4, 1fr);
     max-width: 1200px;
     margin: 0 auto;
   }
-
-  .documentsPage__contentGrid {
-    grid-template-columns: repeat(4, 1fr);
+  .documentsPage__header {
+    max-width: 1200px;
+    margin: 0 auto 32px auto;
   }
 }
