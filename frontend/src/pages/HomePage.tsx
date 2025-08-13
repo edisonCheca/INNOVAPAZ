@@ -1,5 +1,5 @@
 import React from 'react';
-import PlatformFeatures from '../components/ui/PlatformFeatures';
+import PlatformFeatures from '../components/layout/PlatformFeatures';
 
 const HomePage: React.FC = () => {
   return (
