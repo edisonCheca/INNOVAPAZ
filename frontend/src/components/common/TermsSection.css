@@ -1,5 +1,7 @@
 .terms-section {
   margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--pri-200);
 }
 
 .terms-section__title {
@@ -27,6 +29,7 @@
 @media (max-width: 768px) {
   .terms-section {
     margin-bottom: 2rem;
+    padding-bottom: 2rem;
   }
 
   .terms-section__title {

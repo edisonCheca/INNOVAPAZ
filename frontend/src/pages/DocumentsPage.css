@@ -1,14 +1,14 @@
 /* ===== BASE: Mobile first (menos de 480px) ===== */
 .documentsPage {
-  background-color: #f2f0ea;
-  font-family: sans-serif;
+  background-color: var(--bg-500);
+  font-family: var(--font);
   padding: 24px 0;
 }
 
 .documentsPage__container {
   width: 100%;
   margin: 0 auto;
-  padding: 0 12px; /* Espacio lateral para móviles pequeños */
+  padding: 0 20px; /* Espacio lateral para móviles pequeños */
 }
 
 .documentsPage__header {
@@ -16,19 +16,20 @@
   text-align: left;
   max-width: 1200px; /* Igual que el grid y el footer */
   margin: 0 auto 32px auto; /* Centrado horizontal y espacio abajo */
-  padding-left: 20px; /* Igual que el container en mobile */
-  padding-right: 20px;
+  padding-left: 0; /* Se controla en el container */
+  padding-right: 0; /* Se controla en el container */
 }
 
 .documentsPage__title {
-  font-size: 2rem;
   font-weight: 700;
   margin: 0 0 8px 0;
+  color: var(--pri-900);
+  font: var(--font-31);
 }
 
 .documentsPage__lastUpdate {
   font-size: 0.875rem;
-  color: #6c757d;
+  color: var(--pri-500);
   margin: 0;
 }
 
@@ -42,8 +43,8 @@
 /* ===== 480px y más ===== */
 @media (min-width: 480px) {
   .documentsPage__header {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -51,6 +52,9 @@
 @media (min-width: 768px) {
   .documentsPage__container {
     padding: 0 40px;
+  }
+  .documentsPage__title {
+    font: var(--font-39);
   }
   .documentsPage__contentGrid {
     grid-template-columns: repeat(2, 1fr);
@@ -63,6 +67,9 @@
   .documentsPage__container {
     max-width: 1200px;
     padding: 0; /* El centrado lo hace el max-width y margin:auto */
+  }
+  .documentsPage__title {
+    font: var(--font-49);
   }
   .documentsPage__contentGrid {
     grid-template-columns: repeat(4, 1fr);
