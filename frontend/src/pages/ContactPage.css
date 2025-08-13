@@ -168,8 +168,7 @@
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
   padding: 2rem 1.5rem;
-  min-width: 320px;
-  max-width: 400px;
+  width: 600px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -188,16 +187,12 @@
 }
 
 .contact-input {
-  padding: 0.7rem 1rem;
-  border: 1px solid #e0e0e0;
+  padding: 1rem 0.5rem;
+  border: 1px solid var(--pri-90);
   border-radius: 8px;
   font-size: 1rem;
   outline: none;
   transition: border 0.2s;
-}
-
-.contact-input:focus {
-  border-color: #bfa46f;
 }
 
 .contact-textarea {
@@ -211,12 +206,8 @@
   transition: border 0.2s;
 }
 
-.contact-textarea:focus {
-  border-color: #bfa46f;
-}
-
 .contact-submit-btn {
-  background: #bfa46f;
+  background: var(--pri-900);
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -227,38 +218,66 @@
   transition: background 0.2s;
 }
 
-.contact-submit-btn:hover {
-  background: #a88c4a;
-}
-
 .contact-faq-box {
-  max-width: 800px;
+  width: 1120px;
   margin: 0 auto;
-  background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
-  padding: 2rem 1.5rem;
+  padding: 1.5rem 2rem;
 }
 
 .contact-faq-title {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  color: var(--pri-900);
+  text-align: center;
 }
 
 .contact-faq-item {
-  margin-bottom: 0.7rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--bg-600);
+  padding-bottom: 0.5rem;
 }
 
 .contact-faq-item summary {
   font-weight: 500;
   cursor: pointer;
-  font-size: 1rem;
-  color: #333;
+  font-size: 1.1rem;
+  color: var(--pri-800);
+  padding: 1rem;
+  background-color: var(--bg-400);
+  border-radius: 8px;
+  position: relative;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.contact-faq-item summary::after {
+  content: '▼';
+  font-size: 0.8rem;
+  color: var(--pri-700);
+  transition: transform 0.3s ease;
+}
+
+.contact-faq-item[open] summary::after {
+  transform: rotate(180deg);
 }
 
 .contact-faq-item p {
-  margin: 0.5rem 0 0 1rem;
-  color: #555;
-  font-size: 0.98rem;
+  margin: 1rem;
+  color: var(--pri-700);
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 0 0.5rem;
+}
+
+.contact-faq-item[open] summary {
+  border-radius: 8px 8px 0 0;
 }

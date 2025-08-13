@@ -8,7 +8,6 @@ const TermsPage = () => {
     <div className="terms-page">
       <div className="terms-page__container">
         <TermsTitle title="Términos de Uso" subtitle="Última actualización: 9 de agosto de 2025" />
-
         <TermsContent />
       </div>
     </div>
