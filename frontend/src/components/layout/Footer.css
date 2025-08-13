@@ -28,8 +28,6 @@
 .footer__left-content {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  width: 100%;
 }
 
 .footer__right-content {
@@ -50,8 +48,6 @@
 }
 
 .footer__description {
-  font: var(--font-16);
-  font-weight: 200;
   color: var(--bg-50);
   margin: 0;
 }
@@ -59,10 +55,7 @@
 .footer__links-wrapper {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   align-items: flex-start;
-  gap: 26px 42px;
-  width: 100%;
 }
 
 .footer__sitemap-section,
@@ -74,16 +67,7 @@
   gap: 20px;
 }
 
-.footer__sitemap-section {
-  width: 140px;
-}
-
-.footer__product-section {
-  width: 125px;
-}
-
 .footer__support-section {
-  width: 100%;
   min-width: 240px;
 }
 
@@ -106,11 +90,6 @@
 
 .footer__support-links {
   width: 152px;
-}
-
-.footer__contact-info {
-  width: 100%;
-  max-width: 246px;
 }
 
 .footer__bottom {
@@ -148,11 +127,6 @@
 @media (min-width: 481px) {
   .footer__content {
     padding: 32px 32px;
-  }
-
-  .footer__description {
-    font: var(--font-20);
-    font-weight: 200;
   }
 }
 
