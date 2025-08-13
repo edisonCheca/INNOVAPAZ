@@ -11,7 +11,7 @@ const FrequentQuestions: React.FC = () => {
       question: "¿Cómo personalizar el dashboard de mi negocio?"
     },
     {
-      category: "Personalización", 
+      category: "Personalización",
       question: "¿Cómo personalizar el dashboard de mi negocio?"
     },
     {
@@ -41,7 +41,7 @@ const FrequentQuestions: React.FC = () => {
           descripcionSize={20}
           descripcionMaxWidth="500px"
         />
-        
+
         <div className="frequent-questions__grid">
           {faqData.map((faq, index) => (
             <FaqCard
