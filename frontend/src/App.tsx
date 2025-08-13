@@ -7,7 +7,8 @@ import AboutPage from './pages/AboutPage';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import TermsPage from './pages/TermsPage';
-import DocumentsPage from './pages/DocumentsPage';
+import ContactPage from './pages/ContactPage';
+import DocumentsPage from './pages/DocumentsPage'; // <-- Importa DocumentsPage
 
 const App: React.FC = () => {
   return (
@@ -20,7 +21,8 @@ const App: React.FC = () => {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/documentacion" element={<DocumentsPage />} />
+          <Route path="/contacto" element={<ContactPage />} />
+          <Route path="/documentacion" element={<DocumentsPage />} /> {/* <-- Nueva ruta */}
         </Routes>
       </div>
       <Footer />

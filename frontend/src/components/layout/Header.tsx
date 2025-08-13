@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from '../common/ButtonExtra';
 import Logo from '../ui/Logo';
 import NavLink from '../ui/NavLink';
 import MobileMenu from './MobileMenu';
-import { useNavigate } from 'react-router-dom';
 import './Header.css';
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('inicio');
   const navigate = useNavigate();
-
   const handleNavigationClick = (section: string) => {
     setActiveSection(section);
     setIsMobileMenuOpen(false);
