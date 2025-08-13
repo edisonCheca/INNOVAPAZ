@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
                 text="innovapaz@erpsolutions.com"
                 onClick={() =>
                   window.open(
-                    'https://mail.google.com/mail/?view=cm&fs=1&to=contacto@erpsolutions.com',
+                    'https://mail.google.com/mail/?view=cm&fs=1&to=innovapaz@erpsolutions.com',
                     '_blank'
                   )
                 }
@@ -117,15 +117,11 @@ const Footer: React.FC = () => {
               <div className="footer__product-section">
                 <SectionTitle>Producto</SectionTitle>
                 <div className="footer__product-links">
-                  <FooterLink onClick={() => handleNavigationClick('funcionalidades')}>
-                    Funcionalidades
+                  <FooterLink onClick={() => handleNavigationClick('terminos')}>
+                    Términos de Uso
                   </FooterLink>
-                  <FooterLink onClick={() => handleNavigationClick('precios')}>Precios</FooterLink>
-                  <FooterLink onClick={() => handleNavigationClick('integracion')}>
-                    Integración
-                  </FooterLink>
-                  <FooterLink onClick={() => handleNavigationClick('seguridad')}>
-                    Seguridad
+                  <FooterLink onClick={() => handleNavigationClick('politica')}>
+                    Política de Privacidad
                   </FooterLink>
                 </div>
               </div>
@@ -133,12 +129,6 @@ const Footer: React.FC = () => {
               <div className="footer__support-section">
                 <SectionTitle>Soporte</SectionTitle>
                 <div className="footer__support-links">
-                  <FooterLink onClick={() => handleNavigationClick('terminos')}>
-                    Términos de Uso
-                  </FooterLink>
-                  <FooterLink onClick={() => handleNavigationClick('politica')}>
-                    Política de Privacidad
-                  </FooterLink>
                   <FooterLink onClick={() => handleNavigationClick('documentacion')}>
                     Documentación
                   </FooterLink>
