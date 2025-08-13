@@ -80,37 +80,8 @@ body {
   --font-13: 13px/1.1 var(--font);
   --font-10: 10px/1.1 var(--font);
 
-  /* Responsive container max-widths */
-  --container-max-mobile-xs: 288px;
-  --container-max-mobile: 380px;
-  --container-max-tablet: 680px;
-  --container-max-laptop: 1120px;
-}
-
-/* Responsive container class */
-.container {
-  width: 100%;
-  max-width: var(--container-max-mobile);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
-@media (max-width: 411px) {
-  .container {
-    max-width: var(--container-max-mobile-xs);
-  }
-}
-
-@media (min-width: 481px) {
-  .container {
-    max-width: var(--container-max-tablet);
-  }
-}
-
-@media (min-width: 1025px) {
-  .container {
-    max-width: var(--container-max-laptop);
-  }
+  /* Basic colors */
+  --black: #000;
+  --white: #fff;
+  --transparent: transparent;
 }
