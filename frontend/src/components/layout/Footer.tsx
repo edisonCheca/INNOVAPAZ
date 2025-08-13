@@ -35,8 +35,11 @@ const Footer: React.FC = () => {
       case 'seguridad':
         navigate('/seguridad');
         break;
-      case 'ayuda':
-        navigate('/ayuda');
+      case 'Términos de Uso':
+        navigate('/terms');
+        break;
+      case 'Política de Privacidad':
+        navigate('/privacy');
         break;
       case 'documentacion':
         navigate('/documentacion');
