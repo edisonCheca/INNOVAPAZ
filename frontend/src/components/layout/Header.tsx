@@ -7,9 +7,11 @@ import './Header.css';
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('inicio');
 
   const handleNavigationClick = (section: string) => {
     console.log(`Navigating to ${section}`);
+    setActiveSection(section);
     setIsMobileMenuOpen(false);
   };
 
@@ -34,16 +36,28 @@ const Header: React.FC = () => {
           </div>
 
           <nav className="header__nav">
-            <NavLink onClick={() => handleNavigationClick('inicio')}>
+            <NavLink 
+              onClick={() => handleNavigationClick('inicio')}
+              isActive={activeSection === 'inicio'}
+            >
               Inicio
             </NavLink>
-            <NavLink onClick={() => handleNavigationClick('sobre-nosotros')}>
+            <NavLink 
+              onClick={() => handleNavigationClick('sobre-nosotros')}
+              isActive={activeSection === 'sobre-nosotros'}
+            >
               Sobre Nosotros
             </NavLink>
-            <NavLink onClick={() => handleNavigationClick('documentacion')}>
+            <NavLink 
+              onClick={() => handleNavigationClick('documentacion')}
+              isActive={activeSection === 'documentacion'}
+            >
               Documentación
             </NavLink>
-            <NavLink onClick={() => handleNavigationClick('contacto')}>
+            <NavLink 
+              onClick={() => handleNavigationClick('contacto')}
+              isActive={activeSection === 'contacto'}
+            >
               Contacto
             </NavLink>
           </nav>

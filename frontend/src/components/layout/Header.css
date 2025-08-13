@@ -120,9 +120,9 @@ body {
     display: flex;
     position: absolute;
     left: 449px;
-    top: 24px;
+    top: 0;
     width: 485px;
-    height: 16px;
+    height: 100%;
     align-items: center;
     justify-content: flex-start;
     gap: 57px;
