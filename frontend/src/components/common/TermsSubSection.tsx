@@ -9,11 +9,15 @@ interface TermsSubSectionProps {
 const TermsSubSection = ({ title, content }: TermsSubSectionProps) => {
   const renderContent = () => {
     if (Array.isArray(content)) {
-      return content.map((paragraph, index) => (
-        <p key={index} className="terms-section__paragraph">
-          {paragraph}
-        </p>
-      ));
+      return (
+        <ul className="terms-section__list">
+          {content.map((item, index) => (
+            <li key={index} className="terms-section__list-item">
+              {item}
+            </li>
+          ))}
+        </ul>
+      );
     }
     return <p className="terms-section__paragraph">{content}</p>;
   };

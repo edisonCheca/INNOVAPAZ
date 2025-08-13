@@ -1,5 +1,6 @@
 .terms-subsection {
   margin-top: 1.5rem;
+  font: var(--font);
 }
 
 .terms-subsection__title {
@@ -7,10 +8,4 @@
   font-weight: 600;
   color: var(--pri-900);
   margin: 0 0 0.75rem 0;
-}
-
-@media (max-width: 768px) {
-  .terms-subsection__title {
-    font: var(--font-18);
-  }
 }

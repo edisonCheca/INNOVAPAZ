@@ -15,6 +15,22 @@
   line-height: 1.6;
 }
 
+.terms-section__list {
+  font: var(--font-16);
+  color: var(--pri-700);
+  margin: 0;
+  padding-left: 1.5rem;
+  text-align: justify;
+}
+
+.terms-section__list-item {
+  margin-bottom: 0.5rem;
+}
+
+.terms-section__list-item:last-child {
+  margin-bottom: 0;
+}
+
 .terms-section__paragraph {
   font: var(--font-16);
   color: var(--pri-700);
@@ -35,6 +51,10 @@
   .terms-section__title {
     font: var(--font-20);
     font-weight: 600;
+  }
+
+  .terms-section__list {
+    font: var(--font-14);
   }
 
   .terms-section__paragraph {
