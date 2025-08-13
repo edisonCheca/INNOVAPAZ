@@ -1,4 +1,3 @@
-import React from 'react';
 import HeroTitle from '../common/HeroTitle';
 import DisplayCard from '../common/DisplayCard';
 import './Values.css';
