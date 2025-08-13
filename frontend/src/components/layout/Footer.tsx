@@ -35,10 +35,10 @@ const Footer: React.FC = () => {
       case 'seguridad':
         navigate('/seguridad');
         break;
-      case 'Términos de Uso':
+      case 'terminos':
         navigate('/terms');
         break;
-      case 'Política de Privacidad':
+      case 'politica':
         navigate('/privacy');
         break;
       case 'documentacion':
@@ -128,7 +128,12 @@ const Footer: React.FC = () => {
               <div className="footer__support-section">
                 <SectionTitle>Soporte</SectionTitle>
                 <div className="footer__support-links">
-                  <FooterLink onClick={() => handleNavigationClick('ayuda')}>Ayuda</FooterLink>
+                  <FooterLink onClick={() => handleNavigationClick('terminos')}>
+                    Términos de Uso
+                  </FooterLink>
+                  <FooterLink onClick={() => handleNavigationClick('politica')}>
+                    Política de Privacidad
+                  </FooterLink>
                   <FooterLink onClick={() => handleNavigationClick('documentacion')}>
                     Documentación
                   </FooterLink>
