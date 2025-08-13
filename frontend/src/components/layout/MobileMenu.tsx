@@ -22,8 +22,8 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavigate }) 
           <NavLink variant="mobile" onClick={() => onNavigate('sobre-nosotros')}>
             Sobre Nosotros
           </NavLink>
-          <NavLink variant="mobile" onClick={() => onNavigate('documentacion')}>
-            Documentación
+          <NavLink variant="mobile" onClick={() => onNavigate('politicas')}>
+            Privacidad
           </NavLink>
           <NavLink variant="mobile" onClick={() => onNavigate('contacto')}>
             Contacto
