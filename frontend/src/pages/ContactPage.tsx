@@ -59,12 +59,60 @@ const ContactPage: React.FC = () => {
             </div>
           </div>
           <div className="contact-social-icons contact-social-icons--row">
-            <FaFacebook />
-            <FaWhatsapp />
-            <FaTwitter />
-            <TbBrandTelegram />
-            <FaDiscord />
-            <FaInstagram />
+            <a
+              href="https://facebook.com/innova.paz"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="contact-social-link"
+            >
+              <FaFacebook style={{ color: 'var(--pri-900)' }} />
+            </a>
+            <a
+              href="https://wa.me/59170520728"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Whatsapp"
+              className="contact-social-link"
+            >
+              <FaWhatsapp style={{ color: 'var(--pri-900)' }} />
+            </a>
+            <a
+              href="https://twitter.com/innova_paz"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+              className="contact-social-link"
+            >
+              <FaTwitter style={{ color: 'var(--pri-900)' }} />
+            </a>
+            <a
+              href="https://t.me/innova_paz"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Telegram"
+              className="contact-social-link"
+            >
+              <TbBrandTelegram style={{ color: 'var(--pri-900)' }} />
+            </a>
+            <a
+              href="https://discord.gg/innova_paz"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Discord"
+              className="contact-social-link"
+            >
+              <FaDiscord style={{ color: 'var(--pri-900)' }} />
+            </a>
+            <a
+              href="https://instagram.com/innova.paz"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="contact-social-link"
+            >
+              <FaInstagram style={{ color: 'var(--pri-900)' }} />
+            </a>
           </div>
         </div>
         <div className="contact-form-box">
