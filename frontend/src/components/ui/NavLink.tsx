@@ -6,6 +6,7 @@ interface NavLinkProps {
   onClick?: () => void;
   variant?: 'desktop' | 'mobile';
   className?: string;
+  isActive?: boolean;
 }
 
 const NavLink: React.FC<NavLinkProps> = ({
@@ -13,10 +14,11 @@ const NavLink: React.FC<NavLinkProps> = ({
   onClick,
   variant = 'desktop',
   className = '',
+  isActive = false,
 }) => {
   return (
     <button
-      className={`nav-link nav-link--${variant} ${className}`}
+      className={`nav-link nav-link--${variant} ${isActive ? 'nav-link--active' : ''} ${className}`}
       onClick={onClick}
     >
       {children}
