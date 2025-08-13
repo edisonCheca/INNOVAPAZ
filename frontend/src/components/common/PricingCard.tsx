@@ -11,6 +11,7 @@ interface PricingCardProps {
   highlight?: boolean;
   buttonText: string;
   icons?: React.ReactNode[];
+  onButtonClick?: () => void;
 }
 
 const PricingCard: React.FC<PricingCardProps> = ({
@@ -22,6 +23,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
   highlight = false,
   buttonText,
   icons = [],
+  onButtonClick,
 }) => {
   return (
     <div className={`pricing-card ${highlight ? 'pricing-card--highlight' : ''}`}>
@@ -54,6 +56,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
           backgroundColor="var(--acc-500)"
           textColor="white"
           className="custom-button--pricingcard"
+          onClick={onButtonClick}
         />
       </div>
     </div>

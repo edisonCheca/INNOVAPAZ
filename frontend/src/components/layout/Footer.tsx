@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
               />
               <ContactItem
                 icon="location"
-                text="La Paz, Bolivia"
+                text="Calle General Lanza, #2278 La Paz, Bolivia"
                 onClick={() => handleNavigationClick('location')}
               />
               <ContactItem

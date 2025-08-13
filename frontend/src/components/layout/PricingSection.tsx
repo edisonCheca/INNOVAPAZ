@@ -4,8 +4,15 @@ import './PricingSection.css';
 import basic from '../../assets/icons/basic_icon.png';
 import professional from '../../assets/icons/professional_icon.png';
 import bussines from '../../assets/icons/business_icon.png';
+import { useNavigate } from 'react-router-dom';
 
 const PricingSection = () => {
+  const navigate = useNavigate();
+
+  const handleRedirect = () => {
+    navigate('/register');
+  };
+
   return (
     <section className="pricing">
       <div className="pricing__container">
@@ -31,6 +38,7 @@ const PricingSection = () => {
             ]}
             buttonText="Comenzar Ahora"
             icons={[<img src={basic} alt="Hand" />]}
+            onButtonClick={handleRedirect}
           />
           <PricingCard
             title="Profesional"
@@ -46,6 +54,7 @@ const PricingSection = () => {
             ]}
             buttonText="Comenzar Ahora"
             icons={[<img src={professional} alt="Grid" />]}
+            onButtonClick={handleRedirect}
           />
           <PricingCard
             title="Empresarial"
@@ -61,6 +70,7 @@ const PricingSection = () => {
             ]}
             buttonText="Comenzar Ahora"
             icons={[<img src={bussines} alt="Bookmark" />]}
+            onButtonClick={handleRedirect}
           />
         </div>
       </div>
