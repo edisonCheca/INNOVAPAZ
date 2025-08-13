@@ -11,6 +11,7 @@ const Footer: React.FC = () => {
 
   const handleNavigationClick = (section: string) => {
     switch (section) {
+      case 'home':
       case 'inicio':
         navigate('/');
         break;
@@ -22,18 +23,6 @@ const Footer: React.FC = () => {
         break;
       case 'register':
         navigate('/register');
-        break;
-      case 'funcionalidades':
-        navigate('/funcionalidades');
-        break;
-      case 'precios':
-        navigate('/precios');
-        break;
-      case 'integracion':
-        navigate('/integracion');
-        break;
-      case 'seguridad':
-        navigate('/seguridad');
         break;
       case 'terminos':
         navigate('/terms');
