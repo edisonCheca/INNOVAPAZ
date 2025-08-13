@@ -7,20 +7,28 @@ import './FrequentQuestions.css';
 const FrequentQuestions: React.FC = () => {
   const faqData = [
     {
-      category: 'Personalización',
-      question: '¿Cómo personalizar el dashboard de mi negocio?',
+      category: 'Implementación',
+      question: '¿Cuánto tiempo tarda la implementación del sistema ERP?',
+      answer:
+        'El tiempo de implementación varía según la complejidad y el tamaño de tu empresa. Un proyecto estándar puede durar entre 3 y 6 meses, incluyendo análisis, configuración, migración de datos y capacitación.',
     },
     {
       category: 'Personalización',
-      question: '¿Cómo personalizar el dashboard de mi negocio?',
+      question: '¿El sistema ERP se puede personalizar para mi industria?',
+      answer:
+        'Sí, nuestro ERP es altamente personalizable. Podemos adaptarlo a las necesidades específicas de tu industria, ya sea manufactura, distribución, servicios, etc., configurando módulos y flujos de trabajo a medida.',
     },
     {
-      category: 'Personalización',
-      question: '¿Cómo personalizar el dashboard de mi negocio?',
+      category: 'Costos',
+      question: '¿Cuál es el modelo de precios del ERP?',
+      answer:
+        'Ofrecemos un modelo de suscripción basado en el número de usuarios y los módulos contratados. Esto incluye actualizaciones, soporte técnico y mantenimiento. Contáctanos para una cotización personalizada.',
     },
     {
-      category: 'Personalización',
-      question: '¿Cómo personalizar el dashboard de mi negocio?',
+      category: 'Soporte',
+      question: '¿Qué tipo de soporte técnico ofrecen post-implementación?',
+      answer:
+        'Brindamos soporte continuo a través de varios canales: teléfono, email y portal de cliente. Nuestro equipo está disponible para resolver incidencias, responder dudas y asegurar el óptimo funcionamiento del sistema.',
     },
   ];
 
@@ -44,7 +52,12 @@ const FrequentQuestions: React.FC = () => {
 
         <div className="frequent-questions__grid">
           {faqData.map((faq, index) => (
-            <FaqCard key={index} category={faq.category} question={faq.question} />
+            <FaqCard
+              key={index}
+              category={faq.category}
+              question={faq.question}
+              answer={faq.answer}
+            />
           ))}
         </div>
 
