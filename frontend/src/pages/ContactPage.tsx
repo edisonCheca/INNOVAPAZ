@@ -90,10 +90,14 @@ const ContactPage: React.FC = () => {
               name="telefono"
               className="contact-input"
             />
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              <label className="input__label">Mensaje</label>
-              <textarea placeholder="Mensaje" className="contact-textarea" />
-            </div>
+            <Input
+              type="text"
+              placeholder="Mensaje"
+              label="Mensaje"
+              name="mensaje"
+              className="contact-input"
+              style={{ minHeight: '80px', resize: 'vertical' }}
+            />
             <button type="submit" className="contact-submit-btn">
               Enviar
             </button>
