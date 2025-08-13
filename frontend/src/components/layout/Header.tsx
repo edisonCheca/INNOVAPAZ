@@ -14,7 +14,7 @@ const Header: React.FC = () => {
     setActiveSection(section);
     setIsMobileMenuOpen(false);
     switch (section) {
-      case 'inicio':
+      case 'home':
         navigate('/');
         break;
       case 'sobre-nosotros':
