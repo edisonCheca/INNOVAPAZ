@@ -30,6 +30,7 @@ interface ButtonProps {
   size?: 'small' | 'medium' | 'large' | 'custom';
   width?: string;
   height?: string;
+  containerWidth?: 'full' | 'auto' | 'fit-content' | string; // Nueva prop
 
   // Funcionalidad
   onClick?: () => void;
@@ -54,6 +55,7 @@ const Button: React.FC<ButtonProps> = ({
   size = 'medium',
   width,
   height,
+  containerWidth = 'auto', // Valor por defecto
   onClick,
   disabled = false,
   className = '',
@@ -78,11 +80,26 @@ const Button: React.FC<ButtonProps> = ({
     );
   };
 
+  // Función para determinar el ancho del contenedor
+  const getContainerWidth = (): string => {
+    if (containerWidth === 'full') return '100%';
+    if (containerWidth === 'auto') return 'auto';
+    if (containerWidth === 'fit-content') return 'fit-content';
+    if (
+      (typeof containerWidth === 'string' && containerWidth.includes('px')) ||
+      containerWidth.includes('%') ||
+      containerWidth.includes('rem')
+    ) {
+      return containerWidth;
+    }
+    return 'auto';
+  };
+
   const buttonStyle: React.CSSProperties = {
     backgroundColor: hasBackground ? backgroundColor : 'transparent',
     border: hasBackground ? 'none' : `2px solid ${borderColor}`,
     color: hasBackground ? textColor : borderColor,
-    width: size === 'custom' ? width : undefined,
+    width: size === 'custom' ? width : getContainerWidth(),
     height: size === 'custom' ? height : undefined,
   };
 
@@ -90,6 +107,7 @@ const Button: React.FC<ButtonProps> = ({
     'custom-button',
     `custom-button--${size}`,
     disabled ? 'custom-button--disabled' : '',
+    containerWidth === 'full' ? 'custom-button--full-width' : '',
     className,
   ]
     .filter(Boolean)
