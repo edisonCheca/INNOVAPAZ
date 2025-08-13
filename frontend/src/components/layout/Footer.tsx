@@ -50,6 +50,24 @@ const Footer: React.FC = () => {
 
           <div className="footer__right-content">
             <div className="footer__links-wrapper">
+              <div className="footer__sitemap-section">
+                <SectionTitle>Sitio</SectionTitle>
+                <div className="footer__sitemap-links">
+                  <FooterLink onClick={() => handleNavigationClick('inicio')}>
+                    Inicio
+                  </FooterLink>
+                  <FooterLink onClick={() => handleNavigationClick('sobre-nosotros')}>
+                    Sobre Nosotros
+                  </FooterLink>
+                  <FooterLink onClick={() => handleNavigationClick('login')}>
+                    Iniciar Sesión
+                  </FooterLink>
+                  <FooterLink onClick={() => handleNavigationClick('register')}>
+                    Registrarse
+                  </FooterLink>
+                </div>
+              </div>
+
               <div className="footer__product-section">
                 <SectionTitle>Producto</SectionTitle>
                 <div className="footer__product-links">

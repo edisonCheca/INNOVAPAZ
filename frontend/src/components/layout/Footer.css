@@ -65,12 +65,17 @@
   width: 100%;
 }
 
+.footer__sitemap-section,
 .footer__product-section,
 .footer__support-section {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
+}
+
+.footer__sitemap-section {
+  width: 140px;
 }
 
 .footer__product-section {
@@ -82,12 +87,17 @@
   min-width: 240px;
 }
 
+.footer__sitemap-links,
 .footer__product-links,
 .footer__support-links {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
+}
+
+.footer__sitemap-links {
+  width: 140px;
 }
 
 .footer__product-links {
@@ -156,15 +166,15 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 30px;
+    gap: 60px;
     width: 100%;
-    min-height: 150px;
+    min-height: 180px;
     margin-bottom: 30px;
   }
 
   .footer__left-content {
-    width: 545px;
-    min-height: 150px;
+    width: 400px;
+    min-height: 180px;
     flex-shrink: 0;
     gap: 30px;
   }
@@ -173,17 +183,18 @@
     flex: 1;
     min-width: 0;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
 
   .footer__description-wrapper {
-    width: 545px;
+    width: 400px;
     min-height: 38px;
   }
 
   .footer__description {
     font: var(--font-16);
     font-weight: 200;
+    width: 400px;
   }
 
   .footer__contact-info {
@@ -192,11 +203,17 @@
   }
 
   .footer__links-wrapper {
-    width: auto;
-    min-height: 150px;
+    width: 100%;
+    min-height: 180px;
     justify-content: flex-start;
     gap: 60px;
     flex-wrap: nowrap;
+  }
+
+  .footer__sitemap-section {
+    min-height: 120px;
+    width: 140px;
+    flex-shrink: 0;
   }
 
   .footer__product-section {
@@ -207,8 +224,12 @@
 
   .footer__support-section {
     width: 150px;
-    min-height: 121px;
+    min-height: 100px;
     flex-shrink: 0;
+  }
+
+  .footer__sitemap-links {
+    min-height: 100px;
   }
 
   .footer__product-links {
@@ -219,6 +240,7 @@
     min-height: 77px;
   }
 
+  .footer__sitemap-links .footer-link,
   .footer__product-links .footer-link,
   .footer__support-links .footer-link {
     font: var(--font-16);
