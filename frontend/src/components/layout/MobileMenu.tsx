@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../common/Button';
+import Button from '../common/ButtonExtra';
 import NavLink from '../ui/NavLink';
 import Overlay from '../common/Overlay';
 import './MobileMenu.css';
