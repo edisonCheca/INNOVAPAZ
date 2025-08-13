@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Button from '../ui/Button';
+import Button from '../common/Button';
 import Logo from '../ui/Logo';
 import NavLink from '../ui/NavLink';
 import MobileMenu from './MobileMenu';
