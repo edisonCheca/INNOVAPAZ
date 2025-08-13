@@ -1,7 +1,7 @@
 import React from 'react';
-import Button from '../ui/Button';
+import Button from '../common/Button';
 import NavLink from '../ui/NavLink';
-import Overlay from '../ui/Overlay';
+import Overlay from '../common/Overlay';
 import './MobileMenu.css';
 
 interface MobileMenuProps {
