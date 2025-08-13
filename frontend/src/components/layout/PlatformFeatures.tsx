@@ -8,52 +8,54 @@ import iconreportes from '../../assets/images/iconreportes.png';
 import HeroTitle from '../common/HeroTitle';
 
 const PlatformFeatures: React.FC = () => (
-  <section>
-    <div className="platform-features__title">
-      <HeroTitle
-        titulo="Todo lo que Necesitas en una Plataforma"
-        descripcion="Descubre cómo nuestro ERP puede revolucionar la gestión de tu empresa"
-        gradientText="Plataforma"
-        className="platform-features__center-title"
-      />
-    </div>
-    <div className="platform-features__grid">
-      <DisplayCard
-        icon={<img src={iconventas} />}
-        title="Gestión de Ventas"
-        iconBg="radial-gradient(circle, #DBD56E 0%, #FC7753 100%)"
-      >
-        El sistema permite registrar ventas rápidas, gestionar clientes internos, seguir
-        transacciones por producto y generar cotizaciones con seguimiento, además de reportes por
-        período, vendedor, producto y cliente.
-      </DisplayCard>
-      <DisplayCard
-        icon={<img src={iconcompras} />}
-        title="Gestión de Compras"
-        iconBg="linear-gradient(to right, #66D7D1 21%, #403D58 100%)"
-      >
-        El sistema permite registrar ventas rápidas, gestionar clientes internos, seguir
-        transacciones por producto y generar cotizaciones con seguimiento, además de reportes por
-        período, vendedor, producto y cliente.
-      </DisplayCard>
-      <DisplayCard
-        icon={<img src={iconinventario} />}
-        title="Gestión de Inventarios"
-        iconBg="radial-gradient(circle, #DBD56E 0%, #FC7753 100%)"
-      >
-        El sistema permite registrar ventas rápidas, gestionar clientes internos, seguir
-        transacciones por producto y generar cotizaciones con seguimiento, además de reportes por
-        período, vendedor, producto y cliente.
-      </DisplayCard>
-      <DisplayCard
-        icon={<img src={iconreportes} />}
-        title="Gestión de Reportes"
-        iconBg="linear-gradient(to right, #66D7D1 21%, #403D58 100%)"
-      >
-        El sistema permite registrar ventas rápidas, gestionar clientes internos, seguir
-        transacciones por producto y generar cotizaciones con seguimiento, además de reportes por
-        período, vendedor, producto y cliente.
-      </DisplayCard>
+  <section className="platform-features">
+    <div className="platform-features__container">
+      <div className="platform-features__title">
+        <HeroTitle
+          titulo="Todo lo que Necesitas en una Plataforma"
+          descripcion="Descubre cómo nuestro ERP puede revolucionar la gestión de tu empresa"
+          gradientText="Plataforma"
+          className="platform-features__center-title"
+        />
+      </div>
+      <div className="platform-features__grid">
+        <DisplayCard
+          icon={<img src={iconventas} />}
+          title="Gestión de Ventas"
+          iconBg="radial-gradient(circle, #DBD56E 0%, #FC7753 100%)"
+        >
+          El sistema permite registrar ventas rápidas, gestionar clientes internos, seguir
+          transacciones por producto y generar cotizaciones con seguimiento, además de reportes por
+          período, vendedor, producto y cliente.
+        </DisplayCard>
+        <DisplayCard
+          icon={<img src={iconcompras} />}
+          title="Gestión de Compras"
+          iconBg="linear-gradient(to right, #66D7D1 21%, #403D58 100%)"
+        >
+          El sistema permite registrar ventas rápidas, gestionar clientes internos, seguir
+          transacciones por producto y generar cotizaciones con seguimiento, además de reportes por
+          período, vendedor, producto y cliente.
+        </DisplayCard>
+        <DisplayCard
+          icon={<img src={iconinventario} />}
+          title="Gestión de Inventarios"
+          iconBg="radial-gradient(circle, #DBD56E 0%, #FC7753 100%)"
+        >
+          El sistema permite registrar ventas rápidas, gestionar clientes internos, seguir
+          transacciones por producto y generar cotizaciones con seguimiento, además de reportes por
+          período, vendedor, producto y cliente.
+        </DisplayCard>
+        <DisplayCard
+          icon={<img src={iconreportes} />}
+          title="Gestión de Reportes"
+          iconBg="linear-gradient(to right, #66D7D1 21%, #403D58 100%)"
+        >
+          El sistema permite registrar ventas rápidas, gestionar clientes internos, seguir
+          transacciones por producto y generar cotizaciones con seguimiento, además de reportes por
+          período, vendedor, producto y cliente.
+        </DisplayCard>
+      </div>
     </div>
   </section>
 );

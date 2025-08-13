@@ -22,6 +22,7 @@
   margin: 10px 0;
 }
 .display-card__content {
-  font: var(--font-13);
+  font: var(--font-16);
   color: var(--pri-600);
+  line-height: 1.5;
 }
