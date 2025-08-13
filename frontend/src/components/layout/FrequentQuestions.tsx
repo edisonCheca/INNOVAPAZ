@@ -1,32 +1,32 @@
-import React from 'react'
-import HeroTitle from '../common/HeroTitle'
-import FaqCard from '../common/FaqCard'
-import Button from '../common/Button'
-import './FrequentQuestions.css'
+import React from 'react';
+import HeroTitle from '../common/HeroTitle';
+import FaqCard from '../common/FaqCard';
+import Button from '../common/Button';
+import './FrequentQuestions.css';
 
 const FrequentQuestions: React.FC = () => {
   const faqData = [
     {
-      category: "Personalización",
-      question: "¿Cómo personalizar el dashboard de mi negocio?"
+      category: 'Personalización',
+      question: '¿Cómo personalizar el dashboard de mi negocio?',
     },
     {
-      category: "Personalización",
-      question: "¿Cómo personalizar el dashboard de mi negocio?"
+      category: 'Personalización',
+      question: '¿Cómo personalizar el dashboard de mi negocio?',
     },
     {
-      category: "Personalización",
-      question: "¿Cómo personalizar el dashboard de mi negocio?"
+      category: 'Personalización',
+      question: '¿Cómo personalizar el dashboard de mi negocio?',
     },
     {
-      category: "Personalización",
-      question: "¿Cómo personalizar el dashboard de mi negocio?"
-    }
-  ]
+      category: 'Personalización',
+      question: '¿Cómo personalizar el dashboard de mi negocio?',
+    },
+  ];
 
   const handleViewMore = (): void => {
-    console.log('Botón "ver más" clickeado')
-  }
+    console.log('Botón "ver más" clickeado');
+  };
 
   return (
     <section className="frequent-questions">
@@ -44,11 +44,7 @@ const FrequentQuestions: React.FC = () => {
 
         <div className="frequent-questions__grid">
           {faqData.map((faq, index) => (
-            <FaqCard
-              key={index}
-              category={faq.category}
-              question={faq.question}
-            />
+            <FaqCard key={index} category={faq.category} question={faq.question} />
           ))}
         </div>
 
@@ -65,7 +61,7 @@ const FrequentQuestions: React.FC = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default FrequentQuestions
+export default FrequentQuestions;
