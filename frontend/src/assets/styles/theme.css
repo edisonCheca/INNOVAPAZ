@@ -96,6 +96,8 @@ body {
 #root {
   width: 100%;
   max-width: var(--container-max-mobile);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (max-width: 411px) {
