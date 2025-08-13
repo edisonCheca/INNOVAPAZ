@@ -7,7 +7,7 @@
   height: 64px;
   background: var(--bg-50);
   z-index: 1000;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
 }
 
@@ -32,26 +32,6 @@
 
 .header__nav {
   display: none;
-}
-
-.header__nav-link {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-family: var(--font);
-  font-style: normal;
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 16px;
-  color: var(--pri-600);
-  padding: 8px 12px;
-  margin: 0 4px;
-  transition: all 0.2s ease;
-}
-
-.header__nav-link:hover {
-  transform: translateY(-1px);
-  color: var(--pri-700);
 }
 
 .header__actions {
@@ -91,6 +71,32 @@
   background: var(--pri-700);
 }
 
+.header__menu-toggle--active .header__hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.header__menu-toggle--active .header__hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.header__menu-toggle--active .header__hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+body {
+  margin-top: 64px;
+}
+
+@media (max-width: 411px) {
+  .header__logo-container {
+    left: 16px;
+  }
+
+  .header__menu-toggle {
+    right: 16px;
+  }
+}
+
 @media (min-width: 481px) {
   .header__menu-toggle {
     right: 32px;
@@ -99,9 +105,7 @@
 
 @media (min-width: 1025px) {
   .header {
-    background: var(--bg-50);
     border-bottom: none;
-    filter: none;
   }
 
   .header__content {
@@ -124,25 +128,19 @@
     gap: 57px;
   }
 
-  .header__nav-link {
-    margin: 0;
-    padding: 0;
-    position: relative;
-  }
-
-  .header__nav-link:nth-child(1) {
+  .header__nav .nav-link--desktop:nth-child(1) {
     width: 33px;
   }
 
-  .header__nav-link:nth-child(2) {
+  .header__nav .nav-link--desktop:nth-child(2) {
     width: 96px;
   }
 
-  .header__nav-link:nth-child(3) {
+  .header__nav .nav-link--desktop:nth-child(3) {
     width: 97px;
   }
 
-  .header__nav-link:nth-child(4) {
+  .header__nav .nav-link--desktop:nth-child(4) {
     width: 57px;
   }
 
@@ -161,18 +159,8 @@
   .header__menu-toggle {
     display: none;
   }
-}
 
-@media (max-width: 411px) {
-  .header__logo-container {
-    left: 16px;
+  .mobile-menu {
+    display: none;
   }
-
-  .header__menu-toggle {
-    right: 16px;
-  }
-}
-
-body {
-  margin-top: 64px;
 }
