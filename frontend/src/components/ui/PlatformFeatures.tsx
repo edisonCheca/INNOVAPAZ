@@ -5,10 +5,19 @@ import iconventas from '../../assets/images/iconventas.png';
 import iconcompras from '../../assets/images/iconcompras.png';
 import iconinventario from '../../assets/images/iconinventarios.png';
 import iconreportes from '../../assets/images/iconreportes.png';
+import HeroTitle from '../common/HeroTitle';
 
 const PlatformFeatures: React.FC = () => (
   <section>
-    <div className="features-grid">
+    <div className="platform-features__title">
+      <HeroTitle
+        titulo="Todo lo que Necesitas en una Plataforma"
+        descripcion="Descubre cómo nuestro ERP puede revolucionar la gestión de tu empresa"
+        gradientText="Plataforma"
+        className="platform-features__center-title"
+      />
+    </div>
+    <div className="platform-features__grid">
       <DisplayCard
         icon={<img src={iconventas} />}
         title="Gestión de Ventas"

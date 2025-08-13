@@ -1,6 +1,14 @@
-.features-grid {
+.platform-features__grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+}
+.platform-features__title {
+  margin: 0px 40px 40px 40px;
+  gap: 20px;
+}
+.platform-features__center-title h1 {
+  font: var(--font-39);
+  font-weight: 600;
 }

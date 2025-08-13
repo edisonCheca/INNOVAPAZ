@@ -8,12 +8,12 @@ interface DisplayCardProps {
 }
 
 const DisplayCard: React.FC<DisplayCardProps> = ({ icon, title, children, iconBg }) => (
-  <div className="card">
-    <div className="card__icon" style={iconBg ? { background: iconBg } : undefined}>
+  <div className="display-card">
+    <div className="display-card__icon" style={iconBg ? { background: iconBg } : undefined}>
       {icon}
     </div>
-    <h3 className="card__title">{title}</h3>
-    <div className="card__content">{children}</div>
+    <h3 className="display-card__title">{title}</h3>
+    <div className="display-card__content">{children}</div>
   </div>
 );
 
