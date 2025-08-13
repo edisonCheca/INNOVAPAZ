@@ -7,6 +7,7 @@ import AboutPage from './pages/AboutPage';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import TermsPage from './pages/TermsPage';
+import ContactPage from './pages/ContactPage';
 
 const App: React.FC = () => {
   return (
@@ -19,6 +20,7 @@ const App: React.FC = () => {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/contacto" element={<ContactPage />} />
         </Routes>
       </div>
       <Footer />
