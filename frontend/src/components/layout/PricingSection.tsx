@@ -4,8 +4,15 @@ import './PricingSection.css';
 import basic from '../../assets/icons/basic_icon.png';
 import professional from '../../assets/icons/professional_icon.png';
 import bussines from '../../assets/icons/business_icon.png';
+import { useNavigate } from 'react-router-dom';
 
 const PricingSection = () => {
+  const navigate = useNavigate();
+
+  const handleRedirect = () => {
+    navigate('/register');
+  };
+
   return (
     <section className="pricing">
       <div className="pricing__container">
@@ -20,7 +27,7 @@ const PricingSection = () => {
         <div className="pricing__cards">
           <PricingCard
             title="Básico"
-            price="$20"
+            price="Bs. 50"
             comment="Perfecto para empresas pequeñas"
             features={[
               'Hasta 10 usuarios',
@@ -31,26 +38,12 @@ const PricingSection = () => {
             ]}
             buttonText="Comenzar Ahora"
             icons={[<img src={basic} alt="Hand" />]}
-          />
-          <PricingCard
-            title="Empresarial"
-            comment="Ideal para empresas en crecimiento"
-            price="$199"
-            features={[
-              'Usuarios ilimitados',
-              'Todas las funcionalidades',
-              'Facturación simple',
-              'Soporte 24/7 dedicado',
-              'Almacenamiento ilimitado',
-              'Personalización completa',
-            ]}
-            buttonText="Comenzar Ahora"
-            icons={[<img src={bussines} alt="Bookmark" />]}
+            onButtonClick={handleRedirect}
           />
           <PricingCard
             title="Profesional"
             comment="Para grandes organizaciones"
-            price="$99"
+            price="Bs. 100"
             features={[
               'Hasta 50 usuarios',
               'Gestión de inventario avanzada',
@@ -61,6 +54,23 @@ const PricingSection = () => {
             ]}
             buttonText="Comenzar Ahora"
             icons={[<img src={professional} alt="Grid" />]}
+            onButtonClick={handleRedirect}
+          />
+          <PricingCard
+            title="Empresarial"
+            comment="Ideal para empresas en crecimiento"
+            price="Bs. 200"
+            features={[
+              'Usuarios ilimitados',
+              'Todas las funcionalidades',
+              'Facturación simple',
+              'Soporte 24/7 dedicado',
+              'Almacenamiento ilimitado',
+              'Personalización completa',
+            ]}
+            buttonText="Comenzar Ahora"
+            icons={[<img src={bussines} alt="Bookmark" />]}
+            onButtonClick={handleRedirect}
           />
         </div>
       </div>

@@ -35,8 +35,11 @@ const Footer: React.FC = () => {
       case 'seguridad':
         navigate('/seguridad');
         break;
-      case 'ayuda':
-        navigate('/ayuda');
+      case 'terminos':
+        navigate('/terms');
+        break;
+      case 'politica':
+        navigate('/privacy');
         break;
       case 'documentacion':
         navigate('/documentacion');
@@ -72,18 +75,23 @@ const Footer: React.FC = () => {
             <div className="footer__contact-info">
               <ContactItem
                 icon="email"
-                text="contacto@erpsolutions.com"
-                onClick={() => handleNavigationClick('email')}
+                text="innovapaz@erpsolutions.com"
+                onClick={() =>
+                  window.open(
+                    'https://mail.google.com/mail/?view=cm&fs=1&to=contacto@erpsolutions.com',
+                    '_blank'
+                  )
+                }
               />
               <ContactItem
                 icon="location"
-                text="La Paz, Bolivia"
-                onClick={() => handleNavigationClick('location')}
+                text="Calle General Lanza, #2278 - La Paz, Bolivia"
+                onClick={() => window.open('https://maps.app.goo.gl/PZvNsr4N74YTs86B6', '_blank')}
               />
               <ContactItem
                 icon="phone"
-                text="+591 77517893"
-                onClick={() => handleNavigationClick('phone')}
+                text="+591 62366294"
+                onClick={() => window.open('https://wa.me/59162366294', '_blank')}
               />
             </div>
           </div>
@@ -125,7 +133,12 @@ const Footer: React.FC = () => {
               <div className="footer__support-section">
                 <SectionTitle>Soporte</SectionTitle>
                 <div className="footer__support-links">
-                  <FooterLink onClick={() => handleNavigationClick('ayuda')}>Ayuda</FooterLink>
+                  <FooterLink onClick={() => handleNavigationClick('terminos')}>
+                    Términos de Uso
+                  </FooterLink>
+                  <FooterLink onClick={() => handleNavigationClick('politica')}>
+                    Política de Privacidad
+                  </FooterLink>
                   <FooterLink onClick={() => handleNavigationClick('documentacion')}>
                     Documentación
                   </FooterLink>
