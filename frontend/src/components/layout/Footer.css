@@ -50,10 +50,9 @@
 }
 
 .footer__description {
-  font: var(--font-20);
+  font: var(--font-16);
   font-weight: 200;
-  line-height: 24px;
-  color: #FFFFFF;
+  color: var(--bg-50);
   margin: 0;
 }
 
@@ -117,7 +116,7 @@
 .footer__divider {
   width: 100%;
   height: 0px;
-  border: 0.5px solid #FFFFFF;
+  border: 0.5px solid var(--bg-50);
 }
 
 .footer__copyright {
@@ -139,6 +138,11 @@
 @media (min-width: 481px) {
   .footer__content {
     padding: 32px 32px;
+  }
+
+  .footer__description {
+    font: var(--font-20);
+    font-weight: 200;
   }
 }
 
@@ -179,7 +183,7 @@
 
   .footer__description {
     font: var(--font-16);
-    line-height: 19px;
+    font-weight: 200;
   }
 
   .footer__contact-info {
@@ -218,7 +222,7 @@
   .footer__product-links .footer-link,
   .footer__support-links .footer-link {
     font: var(--font-16);
-    line-height: 19px;
+    font-weight: 200;
   }
 
   .footer__bottom {
