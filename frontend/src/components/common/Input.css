@@ -3,28 +3,23 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  /* Para que se vea igual que .contact-input */
-  margin-bottom: 0;
 }
 
 .input__label {
   color: var(--pri-100);
-  font-size: 1rem;
-  font-weight: 500;
-  margin-bottom: 0.2rem;
+  font-size: 13px;
 }
 
 .input__wrapper {
-  background: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  height: auto;
-  min-height: 44px;
+  position: relative; /* necesario para icono flotante */
+  background: var(--pri-900);
+  border: 2px solid var(--bg-900);
+  border-radius: 10px;
+  height: 60px;
   width: 100%;
   display: flex;
   align-items: center;
   transition: border 0.2s;
-  box-sizing: border-box;
 }
 
 .input__field {
@@ -32,19 +27,34 @@
   background: transparent;
   border: none;
   outline: none;
-  color: #222;
-  font-size: 1rem;
-  padding: 0.7rem 1rem;
+  color: var(--pri-100);
+  font-size: 16px;
+  padding: 1rem;
+  padding-right: 2.5rem; /* espacio para ícono */
   height: 100%;
 }
 
-.input__field:focus {
-  border: none;
+.input__icon-btn {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
   outline: none;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  line-height: 0;
+  width: auto;
+  height: auto;
+  z-index: 2;
 }
-
-.input__wrapper:focus-within {
-  border-color: #bfa46f;
+.input_icon {
+  width: 0;
 }
 
 .input__error {
