@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
         <div className="footer__main-wrapper">
           <div className="footer__left-content">
             <div className="footer__brand">
-              <Logo text="INNOVAPAZ" size="medium" onClick={handleLogoClick} />
+              <Logo text="INNOVAPAZ" size="medium" variant="white" onClick={handleLogoClick} />
             </div>
 
             <div className="footer__description-wrapper">
