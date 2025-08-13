@@ -1,7 +1,7 @@
 .section-title {
   font: var(--font-20);
   font-weight: 700;
-  color: #FFFFFF;
+  color: var(--bg-50);
   margin: 0;
   padding: 0;
 }
