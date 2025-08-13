@@ -36,25 +36,25 @@ const Header: React.FC = () => {
           </div>
 
           <nav className="header__nav">
-            <NavLink 
+            <NavLink
               onClick={() => handleNavigationClick('inicio')}
               isActive={activeSection === 'inicio'}
             >
               Inicio
             </NavLink>
-            <NavLink 
+            <NavLink
               onClick={() => handleNavigationClick('sobre-nosotros')}
               isActive={activeSection === 'sobre-nosotros'}
             >
               Sobre Nosotros
             </NavLink>
-            <NavLink 
+            <NavLink
               onClick={() => handleNavigationClick('documentacion')}
               isActive={activeSection === 'documentacion'}
             >
               Documentación
             </NavLink>
-            <NavLink 
+            <NavLink
               onClick={() => handleNavigationClick('contacto')}
               isActive={activeSection === 'contacto'}
             >
