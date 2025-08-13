@@ -24,7 +24,7 @@
   border-radius: 12px;
   border: 2px solid #e0e0e0;
   padding: 15px;
-  background: #ece6db;
+  background: var(--pri-50);
 }
 
 .contact-info-card--phone .contact-info-icon-box {
@@ -147,6 +147,19 @@
 .contact-info-label {
   font-size: 0.95rem;
   color: #888;
+}
+
+.contact-form .input__wrapper {
+  background: var(--pri-50);
+  border: 2px solid var(--pri-900);
+}
+
+.contact-form .input__label {
+  color: var(--pri-900) !important; /* Elige el color que prefieras */
+}
+
+.contact-form .input__field {
+  color: var(--pri-900);
 }
 
 .contact-info-value {

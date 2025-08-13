@@ -11,7 +11,7 @@
 }
 
 .input__wrapper {
-  position: relative; /* necesario para icono flotante */
+  position: relative;
   background: var(--pri-900);
   border: 2px solid var(--bg-900);
   border-radius: 10px;
@@ -30,7 +30,7 @@
   color: var(--pri-100);
   font-size: 16px;
   padding: 1rem;
-  padding-right: 2.5rem; /* espacio para ícono */
+  padding-right: 2.5rem;
   height: 100%;
 }
 
