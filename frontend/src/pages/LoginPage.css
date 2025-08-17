@@ -59,6 +59,14 @@
 
 .login-box .custom-button {
   max-height: 50px;
+  font-size: 16px;
+}
+
+.login-box .google-button {
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
 }
 
 .login-box .custom-input-container label {

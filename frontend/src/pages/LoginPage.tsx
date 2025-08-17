@@ -1,12 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Input from '../components/common/Input';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import Button from '../components/common/Button';
 import illustrationPicture from '@/assets/icons/illustrationPicture.svg';
 import Logo from '../components/ui/Logo';
+import GoogleButton from '../components/common/GoogleButton';
 import './LoginPage.css';
+import { useNavigate } from 'react-router-dom';
+import { signInWithGoogle } from '../services/auth/firebaseAuthService';
 
 const LoginPage: React.FC = () => {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleGoogleLogin = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const { user, error } = await signInWithGoogle();
+      if (user) {
+        console.log('¡Usuario logueado con Google!', user);
+        navigate('/');
+      } else {
+        setError('Error al iniciar sesión con Google');
+        console.error(error);
+      }
+    } catch (err) {
+      setError('Error inesperado. Inténtalo más tarde.');
+      console.error(err);
+    }
+    setLoading(false);
+  };
+
   return (
     <div className="login-bg">
       <div className="login-illustration">
@@ -22,25 +50,33 @@ const LoginPage: React.FC = () => {
 
       <div className="login-box">
         <h1 className="login-title">Iniciar Sesión</h1>
+
         <form className="login-form">
           <Input
+            id="loginEmail"
+            name="email"
             label="Correo electrónico"
             placeholder="ejemplo@email.com"
-            name="email"
             type="email"
             containerWidth="full"
             size="small"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
+
           <Input
+            id="loginPassword"
+            name="password"
             label="Contraseña"
             placeholder="Contraseña"
-            name="password"
             type="password"
             showTogglePassword
             showPasswordIcon={FaEye}
             hidePasswordIcon={FaEyeSlash}
             containerWidth="full"
             size="small"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
 
           <div className="login-forgot">
@@ -60,9 +96,19 @@ const LoginPage: React.FC = () => {
             />
           </div>
 
+          <div>
+            <GoogleButton
+              label="Iniciar sesión con Google"
+              onClick={handleGoogleLogin}
+              disabled={loading}
+            />
+          </div>
+
+          {error && <p className="error-message">{error}</p>}
+
           <div className="login-footer">
             <span className="login-footer-text">¿No tienes cuenta?</span>
-            <span className="login-footer-link">Regístrate</span>
+            <span className="login-footer-link">Crear una cuenta</span>
           </div>
         </form>
       </div>

@@ -9,7 +9,8 @@ import Footer from './components/layout/Footer';
 import TermsPage from './pages/TermsPage';
 import ContactPage from './pages/ContactPage';
 import PrivacyPage from './pages/PrivacyPage';
-import DocumentsPage from './pages/DocumentsPage'; // <-- Importa DocumentsPage
+import DocumentsPage from './pages/DocumentsPage';
+import { UserProvider } from './context/UserContext.tsx';
 
 const AppContent: React.FC = () => {
   const location = useLocation();
@@ -26,7 +27,7 @@ const AppContent: React.FC = () => {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contacto" element={<ContactPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
-          <Route path="/documentacion" element={<DocumentsPage />} /> {/* <-- Nueva ruta */}
+          <Route path="/documentacion" element={<DocumentsPage />} />
         </Routes>
       </div>
       <Footer />
@@ -35,9 +36,11 @@ const AppContent: React.FC = () => {
 };
 
 const App: React.FC = () => (
-  <Router>
-    <AppContent />
-  </Router>
+  <UserProvider>
+    <Router>
+      <AppContent />
+    </Router>
+  </UserProvider>
 );
 
 export default App;

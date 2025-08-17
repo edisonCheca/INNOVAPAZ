@@ -48,12 +48,12 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  gap: 30px;
+  gap: 25px;
   border-radius: 35px 35px 0 0;
   padding: 2rem 2.8rem;
   z-index: 3;
   animation: slideUpAuto 0.7s cubic-bezier(0.77, 0, 0.18, 1) both;
-  max-height: 80vh;
+  max-height: 85vh;
   box-sizing: border-box;
 }
 
@@ -67,6 +67,14 @@
 
 .register-box .custom-button {
   max-height: 50px;
+  font-size: 16px;
+}
+
+.register-box .google-button {
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
 }
 
 .register-logo-img {
@@ -84,7 +92,7 @@
 .register-form {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 21px;
 }
 
 .register-footer {
@@ -118,9 +126,15 @@
     width: 70%;
     margin-top: 35px;
     max-width: 390px;
+    max-height: 590px;
     padding: 2rem 3rem;
+    gap: 25px;
     animation: fadeInCenter 0.7s cubic-bezier(0.77, 0, 0.18, 1) both;
     z-index: 3;
+  }
+
+  .register-form {
+    gap: 20px;
   }
 
   .register-illustration {
@@ -187,7 +201,12 @@
     bottom: auto;
     left: auto;
     max-width: 410px;
-    max-height: 515px;
+    max-height: 690px;
+    gap: 30px;
+  }
+
+  .register-form {
+    gap: 22px;
   }
 
   .register-title {

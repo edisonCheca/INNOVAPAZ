@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useUser } from '../../context/UserContext';
 import Button from '../common/ButtonExtra';
 import Logo from '../ui/Logo';
 import NavLink from '../ui/NavLink';
+import Avatar from '../ui/Avatar';
 import MobileMenu from './MobileMenu';
 import './Header.css';
 
@@ -10,6 +12,8 @@ const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const navigate = useNavigate();
+  const { user } = useUser();
+
   const handleNavigationClick = (section: string) => {
     setActiveSection(section);
     setIsMobileMenuOpen(false);
@@ -27,10 +31,10 @@ const Header: React.FC = () => {
         navigate('/contacto');
         break;
       case 'login':
-        window.open('/login', '_blank');
+        navigate('/login');
         break;
       case 'register':
-        window.open('/register', '_blank');
+        navigate('/register');
         break;
       default:
         break;
@@ -85,22 +89,31 @@ const Header: React.FC = () => {
           </nav>
 
           <div className="header__actions">
-            <Button
-              variant="primary"
-              size="small"
-              onClick={() => handleNavigationClick('login')}
-              className="header__login-btn"
-            >
-              Iniciar Sesión
-            </Button>
-            <Button
-              variant="outline"
-              size="small"
-              onClick={() => handleNavigationClick('register')}
-              className="header__register-btn"
-            >
-              Registrarse
-            </Button>
+            {user ? (
+              <div className="header__user-info">
+                <Avatar user={user} />
+                <span className="header__user-name">{user.displayName}</span>
+              </div>
+            ) : (
+              <>
+                <Button
+                  variant="primary"
+                  size="small"
+                  onClick={() => handleNavigationClick('login')}
+                  className="header__login-btn"
+                >
+                  Iniciar Sesión
+                </Button>
+                <Button
+                  variant="outline"
+                  size="small"
+                  onClick={() => handleNavigationClick('register')}
+                  className="header__register-btn"
+                >
+                  Registrarse
+                </Button>
+              </>
+            )}
           </div>
 
           <button

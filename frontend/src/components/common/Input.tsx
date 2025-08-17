@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 interface InputProps {
+  id: string; // ✅ obligatorio
   label?: string;
   type?: string;
   name?: string;
@@ -18,7 +19,6 @@ interface InputProps {
   disabled?: boolean;
   className?: string;
 
-  // Estilo configurable
   containerWidth?: 'full' | 'auto' | 'fit-content' | string;
   size?: 'small' | 'medium' | 'large' | 'custom';
   width?: string;
@@ -32,6 +32,7 @@ interface InputProps {
 }
 
 const Input: React.FC<InputProps> = ({
+  id,
   label,
   type = 'text',
   name,
@@ -90,7 +91,7 @@ const Input: React.FC<InputProps> = ({
     outline: 'none',
     background: 'transparent',
     color: textColor,
-    fontSize: size === 'small' ? '13px' : size === 'large' ? '20px' : '16px',
+    fontSize: size === 'small' ? '14px' : size === 'large' ? '20px' : '16px',
     height: '100%',
   };
 
@@ -99,12 +100,17 @@ const Input: React.FC<InputProps> = ({
       className={`custom-input-container ${className}`}
       style={{ width: getContainerWidth(), display: 'flex', flexDirection: 'column', gap: '4px' }}
     >
-      {label && <label style={{ color: labelColor, fontSize: '13px' }}>{label}</label>}
+      {label && (
+        <label htmlFor={id} style={{ color: labelColor, fontSize: '13px' }}>
+          {label}
+        </label>
+      )}
       <div style={inputWrapperStyle}>
         {Icon && iconPosition === 'left' && <Icon size={iconSize} />}
         <input
+          id={id} // ✅ agregado
           type={inputType}
-          name={name}
+          name={name || id} // name por defecto al id si no se pasa
           value={value}
           placeholder={placeholder}
           onChange={onChange}
