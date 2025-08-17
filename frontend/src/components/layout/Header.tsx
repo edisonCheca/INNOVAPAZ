@@ -1,5 +1,3 @@
-// Ubicación: frontend/src/components/layout/Header.tsx
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../../context/UserContext';
@@ -32,9 +30,6 @@ const Header: React.FC = () => {
       case 'contacto':
         navigate('/contacto');
         break;
-
-      // --- ¡CAMBIO CLAVE AQUÍ! ---
-      // Usamos window.open con '_blank' para abrir en una nueva pestaña.
       case 'login':
         window.open('/login', '_blank');
         break;
