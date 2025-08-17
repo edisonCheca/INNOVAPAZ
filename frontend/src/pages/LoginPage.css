@@ -1,260 +1,145 @@
-.login-badge {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background: transparent;
-  border-radius: 20px;
-  position: relative;
-  z-index: 2;
-  color: var(--pri-100);
-  margin-top: 1rem;
-}
-
-.login-logo-text {
-  color: var(--pri-100);
-  font-weight: 700;
-  font-size: 25px;
-  letter-spacing: 1px;
-}
-
-.login-box button {
-  width: 100%;
-  min-width: 0;
-  max-width: 100%;
-  display: block;
-  box-sizing: border-box;
-}
-
-/* ====== ESTILOS BASE ====== */
 .login-bg {
-  width: 100vw;
   min-height: 100vh;
-  box-sizing: border-box;
-  background: linear-gradient(180deg, var(--acc-500) 0%, var(--var-500) 40%, var(--acc-100) 100%);
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: flex-start;
+  align-items: center;
+  background: linear-gradient(180deg, var(--acc-500) 0%, var(--var-500) 40%, var(--acc-100) 100%);
   font-family: var(--font);
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.2);
+  background-blend-mode: overlay;
 }
 
 .login-illustration {
-  width: 100vw;
-  max-width: 425px;
-  margin: 0 auto 0 auto;
-  padding-top: 8px;
+  width: 100%;
+  padding: 1rem 1rem 0 1rem;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
   z-index: 1;
 }
 
 .login-illustration-img {
-  display: flex;
-  width: 100vw;
+  width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: 0 0 32px 32px;
   margin-top: -50px;
+  display: block;
+}
+
+.login-bg .logo,
+.login-badge {
+  position: relative;
+  z-index: 5;
+  margin-top: 15px;
 }
 
 .login-box {
+  width: 100%;
   background: var(--pri-900);
   color: var(--pri-100);
-  width: 90vw;
-  max-width: 375px;
-  min-width: 260px;
-  margin: 0;
-  padding: 3rem;
   display: flex;
   flex-direction: column;
-  margin-top: 0;
-  z-index: 2;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  gap: 30px;
+  border-radius: 35px 35px 0 0;
+  padding: 2rem 2.8rem;
+  z-index: 3;
+  animation: slideUpAuto 0.7s cubic-bezier(0.77, 0, 0.18, 1) both;
+  max-height: 80vh;
+  box-sizing: border-box;
 }
 
-.login-modal__logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 48px;
+.login-box .custom-button {
+  max-height: 50px;
+}
+
+.login-box .custom-input-container label {
+  position: absolute;
+  background-color: var(--pri-900);
+  margin-top: -10px;
+  padding: 2px;
+  margin-left: 8px;
 }
 
 .login-logo-img {
-  background: none;
-  filter: none;
   width: 30px;
   height: auto;
+}
+
+.login-title {
+  font-size: 29px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
 }
 
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 25px;
 }
 
-.login-title {
-  margin-top: 0;
-  margin-bottom: 20px;
-}
-
-.login-forgot-password {
-  display: flex;
-  color: var(--pri-100);
-  text-decoration: none;
-  cursor: default;
-  font-weight: normal;
-  font-size: 14px;
-  justify-content: end;
-}
 .login-footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 8px;
 }
-.login-footer-text {
-  color: var(--pri-100);
+
+.login-footer-text,
+.login-footer-link {
   font-size: 14px;
   font-weight: normal;
 }
 
 .login-footer-link {
   color: var(--bg-900);
-  font-size: 14px;
-  font-weight: normal;
   text-decoration: none;
-  margin-left: 4px;
 }
-.login-modal__logo {
+
+.login-forgot-text {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 48px;
+  width: 100%;
+  font-size: 13px;
+  justify-content: end;
+  color: var(--pri-100);
 }
 
-@keyframes slideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInCenter {
-  0% {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes slideLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@media (max-width: 426px) {
+@media (min-width: 768px) {
   .login-bg {
-    position: relative;
-    overflow: visible;
-    box-sizing: border-box;
-  }
-
-  .login-illustration {
-    position: relative;
-    z-index: 1;
-  }
-
-  .login-title {
-    margin-top: 500px;
-  }
-  .login-box {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    border-radius: 25px 25px 0 0;
-    background: var(--pri-900);
-    box-sizing: border-box;
-    z-index: 3;
-    padding: 2rem;
-    animation: slideUpAuto 0.7s cubic-bezier(0.77, 0, 0.18, 1) both;
-    transform: translateY(100%);
-    overflow-y: auto;
-  }
-}
-
-@keyframes slideUpAuto {
-  0% {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (min-width: 426px) {
-  .login-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    border-radius: 50px;
-    animation: fadeInCenter 0.7s cubic-bezier(0.77, 0, 0.18, 1) both;
-  }
-  .login-logo-text {
-    font-size: 25px;
-  }
-}
-@keyframes fadeInCenter {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-}
-
-@media (min-width: 1023px) {
-  .login-bg {
-    flex-direction: row;
-    align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    max-width: 100vw;
-    gap: 0rem;
-    padding: 0 2rem;
-    box-sizing: border-box;
-    overflow-x: hidden;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .login-box {
+    position: relative;
+    border-radius: 35px;
+    width: 70%;
+    max-width: 400px;
+    padding: 2rem 3rem;
+    animation: fadeInCenter 0.7s cubic-bezier(0.77, 0, 0.18, 1) both;
+    z-index: 3;
   }
 
   .login-illustration {
-    flex: 0 0 calc(50% - 1rem);
-    max-width: none;
-    margin: 0;
-    padding: 1rem;
-    box-sizing: border-box;
-    border-radius: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
   }
 
   .login-illustration-img {
@@ -262,22 +147,101 @@
     height: 100%;
     object-fit: cover;
     border-radius: 0;
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .login-bg {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 7rem;
+    padding: 0 4rem;
+  }
+
+  .login-illustration {
+    position: relative;
+    flex: 1;
+    max-width: 550px;
+    padding: 0;
+    animation: slideLeft 0.8s cubic-bezier(0.77, 0, 0.18, 1) both;
+  }
+
+  .login-illustration-img {
+    border-radius: 35px;
     margin-top: 0;
   }
 
-  .login-box {
-    flex: 0 0 calc(45% - 1rem);
-    max-width: none;
-    border-radius: 35px;
+  .login-badge {
+    position: absolute;
+    top: 0;
     margin: 0;
-    position: static;
-    transform: none;
-    padding: 3rem;
-    box-sizing: border-box;
-    background: var(--pri-900);
-    animation: slideLeft 0.7s cubic-bezier(0.77, 0, 0.18, 1) both;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
   }
-  .login-logo-text {
-    font-size: 35px;
+
+  .login-bg .logo__text {
+    font-size: 29px;
+  }
+
+  .login-box {
+    position: relative;
+    flex: 1;
+    border-radius: 35px;
+    animation: slideRight 0.8s cubic-bezier(0.77, 0, 0.18, 1) both;
+    bottom: auto;
+    left: auto;
+    max-width: 430px;
+    max-height: 500px;
+  }
+
+  .login-title {
+    text-align: center;
+  }
+}
+
+@keyframes slideUpAuto {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInCenter {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

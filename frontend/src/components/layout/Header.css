@@ -1,5 +1,4 @@
 .header {
-  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -80,10 +79,6 @@
 
 .header__menu-toggle--active .header__hamburger-line:nth-child(3) {
   transform: rotate(-45deg) translate(6px, -6px);
-}
-
-body {
-  margin-top: 64px;
 }
 
 @media (max-width: 411px) {

@@ -1,75 +1,90 @@
-.input {
-  width: 100%;
+.custom-input-container {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-}
-
-.input__label {
-  color: var(--pri-100);
-  font-size: 13px;
-}
-
-.input__wrapper {
-  position: relative;
-  background: var(--pri-900);
-  border: 2px solid var(--bg-900);
-  border-radius: 10px;
-  height: 60px;
+  gap: 4px;
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.custom-input-container label {
+  font-size: 13px;
+  color: var(--pri-100);
+}
+
+.custom-input-wrapper {
   display: flex;
   align-items: center;
-  transition: border 0.2s;
+  gap: 8px;
+  border-radius: 8px;
+  border: 2px solid var(--bg-900);
+  background: transparent;
+  padding: 0 12px;
+  height: 60px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
 }
 
-.input__field {
+.custom-input-wrapper:focus-within {
+  border-color: var(--pri-500);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+.custom-input-wrapper input {
   flex: 1;
-  background: transparent;
   border: none;
   outline: none;
-  color: var(--pri-100);
+  background: transparent;
+  color: var(--pri-900);
   font-size: 16px;
-  padding: 1rem;
-  padding-right: 2.5rem;
   height: 100%;
 }
 
-.input__icon-btn {
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  outline: none;
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
+.custom-input-wrapper .input-icon {
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  line-height: 0;
-  width: auto;
-  height: auto;
-  z-index: 2;
-}
-.input_icon {
-  width: 0;
 }
 
-.input__error {
+.custom-input-container .input-error {
   color: var(--acc-700);
   font-size: 12px;
   margin-top: 2px;
-  margin-left: 4px;
 }
 
-.input__field:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+.custom-input--small .custom-input-wrapper {
+  height: 36px;
+  font-size: 13px;
 }
 
-::placeholder {
-  color: rgba(186, 184, 206, 0.3);
-  opacity: 1;
+.custom-input--medium .custom-input-wrapper {
+  height: 44px;
+  font-size: 16px;
+}
+
+.custom-input--large .custom-input-wrapper {
+  height: 52px;
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .custom-input-wrapper {
+    height: 40px;
+    padding: 0 10px;
+  }
+  .custom-input-wrapper input {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .custom-input-wrapper {
+    height: 50px;
+    padding: 0 14px;
+  }
+  .custom-input-wrapper input {
+    font-size: 18px;
+  }
 }

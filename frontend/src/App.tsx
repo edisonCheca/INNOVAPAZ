@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
@@ -11,10 +11,12 @@ import ContactPage from './pages/ContactPage';
 import PrivacyPage from './pages/PrivacyPage';
 import DocumentsPage from './pages/DocumentsPage'; // <-- Importa DocumentsPage
 
-const App: React.FC = () => {
+const AppContent: React.FC = () => {
+  const location = useLocation();
+  const hideHeader = location.pathname === '/login' || location.pathname === '/register';
   return (
-    <Router>
-      <Header />
+    <>
+      {!hideHeader && <Header />}
       <div className="app">
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -28,8 +30,14 @@ const App: React.FC = () => {
         </Routes>
       </div>
       <Footer />
-    </Router>
+    </>
   );
 };
+
+const App: React.FC = () => (
+  <Router>
+    <AppContent />
+  </Router>
+);
 
 export default App;

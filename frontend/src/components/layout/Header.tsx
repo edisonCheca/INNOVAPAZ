@@ -27,10 +27,10 @@ const Header: React.FC = () => {
         navigate('/contacto');
         break;
       case 'login':
-        navigate('/login');
+        window.open('/login', '_blank');
         break;
       case 'register':
-        navigate('/register');
+        window.open('/register', '_blank');
         break;
       default:
         break;
