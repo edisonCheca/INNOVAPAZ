@@ -1,3 +1,5 @@
+// Ubicación: frontend/src/components/layout/Header.tsx
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../../context/UserContext';
@@ -30,12 +32,16 @@ const Header: React.FC = () => {
       case 'contacto':
         navigate('/contacto');
         break;
+
+      // --- ¡CAMBIO CLAVE AQUÍ! ---
+      // Usamos window.open con '_blank' para abrir en una nueva pestaña.
       case 'login':
-        navigate('/login');
+        window.open('/login', '_blank');
         break;
       case 'register':
-        navigate('/register');
+        window.open('/register', '_blank');
         break;
+
       default:
         break;
     }
@@ -100,7 +106,6 @@ const Header: React.FC = () => {
                   variant="primary"
                   size="small"
                   onClick={() => handleNavigationClick('login')}
-                  className="header__login-btn"
                 >
                   Iniciar Sesión
                 </Button>
@@ -108,7 +113,6 @@ const Header: React.FC = () => {
                   variant="outline"
                   size="small"
                   onClick={() => handleNavigationClick('register')}
-                  className="header__register-btn"
                 >
                   Registrarse
                 </Button>
