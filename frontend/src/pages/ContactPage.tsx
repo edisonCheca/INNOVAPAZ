@@ -8,6 +8,7 @@ import {
   FaTwitter,
   FaDiscord,
   FaMapMarkerAlt,
+  FaTiktok,
 } from 'react-icons/fa';
 import { MdSend } from 'react-icons/md';
 import { TbBrandTelegram } from 'react-icons/tb';
@@ -79,7 +80,7 @@ const ContactPage: React.FC = () => {
             </span>
             <div>
               <span className="contact-info-label">Correo electronico</span>
-              <span className="contact-info-value-email">innovapaz@gmail.com</span>
+              <span className="contact-info-value-email">empresainnovapaz@gmail.com</span>
             </div>
           </div>
           <div className="contact-info-card-phone">
@@ -88,13 +89,13 @@ const ContactPage: React.FC = () => {
             </span>
             <div>
               <span className="contact-info-label">Atención al cliente</span>
-              <span className="contact-info-value-phone">+ (591) 705 - 207 - 28</span>
+              <span className="contact-info-value-phone">+ (591) 781 - 701 - 61</span>
             </div>
           </div>
         </div>
         <div className="contact-social-icons-row">
           <a
-            href="https://facebook.com/innova.paz"
+            href="https://www.facebook.com/profile.php?id=61579219903874&locale=es_LA"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
@@ -103,7 +104,16 @@ const ContactPage: React.FC = () => {
             <FaFacebook className="contact-social-icon" />
           </a>
           <a
-            href="https://wa.me/59170520728"
+            href="https://www.tiktok.com/@innovaPaz"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Tiktok"
+            className="contact-social-link"
+          >
+            <FaWhatsapp className="contact-social-icon" />
+          </a>
+          <a
+            href="https://wa.me/59178701761"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Whatsapp"
