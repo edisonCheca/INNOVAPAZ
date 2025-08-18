@@ -87,6 +87,58 @@
   transform: translateY(-10px) rotate(-45deg);
 }
 
+/* Estilos para el menú de usuario */
+.header__user-container {
+  position: relative;
+}
+
+.header__user-info {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.header__user-info:hover {
+  background-color: var(--pri-100);
+}
+
+.header__dropdown-arrow {
+  font-size: 10px;
+  margin-left: 5px;
+  color: var(--pri-500);
+}
+
+.header__user-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 150px;
+  background: var(--white);
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  margin-top: 5px;
+  overflow: hidden;
+}
+
+.header__menu-item {
+  width: 100%;
+  padding: 10px 15px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--acc-900);
+}
+
+.header__menu-item:hover {
+  background-color: var(--acc-800);
+  color: var(--white);
+}
+
 @media (min-width: 1025px) {
   .header__content {
     max-width: 1440px;
