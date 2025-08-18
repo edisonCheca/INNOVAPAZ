@@ -110,7 +110,7 @@ const ContactPage: React.FC = () => {
             aria-label="Tiktok"
             className="contact-social-link"
           >
-            <FaWhatsapp className="contact-social-icon" />
+            <FaTiktok className="contact-social-icon" />
           </a>
           <a
             href="https://wa.me/59178701761"
