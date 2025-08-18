@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../../context/UserContext';
 import Button from '../common/ButtonExtra';
@@ -10,9 +10,11 @@ import './Header.css';
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const navigate = useNavigate();
-  const { user } = useUser();
+  const { user, logout } = useUser();
+  const userMenuRef = useRef<HTMLDivElement>(null);
 
   const handleNavigationClick = (section: string) => {
     setActiveSection(section);
@@ -36,7 +38,6 @@ const Header: React.FC = () => {
       case 'register':
         window.open('/register', '_blank');
         break;
-
       default:
         break;
     }
@@ -53,6 +54,30 @@ const Header: React.FC = () => {
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
   };
+
+  const toggleUserMenu = () => {
+    setIsUserMenuOpen(!isUserMenuOpen);
+  };
+
+  const handleLogout = () => {
+    logout();
+    setIsUserMenuOpen(false);
+    navigate('/');
+  };
+
+  // Cerrar el menú al hacer clic fuera de él
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (userMenuRef.current && !userMenuRef.current.contains(event.target as Node)) {
+        setIsUserMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <>
@@ -91,9 +116,18 @@ const Header: React.FC = () => {
 
           <div className="header__actions">
             {user ? (
-              <div className="header__user-info">
-                <Avatar user={user} />
-                <span className="header__user-name">{user.displayName}</span>
+              <div className="header__user-container" ref={userMenuRef}>
+                <div className="header__user-info" onClick={toggleUserMenu}>
+                  <Avatar user={user} />
+                  <span className="header__user-name">{user.displayName}</span>
+                </div>
+                {isUserMenuOpen && (
+                  <div className="header__user-menu">
+                    <button className="header__menu-item" onClick={handleLogout}>
+                      Cerrar Sesión
+                    </button>
+                  </div>
+                )}
               </div>
             ) : (
               <>
