@@ -17,6 +17,7 @@ import contact from '../assets/icons/contact.svg';
 import Input from '../components/common/Input';
 import Button from '../components/common/Button';
 import FaqCard from '../components/common/FaqCard';
+import HeroTitle from '../components/common/HeroTitle';
 
 const ContactPage: React.FC = () => {
   // Define los datos para tus preguntas frecuentes
@@ -47,11 +48,11 @@ const ContactPage: React.FC = () => {
           <img src={contact} alt="Contact illustration" className="contact-img" />
         </div>
         <div className="contact-header-info">
-          <h1 className="contact-title">Contáctanos</h1>
-          <p className="contact-subtitle">
-            ¡Estamos aquí para ayudarte! Contáctanos si tienes alguna pregunta o inquietud y te
-            responderemos lo antes posible.
-          </p>
+          <HeroTitle
+            titulo="Contactanos"
+            descripcion="¡Estamos aquí para ayudarte! Contáctanos si tienes alguna pregunta o inquietud y te responderemos lo antes posible."
+            gradientText="tanos"
+          />
         </div>
       </div>
       <div className="contact-info-box">
