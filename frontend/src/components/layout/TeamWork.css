@@ -8,7 +8,7 @@
 .teamwork__quienes_somos {
   /* Estilos específicos para la sección quienes somos */
   background-color: var(--bg-500);
-  padding: 160px 160px;
+  padding: 20px 160px;
   display: flex;
 }
 
@@ -43,6 +43,11 @@
 }
 .teamwork__image_containers img {
   width: 100%;
+}
+.teamwork__images {
+  height: 500px;
+  max-width: 400px;
+  object-fit: cover;
 }
 
 .teamwork__image {
@@ -129,6 +134,25 @@
   .teamwork__image {
     max-height: 350px;
   }
+
+  .teamwork__quienes_somos,
+  .teamwork__mision,
+  .teamwork__vision {
+    padding: 80px 60px;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .teamwork__image_containers {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .teamwork__image_containers img {
+    max-width: 100%;
+  }
 }
 
 /* Mobile layout */
@@ -143,33 +167,41 @@
     gap: 24px;
   }
 
+  .teamwork__quienes_somos,
+  .teamwork__mision,
+  .teamwork__vision {
+    padding: 60px 20px;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .teamwork__image_containers {
+    margin: 0;
+    width: 100%;
+  }
+
   .teamwork__main_title {
-    font-size: 2rem;
+    font-size: 1.8rem;
     text-align: center;
   }
 
   .teamwork__main_description {
     text-align: center;
+    font-size: 0.9rem;
   }
 
   .teamwork__about_title {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     text-align: center;
   }
 
   .teamwork__about_description {
     text-align: center;
+    font-size: 0.9rem;
   }
 
   .teamwork__image {
-    max-height: 250px;
-  }
-
-  .teamwork__main_title,
-  .teamwork__about_title,
-  .teamwork__main_description,
-  .teamwork__about_description {
-    text-align: center;
+    max-height: 220px;
   }
 }
 
@@ -182,17 +214,34 @@
     display: block;
   }
 
-  .teamwork__image_container {
-    margin-bottom: 16px;
-    margin-top: 16px;
+  .teamwork__quienes_somos,
+  .teamwork__mision,
+  .teamwork__vision {
+    padding: 40px 16px;
+  }
+
+  .teamwork__image_containers {
+    margin: 0;
+    width: 100%;
     display: flex;
     justify-content: center;
   }
 
+  .teamwork__image_containers img {
+    width: 100%;
+  }
+
+  .teamwork__image_container {
+    margin-bottom: 0;
+    margin-top: 16px;
+    width: 100%;
+  }
+
   .teamwork__image {
     width: 100%;
-    max-width: 350px;
-    height: 180px;
+    max-width: 100%;
+    height: auto;
+    min-height: 160px;
     border-radius: 12px;
   }
 
@@ -202,12 +251,10 @@
   }
 
   .teamwork__main_title {
-    font-size: 2rem;
-    text-align: center;
+    font-size: 1.6rem;
   }
 
   .teamwork__about_title {
-    font-size: 1.5rem;
-    text-align: center;
+    font-size: 1.4rem;
   }
 }

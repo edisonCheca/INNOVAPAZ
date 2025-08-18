@@ -45,9 +45,7 @@ const DocumentsPage: React.FC = () => {
   ];
 
   return (
-    // El div principal solo se encarga del fondo de página completo
     <div className="documentsPage">
-      {/* ===== CAMBIO CLAVE: Contenedor para alinear todo el contenido ===== */}
       <div className="documentsPage__container">
         <header className="documentsPage__header">
           <h1 className="documentsPage__title">Documentación del usuario</h1>

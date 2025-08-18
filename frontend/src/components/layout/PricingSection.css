@@ -6,7 +6,7 @@
 }
 
 .pricing__container {
-  padding: 40px 16px;
+  padding: 50px 16px;
   margin: 0 auto;
   width: 100%;
   display: flex;
@@ -38,6 +38,7 @@
 @media (min-width: 768px) {
   .pricing__container {
     max-width: 680px;
+    padding: 2rem 0;
   }
 
   .pricing__cards {
