@@ -3,7 +3,7 @@ import HeroTitle from '../common/HeroTitle';
 import './TeamWork.css';
 import reunion from '../../assets/images/reunion.png';
 import nuestramision from '../../assets/images/nuestramision.png';
-import nuestraVision from '../../assets/images/nuestraVision.png';
+import nuestraVision from '../../assets/images/nuestravision.png';
 
 const TeamWork: React.FC = () => (
   <section className="teamwork">
