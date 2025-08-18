@@ -15,8 +15,30 @@ import './ContactPage.css';
 import contact from '../assets/icons/contact.svg';
 import Input from '../components/common/Input';
 import Button from '../components/common/Button';
+import FaqCard from '../components/common/FaqCard';
 
 const ContactPage: React.FC = () => {
+  // Define los datos para tus preguntas frecuentes
+  const faqData = [
+    {
+      category: 'Pregunta 1',
+      question: '¿Cómo creo una cuenta?',
+      answer:
+        'Puedes crear una cuenta desde la página de registro completando el formulario con tus datos personales y de contacto. Una vez completado, recibirás un correo de confirmación para activar tu cuenta.',
+    },
+    {
+      category: 'Pregunta 2',
+      question: '¿Qué métodos de pago aceptan?',
+      answer:
+        'Aceptamos diversos métodos de pago para tu comodidad, incluyendo transferencia bancaria, tarjetas de crédito/débito (Visa, MasterCard, American Express), PayPal, y otros métodos de pago digitales populares en Bolivia.',
+    },
+    {
+      category: 'Pregunta 3',
+      question: '¿Cómo puedo comenzar a usar el ERP?',
+      answer:
+        'Una vez que hayas registrado tu cuenta y accedido con tus credenciales, encontrarás una guía de inicio rápido en tu panel de control. Esta guía te ayudará a configurar tu perfil, familiarizarte con las funciones principales y comenzar a utilizar las herramientas disponibles en nuestro sistema.',
+    },
+  ];
   return (
     <div className="contact-bg">
       <div className="contact-header-row">
@@ -184,8 +206,7 @@ const ContactPage: React.FC = () => {
               hasBackground={true}
               borderColor="transparent"
               titleFontWeight="normal"
-              containerWidth="medium"
-              height="large"
+              containerWidth="full"
               icon={MdSend}
             />
           </div>
@@ -194,31 +215,15 @@ const ContactPage: React.FC = () => {
       <div className="contact-faq-box">
         <h2 className="contact-faq-title">Preguntas frecuentes</h2>
         <div className="contact-faq-items">
-          <details className="contact-faq-item">
-            <summary>¿Cómo creo una cuenta?</summary>
-            <p>
-              Puedes crear una cuenta desde la página de registro completando el formulario con tus
-              datos personales y de contacto. Una vez completado, recibirás un correo de
-              confirmación para activar tu cuenta.
-            </p>
-          </details>
-          <details className="contact-faq-item">
-            <summary>¿Qué métodos de pago aceptan?</summary>
-            <p>
-              Aceptamos diversos métodos de pago para tu comodidad, incluyendo transferencia
-              bancaria, tarjetas de crédito/débito (Visa, MasterCard, American Express), PayPal, y
-              otros métodos de pago digitales populares en Bolivia.
-            </p>
-          </details>
-          <details className="contact-faq-item">
-            <summary>¿Cómo puedo comenzar a usar el ERP?</summary>
-            <p>
-              Una vez que hayas registrado tu cuenta y accedido con tus credenciales, encontrarás
-              una guía de inicio rápido en tu panel de control. Esta guía te ayudará a configurar tu
-              perfil, familiarizarte con las funciones principales y comenzar a utilizar las
-              herramientas disponibles en nuestro sistema.
-            </p>
-          </details>
+          {/* Usamos .map() para crear un FaqCard por cada item en nuestros datos */}
+          {faqData.map((faq, index) => (
+            <FaqCard
+              key={index} // La key es importante para que React identifique cada elemento
+              category={faq.category}
+              question={faq.question}
+              answer={faq.answer}
+            />
+          ))}
         </div>
       </div>
     </div>
