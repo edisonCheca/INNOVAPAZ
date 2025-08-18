@@ -1,10 +1,10 @@
 import React from 'react';
 import DisplayCard from '../common/DisplayCard';
 import './PlatformFeatures.css';
-import iconventas from '../../assets/images/iconventas.png';
-import iconcompras from '../../assets/images/iconcompras.png';
-import iconinventario from '../../assets/images/iconinventarios.png';
-import iconreportes from '../../assets/images/iconreportes.png';
+import ventas from '../../assets/images/Gestinoventas.png';
+import compras from '../../assets/images/Gestioncompras.png';
+import inventario from '../../assets/images/Gestioninventarios.png';
+import reportes from '../../assets/images/Gestionreportes.png';
 import HeroTitle from '../common/HeroTitle';
 
 const PlatformFeatures: React.FC = () => (
@@ -20,7 +20,7 @@ const PlatformFeatures: React.FC = () => (
       </div>
       <div className="platform-features__grid">
         <DisplayCard
-          icon={<img src={iconventas} />}
+          icon={<img src={ventas} />}
           title="Gestión de Ventas"
           iconBg="radial-gradient(circle, #DBD56E 0%, #FC7753 100%)"
         >
@@ -29,7 +29,7 @@ const PlatformFeatures: React.FC = () => (
           período, vendedor, producto y cliente.
         </DisplayCard>
         <DisplayCard
-          icon={<img src={iconcompras} />}
+          icon={<img src={compras} />}
           title="Gestión de Compras"
           iconBg="linear-gradient(to right, #66D7D1 21%, #403D58 100%)"
         >
@@ -38,7 +38,7 @@ const PlatformFeatures: React.FC = () => (
           período, vendedor, producto y cliente.
         </DisplayCard>
         <DisplayCard
-          icon={<img src={iconinventario} />}
+          icon={<img src={inventario} />}
           title="Gestión de Inventarios"
           iconBg="radial-gradient(circle, #DBD56E 0%, #FC7753 100%)"
         >
@@ -47,7 +47,7 @@ const PlatformFeatures: React.FC = () => (
           período, vendedor, producto y cliente.
         </DisplayCard>
         <DisplayCard
-          icon={<img src={iconreportes} />}
+          icon={<img src={reportes} />}
           title="Gestión de Reportes"
           iconBg="linear-gradient(to right, #66D7D1 21%, #403D58 100%)"
         >
