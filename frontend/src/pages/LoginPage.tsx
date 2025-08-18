@@ -50,7 +50,7 @@ const LoginPage: React.FC = () => {
 
       <div className="login-box">
         <h1 className="login-title">Iniciar Sesión</h1>
-
+        <p className="login-subtitle">Bienvenido a InnovaPaz ¡Qué bueno verte de nuevo!</p>
         <form className="login-form">
           <Input
             id="loginEmail"
@@ -59,9 +59,10 @@ const LoginPage: React.FC = () => {
             placeholder="ejemplo@email.com"
             type="email"
             containerWidth="full"
-            size="small"
+            size="medium"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            labelFontSize="16px"
           />
 
           <Input
@@ -74,9 +75,10 @@ const LoginPage: React.FC = () => {
             showPasswordIcon={FaEye}
             hidePasswordIcon={FaEyeSlash}
             containerWidth="full"
-            size="small"
+            size="medium"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            labelFontSize="16px"
           />
 
           <div className="login-forgot">
@@ -108,7 +110,9 @@ const LoginPage: React.FC = () => {
 
           <div className="login-footer">
             <span className="login-footer-text">¿No tienes cuenta?</span>
-            <span className="login-footer-link">Crear una cuenta</span>
+            <span className="login-footer-link" onClick={() => navigate('/register')}>
+              Crear una cuenta
+            </span>
           </div>
         </form>
       </div>

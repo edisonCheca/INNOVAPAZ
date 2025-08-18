@@ -49,8 +49,8 @@
   bottom: 0;
   left: 0;
   gap: 25px;
-  border-radius: 35px 35px 0 0;
-  padding: 2rem 2.8rem;
+  border-radius: 40px 40px 0 0;
+  padding: 2rem 2.1rem;
   z-index: 3;
   animation: slideUpAuto 0.7s cubic-bezier(0.77, 0, 0.18, 1) both;
   max-height: 85vh;
@@ -87,6 +87,14 @@
   font-weight: bold;
   text-align: center;
   margin: 0;
+}
+
+.register-subtitle {
+  font-size: 16px;
+  text-align: center;
+  margin: 0;
+  color: var(--pri-400);
+  margin-bottom: 1rem;
 }
 
 .register-form {

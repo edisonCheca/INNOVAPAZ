@@ -47,6 +47,9 @@ const RegisterPage: React.FC = () => {
       </div>
       <div className="register-box">
         <h1 className="register-title">Crear una cuenta</h1>
+        <p className="register-subtitle">
+          Comienza a simplificar la gestión de tu comercio en solo unos minutos
+        </p>
         <form className="register-form">
           <Input
             id="registerFirstName"
@@ -55,7 +58,7 @@ const RegisterPage: React.FC = () => {
             placeholder="Tu nombre"
             type="text"
             containerWidth="full"
-            size="small"
+            size="medium"
           />
 
           <Input
@@ -65,7 +68,7 @@ const RegisterPage: React.FC = () => {
             placeholder="ejemplo@email.com"
             type="email"
             containerWidth="full"
-            size="small"
+            size="medium"
           />
 
           <Input
@@ -78,7 +81,7 @@ const RegisterPage: React.FC = () => {
             showPasswordIcon={FaEye}
             hidePasswordIcon={FaEyeSlash}
             containerWidth="full"
-            size="small"
+            size="medium"
           />
 
           <Input
@@ -91,12 +94,12 @@ const RegisterPage: React.FC = () => {
             showPasswordIcon={FaEye}
             hidePasswordIcon={FaEyeSlash}
             containerWidth="full"
-            size="small"
+            size="medium"
           />
 
           <div>
             <Button
-              title="Registrate"
+              title="Crear cuenta"
               backgroundColor="var(--bg-100)"
               textColor="var(--pri-900)"
               hasBackground={true}
@@ -109,7 +112,7 @@ const RegisterPage: React.FC = () => {
 
           <div>
             <GoogleButton
-              label="Registrarte con Google"
+              label="Registrarse con Google"
               onClick={handleGoogleRegister}
               disabled={loading}
             />
@@ -119,7 +122,9 @@ const RegisterPage: React.FC = () => {
 
           <div className="register-footer">
             <span className="register-footer-text">¿Ya tienes cuenta?</span>
-            <span className="register-footer-link">Inicia Sesión</span>
+            <span className="register-footer-link" onClick={() => navigate('/login')}>
+              Inicia Sesión
+            </span>
           </div>
         </form>
       </div>
