@@ -119,6 +119,7 @@
 .login-footer-link {
   color: var(--bg-900);
   text-decoration: none;
+  cursor: pointer;
 }
 
 .login-forgot-text {
