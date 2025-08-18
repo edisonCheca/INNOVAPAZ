@@ -132,17 +132,17 @@
     position: relative;
     border-radius: 35px;
     width: 70%;
-    margin-top: 35px;
+    margin-top: 25px;
     max-width: 390px;
-    max-height: 590px;
-    padding: 2rem 3rem;
-    gap: 25px;
+    max-height: 800px;
+    padding: 2rem 2.6rem;
+    gap: 12px;
     animation: fadeInCenter 0.7s cubic-bezier(0.77, 0, 0.18, 1) both;
     z-index: 3;
   }
 
   .register-form {
-    gap: 20px;
+    gap: 15px;
   }
 
   .register-illustration {
@@ -171,7 +171,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 7rem;
+    gap: 2rem;
     padding: 0 4rem;
   }
 
@@ -210,11 +210,11 @@
     left: auto;
     max-width: 410px;
     max-height: 690px;
-    gap: 30px;
+    gap: 20px;
   }
 
   .register-form {
-    gap: 22px;
+    gap: 20px;
   }
 
   .register-title {

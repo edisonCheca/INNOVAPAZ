@@ -48,7 +48,7 @@ const RegisterPage: React.FC = () => {
       <div className="register-box">
         <h1 className="register-title">Crear una cuenta</h1>
         <p className="register-subtitle">
-          Comienza a simplificar la gestión de tu comercio en solo unos minutos
+          Comienza a simplificar la gestión de tu empresa en solo unos minutos
         </p>
         <form className="register-form">
           <Input
