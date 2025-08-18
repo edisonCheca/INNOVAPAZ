@@ -8,7 +8,7 @@
 .teamwork__quienes_somos {
   /* Estilos específicos para la sección quienes somos */
   background-color: var(--bg-500);
-  padding: 160px 160px;
+  padding: 20px 160px;
   display: flex;
 }
 
@@ -43,6 +43,11 @@
 }
 .teamwork__image_containers img {
   width: 100%;
+}
+.teamwork__images {
+  height: 500px;
+  max-width: 400px;
+  object-fit: cover;
 }
 
 .teamwork__image {
@@ -146,7 +151,7 @@
   }
 
   .teamwork__image_containers img {
-    max-width: 80%;
+    max-width: 100%;
   }
 }
 
