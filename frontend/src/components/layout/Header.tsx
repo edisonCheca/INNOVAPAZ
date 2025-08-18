@@ -110,7 +110,7 @@ const Header: React.FC = () => {
               onClick={() => handleNavigationClick('contacto')}
               isActive={activeSection === 'contacto'}
             >
-              Contacto
+              Contáctanos
             </NavLink>
           </nav>
 

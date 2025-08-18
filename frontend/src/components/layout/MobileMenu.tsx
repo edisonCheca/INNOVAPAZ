@@ -2,6 +2,8 @@ import React from 'react';
 import Button from '../common/ButtonExtra';
 import NavLink from '../ui/NavLink';
 import Overlay from '../common/Overlay';
+import Avatar from '../ui/Avatar';
+import { useUser } from '../../context/UserContext';
 import './MobileMenu.css';
 
 interface MobileMenuProps {
@@ -11,10 +13,18 @@ interface MobileMenuProps {
 }
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavigate }) => {
+  const { user } = useUser();
+
   return (
     <div className={`mobile-menu ${isOpen ? 'mobile-menu--open' : ''}`}>
       <Overlay isVisible={isOpen} onClick={onClose} />
       <div className="mobile-menu__content">
+        {user && (
+          <div className="mobile-menu__user-header">
+            <Avatar user={user} />
+            <span className="mobile-menu__user-name">{user.displayName}</span>
+          </div>
+        )}
         <nav className="mobile-menu__nav">
           <NavLink variant="mobile" onClick={() => onNavigate('home')}>
             Inicio
@@ -26,17 +36,31 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavigate }) 
             Privacidad
           </NavLink>
           <NavLink variant="mobile" onClick={() => onNavigate('contacto')}>
-            Contacto
+            Contáctanos
           </NavLink>
         </nav>
-
-        <div className="mobile-menu__actions">
-          <Button variant="primary" size="medium" onClick={() => onNavigate('login')}>
-            Iniciar Sesión
-          </Button>
-          <Button variant="outline" size="medium" onClick={() => onNavigate('register')}>
-            Registrarse
-          </Button>
+        <div className="mobile-menu__footer">
+          {user ? (
+            <Button
+              variant="outline"
+              size="medium"
+              onClick={() => {
+                console.log('Cerrar sesión');
+                onClose();
+              }}
+            >
+              Cerrar Sesión
+            </Button>
+          ) : (
+            <>
+              <Button variant="primary" size="medium" onClick={() => onNavigate('login')}>
+                Iniciar Sesión
+              </Button>
+              <Button variant="outline" size="medium" onClick={() => onNavigate('register')}>
+                Registrarse
+              </Button>
+            </>
+          )}
         </div>
       </div>
     </div>

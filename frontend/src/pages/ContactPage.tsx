@@ -3,16 +3,18 @@ import {
   FaWhatsapp,
   FaFacebook,
   FaInstagram,
-  FaTelegram,
   FaEnvelope,
   FaPhone,
   FaTwitter,
   FaDiscord,
+  FaMapMarkerAlt,
 } from 'react-icons/fa';
+import { MdSend } from 'react-icons/md';
 import { TbBrandTelegram } from 'react-icons/tb';
 import './ContactPage.css';
 import contact from '../assets/icons/contact.svg';
-import Input from '@/components/common/Input';
+import Input from '../components/common/Input';
+import Button from '../components/common/Button';
 
 const ContactPage: React.FC = () => {
   return (
@@ -21,164 +23,203 @@ const ContactPage: React.FC = () => {
         <div className="contact-img-box">
           <img src={contact} alt="Contact illustration" className="contact-img" />
         </div>
-        <div className="contact-content-box">
-          <h1 className="contact-title">Contactanos</h1>
+        <div className="contact-header-info">
+          <h1 className="contact-title">Contáctanos</h1>
           <p className="contact-subtitle">
             ¡Estamos aquí para ayudarte! Contáctanos si tienes alguna pregunta o inquietud y te
             responderemos lo antes posible.
           </p>
         </div>
       </div>
-      <div className="contact-main-box">
-        <div className="contact-info-box    ">
-          <h2 className="contact-info-title">Información del contacto</h2>
-          <div className="contact-info-row">
-            <div className="contact-info-card contact-info-card--email">
-              <span className="contact-info-icon-box">
-                <FaEnvelope className="contact-info-icon" />
-              </span>
-              <div>
-                <span className="contact-info-label">Correo electronico</span>
-                <br />
-                <span className="contact-info-value" style={{ color: '#bfa46f' }}>
-                  innovapaz@gmail.com
-                </span>
-              </div>
-            </div>
-            <div className="contact-info-card contact-info-card--phone">
-              <span className="contact-info-icon-box">
-                <FaPhone className="contact-info-icon" />
-              </span>
-              <div>
-                <span className="contact-info-label">Atención al cliente</span>
-                <br />
-                <span className="contact-info-value" style={{ color: '#2ca6a4' }}>
-                  + (591) 705 - 207 - 28
-                </span>
-              </div>
+      <div className="contact-info-box">
+        <h2 className="contact-info-title">Información de Contacto</h2>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d478.1752802095031!2d-68.0870545934529!3d-16.53529145695847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915f21239926c7cd%3A0x2a399dfb88c485d6!2sEscuela%20Militar%20de%20Ingenier%C3%ADa%20-%20Unidad%20Acad%C3%A9mica%20La%20Paz!5e0!3m2!1ses!2sbo!4v1723447885351!5m2!1ses!2sbo"
+          className="contact-map-iframe"
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Ubicación de la Escuela Militar de Ingeniería en Google Maps"
+        ></iframe>
+        <div className="contact-info-row">
+          <div className="contact-map-address">
+            <span className="contact-map-icon-box">
+              <FaMapMarkerAlt className="contact-info-icon" />
+            </span>
+            <div>
+              <span className="contact-info-label">Dirección</span>
+              <span className="contact-address-value">Av. Rafael Pabón, Zona Irpavi II</span>
             </div>
           </div>
-          <div className="contact-social-icons contact-social-icons--row">
-            <a
-              href="https://facebook.com/innova.paz"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-              className="contact-social-link"
-            >
-              <FaFacebook style={{ color: 'var(--pri-900)' }} />
-            </a>
-            <a
-              href="https://wa.me/59170520728"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Whatsapp"
-              className="contact-social-link"
-            >
-              <FaWhatsapp style={{ color: 'var(--pri-900)' }} />
-            </a>
-            <a
-              href="https://twitter.com/innova_paz"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Twitter"
-              className="contact-social-link"
-            >
-              <FaTwitter style={{ color: 'var(--pri-900)' }} />
-            </a>
-            <a
-              href="https://t.me/innova_paz"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Telegram"
-              className="contact-social-link"
-            >
-              <TbBrandTelegram style={{ color: 'var(--pri-900)' }} />
-            </a>
-            <a
-              href="https://discord.gg/innova_paz"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Discord"
-              className="contact-social-link"
-            >
-              <FaDiscord style={{ color: 'var(--pri-900)' }} />
-            </a>
-            <a
-              href="https://instagram.com/innova.paz"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="contact-social-link"
-            >
-              <FaInstagram style={{ color: 'var(--pri-900)' }} />
-            </a>
+          <div className="contact-info-card-email">
+            <span className="contact-info-icon-box">
+              <FaEnvelope className="contact-info-icon" />
+            </span>
+            <div>
+              <span className="contact-info-label">Correo electronico</span>
+              <span className="contact-info-value-email">innovapaz@gmail.com</span>
+            </div>
+          </div>
+          <div className="contact-info-card-phone">
+            <span className="contact-info-icon-box">
+              <FaPhone className="contact-info-icon" />
+            </span>
+            <div>
+              <span className="contact-info-label">Atención al cliente</span>
+              <span className="contact-info-value-phone">+ (591) 705 - 207 - 28</span>
+            </div>
           </div>
         </div>
-        <div className="contact-form-box">
-          <h2 className="contact-form-title">Envíanos un mensaje</h2>
-          <form className="contact-form">
-            <Input
-              placeholder="Ingrese su nombre completo"
-              label="Nombre completo"
-              name="nombre"
-              className="contact-input"
-            />
-            <Input
-              type="email"
-              placeholder="Ingrese su correo electrónico"
-              label="Correo electrónico"
-              name="correo"
-              className="contact-input"
-            />
-            <Input
-              type="tel"
-              placeholder="Ingrese su número de teléfono"
-              label="Número de teléfono"
-              name="telefono"
-              className="contact-input"
-            />
-            <Input
-              type="text"
-              placeholder="Mensaje"
-              label="Mensaje"
-              name="mensaje"
-              className="contact-input"
-              style={{ minHeight: '80px', resize: 'vertical' }}
-            />
-            <button type="submit" className="contact-submit-btn">
-              Enviar
-            </button>
-          </form>
+        <div className="contact-social-icons-row">
+          <a
+            href="https://facebook.com/innova.paz"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            className="contact-social-link"
+          >
+            <FaFacebook className="contact-social-icon" />
+          </a>
+          <a
+            href="https://wa.me/59170520728"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Whatsapp"
+            className="contact-social-link"
+          >
+            <FaWhatsapp className="contact-social-icon" />
+          </a>
+          <a
+            href="https://twitter.com/innova_paz"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Twitter"
+            className="contact-social-link"
+          >
+            <FaTwitter className="contact-social-icon" />
+          </a>
+          <a
+            href="https://t.me/innova_paz"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Telegram"
+            className="contact-social-link"
+          >
+            <TbBrandTelegram className="contact-social-icon" />
+          </a>
+          <a
+            href="https://discord.gg/innova_paz"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Discord"
+            className="contact-social-link"
+          >
+            <FaDiscord className="contact-social-icon" />
+          </a>
+          <a
+            href="https://instagram.com/innova.paz"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="contact-social-link"
+          >
+            <FaInstagram className="contact-social-icon" />
+          </a>
         </div>
+      </div>
+      <div className="contact-form-box">
+        <h2 className="contact-form-title">Envíanos un mensaje</h2>
+        <form className="contact-form">
+          <Input
+            id="nombre"
+            type="text"
+            placeholder="Ingrese su nombre completo"
+            label="Nombre completo"
+            name="nombre"
+            labelColor="var(--pri-700)"
+            size="medium"
+            textColor="var(--pri-900)"
+            labelFontSize="16px"
+          />
+          <Input
+            id="correo"
+            type="email"
+            placeholder="Ingrese su correo electrónico"
+            label="Correo electrónico"
+            name="correo"
+            labelColor="var(--pri-700)"
+            size="medium"
+            textColor="var(--pri-900)"
+            labelFontSize="16px"
+          />
+          <Input
+            id="telefono"
+            type="tel"
+            placeholder="Ingrese su número de teléfono"
+            label="Número de teléfono"
+            name="telefono"
+            labelColor="var(--pri-700)"
+            size="medium"
+            textColor="var(--pri-900)"
+            labelFontSize="16px"
+          />
+          <Input
+            id="mensaje"
+            type="text"
+            placeholder="Mensaje"
+            label="Mensaje"
+            name="mensaje"
+            labelColor="var(--pri-700)"
+            size="medium"
+            textColor="var(--pri-900)"
+            labelFontSize="16px"
+            multiline={true}
+            rows={7}
+          />
+          <div className="contact-form-button">
+            <Button
+              title="Enviar"
+              backgroundColor="var(--pri-900)"
+              textColor="var(--pri-100)"
+              hasBackground={true}
+              borderColor="transparent"
+              titleFontWeight="normal"
+              containerWidth="medium"
+              height="large"
+              icon={MdSend}
+            />
+          </div>
+        </form>
       </div>
       <div className="contact-faq-box">
         <h2 className="contact-faq-title">Preguntas frecuentes</h2>
-        <details className="contact-faq-item">
-          <summary>¿Cómo creo una cuenta?</summary>
-          <p>
-            Puedes crear una cuenta desde la página de registro completando el formulario con tus
-            datos personales y de contacto. Una vez completado, recibirás un correo de confirmación
-            para activar tu cuenta.
-          </p>
-        </details>
-        <details className="contact-faq-item">
-          <summary>¿Qué métodos de pago aceptan?</summary>
-          <p>
-            Aceptamos diversos métodos de pago para tu comodidad, incluyendo transferencia bancaria,
-            tarjetas de crédito/débito (Visa, MasterCard, American Express), PayPal, y otros métodos
-            de pago digitales populares en Bolivia.
-          </p>
-        </details>
-        <details className="contact-faq-item">
-          <summary>¿Cómo puedo comenzar a usar el ERP?</summary>
-          <p>
-            Una vez que hayas registrado tu cuenta y accedido con tus credenciales, encontrarás una
-            guía de inicio rápido en tu panel de control. Esta guía te ayudará a configurar tu
-            perfil, familiarizarte con las funciones principales y comenzar a utilizar las
-            herramientas disponibles en nuestro sistema.
-          </p>
-        </details>
+        <div className="contact-faq-items">
+          <details className="contact-faq-item">
+            <summary>¿Cómo creo una cuenta?</summary>
+            <p>
+              Puedes crear una cuenta desde la página de registro completando el formulario con tus
+              datos personales y de contacto. Una vez completado, recibirás un correo de
+              confirmación para activar tu cuenta.
+            </p>
+          </details>
+          <details className="contact-faq-item">
+            <summary>¿Qué métodos de pago aceptan?</summary>
+            <p>
+              Aceptamos diversos métodos de pago para tu comodidad, incluyendo transferencia
+              bancaria, tarjetas de crédito/débito (Visa, MasterCard, American Express), PayPal, y
+              otros métodos de pago digitales populares en Bolivia.
+            </p>
+          </details>
+          <details className="contact-faq-item">
+            <summary>¿Cómo puedo comenzar a usar el ERP?</summary>
+            <p>
+              Una vez que hayas registrado tu cuenta y accedido con tus credenciales, encontrarás
+              una guía de inicio rápido en tu panel de control. Esta guía te ayudará a configurar tu
+              perfil, familiarizarte con las funciones principales y comenzar a utilizar las
+              herramientas disponibles en nuestro sistema.
+            </p>
+          </details>
+        </div>
       </div>
     </div>
   );
