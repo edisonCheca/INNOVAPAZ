@@ -28,16 +28,12 @@
 .values__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 50px;
+  font-family: var(--font-20);
 }
-
-.values__grid-item img,
-.values__grid-item .values__img {
-  max-width: 140px;
-  max-height: 140px;
-  display: block;
-  margin: 0 auto 20px auto;
-  object-fit: contain;
+.values__grid-item img {
+  width: 200px;
+  height: 119px;
 }
 
 /* Media queries para responsividad */
