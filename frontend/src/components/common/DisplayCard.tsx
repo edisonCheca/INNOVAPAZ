@@ -5,11 +5,27 @@ interface DisplayCardProps {
   title: string;
   children: React.ReactNode;
   iconBg?: string; // Nueva prop opcional
+  iconWidth?: string | number; // Nuevo prop opcional
+  iconHeight?: string | number; // Nuevo prop opcional
 }
 
-const DisplayCard: React.FC<DisplayCardProps> = ({ icon, title, children, iconBg }) => (
+const DisplayCard: React.FC<DisplayCardProps> = ({
+  icon,
+  title,
+  children,
+  iconBg,
+  iconWidth,
+  iconHeight,
+}) => (
   <div className="display-card">
-    <div className="display-card__icon" style={iconBg ? { background: iconBg } : undefined}>
+    <div
+      className="display-card__icon"
+      style={{
+        background: iconBg,
+        width: iconWidth ?? 125,
+        height: iconHeight ?? 113,
+      }}
+    >
       {icon}
     </div>
     <h3 className="display-card__title">{title}</h3>
