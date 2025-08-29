@@ -33,8 +33,8 @@
 
 .values__grid-item img,
 .values__grid-item .values__img {
-  max-width: 120px;
-  max-height: 120px;
+  max-width: 140px;
+  max-height: 140px;
   display: block;
   margin: 0 auto 20px auto;
   object-fit: contain;
