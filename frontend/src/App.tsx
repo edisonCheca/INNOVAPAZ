@@ -11,12 +11,14 @@ import ContactPage from './pages/ContactPage';
 import PrivacyPage from './pages/PrivacyPage';
 import DocumentsPage from './pages/DocumentsPage';
 import { UserProvider } from './context/UserContext.tsx';
+import ScrollToTop from './components/common/ScrollToTop';
 
 const AppContent: React.FC = () => {
   const location = useLocation();
   const hideHeader = location.pathname === '/login' || location.pathname === '/register';
   return (
     <>
+      <ScrollToTop />
       {!hideHeader && <Header />}
       <div className="app">
         <Routes>
