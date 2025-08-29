@@ -60,15 +60,13 @@
   box-shadow: none;
 }
 
-@media (max-width: 411px) {
+@media (max-width: 380px) {
+  .comment-section {
+    padding: 80px 0;
+  }
+
   .comment-section__container {
     padding: 40px 16px;
-  }
-}
-
-@media (min-width: 481px) {
-  .comment-section__container {
-    padding: 40px 32px;
   }
 
   .comment-section__button {
@@ -78,6 +76,10 @@
 }
 
 @media (min-width: 768px) {
+  .comment-section {
+    padding: 110px 0;
+  }
+
   .comment-section__container {
     max-width: 680px;
   }
