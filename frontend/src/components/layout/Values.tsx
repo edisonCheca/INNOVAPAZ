@@ -19,17 +19,53 @@ function Values() {
         />
         <div className="values__grid">
           <div className="values__grid-item">
-            <DisplayCard icon={<img src={transparencia} />} title="Transparencia">
+            <DisplayCard
+              icon={<img src={transparencia} />}
+              title="Transparencia"
+              containerWidth={250}
+              containerHeight={400}
+              gap={30}
+              font="var(--font-31)"
+              contentFont="var(--font-20)"
+              color="--pri-600"
+              fontFamily="var(--font)"
+              titleFontWeight={600}
+              contentFontWeight={300}
+            >
               Actuamos con honestidad y claridad en todas nuestras relaciones comerciales.
             </DisplayCard>
           </div>
           <div className="values__grid-item">
-            <DisplayCard icon={<img src={compromiso} />} title="Compromiso">
+            <DisplayCard
+              icon={<img src={compromiso} />}
+              title="Compromiso"
+              containerWidth={250}
+              containerHeight={400}
+              gap={30}
+              font="var(--font-31)"
+              contentFont="var(--font-20)"
+              color="--pri-600"
+              fontFamily="var(--font)"
+              titleFontWeight={600}
+              contentFontWeight={300}
+            >
               Actuamos con honestidad y claridad en todas nuestras relaciones comerciales.
             </DisplayCard>
           </div>
           <div className="values__grid-item">
-            <DisplayCard icon={<img src={innovacion} />} title="Innovación">
+            <DisplayCard
+              icon={<img src={innovacion} />}
+              title="Innovación"
+              containerWidth={250}
+              containerHeight={400}
+              gap={30}
+              font="var(--font-31)"
+              contentFont="var(--font-20)"
+              color="--pri-600"
+              fontFamily="var(--font)"
+              titleFontWeight={600}
+              contentFontWeight={300}
+            >
               Actuamos con honestidad y claridad en todas nuestras relaciones comerciales.
             </DisplayCard>
           </div>
