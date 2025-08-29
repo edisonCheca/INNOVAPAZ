@@ -216,6 +216,13 @@
   }
 }
 
+@media (max-width: 1440px) {
+  .faq-card {
+    width: 100%;
+    max-width: 540px;
+  }
+}
+
 @media (max-width: 320px) {
   .faq-card--open .faq-card__line {
     top: 100px;
