@@ -1,9 +1,9 @@
 import HeroTitle from '../common/HeroTitle';
 import DisplayCard from '../common/DisplayCard';
 import './Values.css';
-import innovacion from '../../assets/images/innovacion.png';
-import transparencia from '../../assets/images/transparencia.png';
-import compromiso from '../../assets/images/compromiso.png';
+import innovacion from '../../assets/images/innovacion.svg';
+import transparencia from '../../assets/images/transparencia.svg';
+import compromiso from '../../assets/images/compromiso.svg';
 
 function Values() {
   return (

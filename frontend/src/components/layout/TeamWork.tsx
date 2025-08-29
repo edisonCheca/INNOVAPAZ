@@ -2,8 +2,8 @@ import React from 'react';
 import HeroTitle from '../common/HeroTitle';
 import './TeamWork.css';
 import reunion from '../../assets/images/reunion.png';
-import nuestramision from '../../assets/images/nuestramision.png';
-import nuestraVision from '../../assets/images/nuestravision.png';
+import nuestramision from '../../assets/images/nuestravision.svg';
+import nuestraVision from '../../assets/images/nuestramision.svg';
 
 const TeamWork: React.FC = () => (
   <section className="teamwork">

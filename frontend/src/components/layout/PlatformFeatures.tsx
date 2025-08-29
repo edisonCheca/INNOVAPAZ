@@ -1,10 +1,10 @@
 import React from 'react';
 import DisplayCard from '../common/DisplayCard';
 import './PlatformFeatures.css';
-import ventas from '../../assets/images/Gestinoventas.png';
-import compras from '../../assets/images/Gestioncompras.png';
-import inventario from '../../assets/images/Gestioninventarios.png';
-import reportes from '../../assets/images/Gestionreportes.png';
+import ventas from '../../assets/images/Gestinoventas.svg';
+import compras from '../../assets/images/Gestioncompras.svg';
+import inventario from '../../assets/images/Gestioninventarios.svg';
+import reportes from '../../assets/images/Gestionreportes.svg';
 import HeroTitle from '../common/HeroTitle';
 
 const PlatformFeatures: React.FC = () => (
