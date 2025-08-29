@@ -1,6 +1,8 @@
 import React from 'react';
 import './PricingCard.css';
 import Button from './Button';
+import CardHeader from './CardHeader';
+import FeatureList from './FeatureList';
 
 interface PricingCardProps {
   title: string;
@@ -27,28 +29,16 @@ const PricingCard: React.FC<PricingCardProps> = ({
 }) => {
   return (
     <div className={`pricing-card ${highlight ? 'pricing-card--highlight' : ''}`}>
-      {description && <span className="pricing-card__tag">{description}</span>}
-      <div className="pricing-card__icons">
-        {icons.map((icon, idx) => (
-          <span key={idx} className="pricing-card__icon">
-            {icon}
-          </span>
-        ))}
-      </div>
-      <h3 className="pricing-card__title">{title}</h3>
-      <p className="pricing-card__comment">{comment}</p>
-      <p className="pricing-card__price">
-        {price}
-        <span>/mes</span>
-      </p>
-      <ul className="pricing-card__features">
-        {features.map((feature, index) => (
-          <li key={index} className="pricing-card__feature">
-            <span className="pricing-card__feature-check" aria-hidden="true"></span>
-            <span>{feature}</span>
-          </li>
-        ))}
-      </ul>
+      <CardHeader
+        title={title}
+        description={description}
+        comment={comment}
+        price={price}
+        icons={icons}
+      />
+
+      <FeatureList features={features} />
+
       <div className="pricing-card__button">
         <Button
           title={buttonText}

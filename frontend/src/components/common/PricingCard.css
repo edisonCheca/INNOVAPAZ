@@ -17,60 +17,8 @@
   border: 0.5px solid var(--acc-500);
 }
 
-.pricing-card__tag {
-  display: inline-block;
-  background: var(--acc-700);
-  color: var(--white);
-  font-size: var(--font-13);
-  padding: 0.3rem 0.6rem;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-}
-
-.pricing-card__title {
-  font: var(--font-25);
-  margin: 0.5rem 0;
-  font-weight: bold;
-}
-
-.pricing-card__comment {
-  font: var(--font-13);
-  color: var(--pri-500);
-  font-weight: 400;
-  margin: 0 1rem;
-}
-
-.pricing-card__price {
-  font: var(--font-39);
-  font-weight: bold;
-  color: var(--acc-700);
-  margin: 1rem 0;
-}
-
-.pricing-card__price span {
-  font: var(--font-16);
-  color: var(--pri-500);
-  font-weight: 300;
-}
-
-.pricing-card__features {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 1rem;
-}
-
-.pricing-card__feature {
-  font: var(--font-16);
-  color: var(--pri-700);
-  display: flex;
-  align-items: center;
-  gap: 0.7em;
-}
-
-.pricing-card__feature-icon {
-  display: flex;
-  align-items: center;
-  margin-right: 0.3em;
+.pricing-card__button {
+  margin-top: auto;
 }
 
 .custom-button--pricingcard {
@@ -82,41 +30,6 @@
   width: 100% !important;
 }
 
-.pricing-card__feature-check {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin-right: 0.3em;
-  position: relative;
-}
-
-.pricing-card__feature-check::after {
-  content: '';
-  position: absolute;
-  left: 5px;
-  top: 1px;
-  width: 8px;
-  height: 14px;
-  border: solid var(--sec-500);
-  border-width: 0 3px 3px 0;
-  border-radius: 1px;
-  transform: rotate(45deg);
-  box-sizing: border-box;
-}
-
-.pricing-card__icons {
-  display: flex;
-  justify-content: center;
-  gap: 0.7em;
-  margin-bottom: 0.5em;
-}
-
-.pricing-card__icon img {
-  width: 44.4px;
-  height: 55.5px;
-  display: block;
-}
-
 @media (min-width: 768px) {
   .pricing-card {
     width: 100%;
@@ -124,20 +37,6 @@
     min-height: 500px;
     box-sizing: border-box;
     padding: 2rem 3rem;
-  }
-
-  .pricing-card__comment {
-    margin: 0 0.5rem;
-  }
-
-  .pricing-card__features {
-    text-align: left;
-    padding-left: 0;
-  }
-
-  .pricing-card__feature {
-    justify-content: flex-start;
-    text-align: left;
   }
 }
 
@@ -148,30 +47,6 @@
     width: 100%;
     max-width: 300px;
     box-sizing: border-box;
-  }
-
-  .pricing-card__comment {
-    margin: 0 0.5rem;
-    font-size: var(--font-12);
-  }
-
-  .pricing-card__title {
-    font-size: var(--font-22);
-    margin: 0.3rem 0;
-  }
-
-  .pricing-card__price {
-    font-size: var(--font-32);
-    margin: 0.8rem 0;
-  }
-
-  .pricing-card__features {
-    margin-bottom: 0.8rem;
-  }
-
-  .pricing-card__feature {
-    font-size: var(--font-14);
-    gap: 0.5em;
   }
 }
 
