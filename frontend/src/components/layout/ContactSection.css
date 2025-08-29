@@ -66,11 +66,22 @@
   max-width: 200px;
   margin: 0 auto;
 }
+@media (min-width: 375px) {
+  .contact-section {
+    height: 385px;
+  }
+
+  .contact-section__content {
+    position: relative;
+    top: -65px;
+  }
+}
 
 /* Tablet styles */
 @media (min-width: 768px) {
   .contact-section {
-    height: 600px;
+    top: 50px;
+    height: 430px;
   }
 
   .contact-section__container {
@@ -78,9 +89,10 @@
   }
 
   .contact-section__content {
+    position: relative;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    top: -70px;
     gap: 20px;
   }
 
