@@ -12,27 +12,40 @@ import PrivacyPage from './pages/PrivacyPage';
 import DocumentsPage from './pages/DocumentsPage';
 import { UserProvider } from './context/UserContext.tsx';
 import ScrollToTop from './components/common/ScrollToTop';
+import LandingPage from './pages/LandingPage.tsx';
 
 const AppContent: React.FC = () => {
   const location = useLocation();
-  const hideHeader = location.pathname === '/login' || location.pathname === '/register';
+  const isInstitutionalPage = location.pathname === '/';
+  const hideSystemHeader =
+    location.pathname === '/login' || location.pathname === '/register' || isInstitutionalPage;
+  const hideSystemFooter = isInstitutionalPage;
   return (
     <>
       <ScrollToTop />
-      {!hideHeader && <Header />}
-      <div className="app">
+
+      {/* Header del sistema - Solo para rutas del sistema */}
+      {!hideSystemHeader && <Header />}
+
+      <div className={isInstitutionalPage ? 'institutional-app' : 'app'}>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/sistema" element={<HomePage />} />
+          <Route path="/sistema/login" element={<LoginPage />} />
+          <Route path="/sistema/register" element={<RegisterPage />} />
+          <Route path="/sistema/about" element={<AboutPage />} />
+          <Route path="/sistema/contacto" element={<ContactPage />} />
+          <Route path="/sistema/documentacion" element={<DocumentsPage />} />
+
           <Route path="/terms" element={<TermsPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contacto" element={<ContactPage />} />
-          <Route path="/privacy" element={<PrivacyPage />} />
-          <Route path="/documentacion" element={<DocumentsPage />} />
         </Routes>
       </div>
-      <Footer />
+
+      {!hideSystemFooter && <Footer />}
     </>
   );
 };
