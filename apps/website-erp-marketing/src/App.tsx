@@ -12,24 +12,20 @@ import PrivacyPage from './pages/PrivacyPage';
 import DocumentsPage from './pages/DocumentsPage';
 import { UserProvider } from './context/UserContext.tsx';
 import ScrollToTop from './components/common/ScrollToTop';
-import LandingPage from './pages/LandingPage.tsx';
 
 const AppContent: React.FC = () => {
   const location = useLocation();
-  const isInstitutionalPage = location.pathname === '/';
-  const hideSystemHeader =
-    location.pathname === '/login' || location.pathname === '/register' || isInstitutionalPage;
-  const hideSystemFooter = isInstitutionalPage;
+  const hideSystemHeader = location.pathname === '/login' || location.pathname === '/register';
+
   return (
     <>
       <ScrollToTop />
 
-      {/* Header del sistema - Solo para rutas del sistema */}
+      {/* Header del sistema */}
       {!hideSystemHeader && <Header />}
 
-      <div className={isInstitutionalPage ? 'institutional-app' : 'app'}>
+      <div className='app'>
         <Routes>
-          <Route path='/' element={<LandingPage />} />
           <Route path='/innovapaz' element={<HomePage />} />
           <Route path='/innovapaz/login' element={<LoginPage />} />
           <Route path='/innovapaz/register' element={<RegisterPage />} />
@@ -45,7 +41,7 @@ const AppContent: React.FC = () => {
         </Routes>
       </div>
 
-      {!hideSystemFooter && <Footer />}
+      <Footer />
     </>
   );
 };
