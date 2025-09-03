@@ -1,81 +1,82 @@
-# Lógica de Frontend - INNOVAPAZ
+# Lógica de Frontend - Arquitectura Monorepo en INNOVAPAZ
 
-## Estructura de Carpetas Frontend
+## Arquitectura General de Frontend
 
-Esta documentación explica la organización y lógica detrás de la estructura de carpetas del frontend en el proyecto INNOVAPAZ, construido con React + TypeScript + Vite.
+La estrategia de frontend en INNOVAPAZ se basa en un **monorepo** que alberga múltiples aplicaciones React independientes dentro de la carpeta `apps/`. Cada aplicación tiene un propósito claro y un dominio de responsabilidad bien definido.
 
-## Arquitectura General
+Esta arquitectura reemplaza el enfoque anterior de un único frontend, permitiendo mayor flexibilidad, escalabilidad y una clara separación de preocupaciones.
 
 ```
-frontend/
+innovapaz-monorepo/
+└── apps/
+    ├── website-corporate/      # Web institucional de la empresa
+    ├── website-erp-marketing/  # Web de marketing del producto ERP
+    └── app-erp/                # La aplicación ERP para clientes
+```
+
+## Regla Fundamental de Comunicación
+
+**Los frontends NO se comunican entre sí.** La única fuente de verdad y el único punto de comunicación para todas las aplicaciones es la **API central del backend**. Esto garantiza el desacoplamiento y la autonomía de cada aplicación.
+
+```
+[ website-corporate ] ----> [ API Backend ]
+[ website-erp-marketing ] -> [ API Backend ]
+[ app-erp ] --------------> [ API Backend ]
+```
+
+## Responsabilidades de Cada Aplicación
+
+### 1. `apps/website-corporate`
+
+- **Propósito**: Servir como la página web institucional de INNOVAPAZ. Su objetivo es comunicar la misión, visión, valores y ser el punto de contacto corporativo.
+- **Audiencia**: Inversores, socios potenciales, medios de comunicación y público general.
+- **Conexión con Backend**: **Mínima y aislada**. Puede consumir endpoints públicos para, por ejemplo, enviar un formulario de contacto o mostrar noticias de un blog. No requiere autenticación.
+
+### 2. `apps/website-erp-marketing`
+
+- **Propósito**: Funcionar como la página de marketing y ventas del producto ERP. Su misión es atraer y convertir clientes potenciales, mostrando las características, beneficios y planes de precios del software. Este proyecto es la evolución del antiguo frontend único.
+- **Audiencia**: Clientes potenciales que evalúan el producto ERP.
+- **Conexión con Backend**: **Casi nula**. Su contenido es mayormente estático. Los botones de "Login" o "Registrarse" no manejan lógica de autenticación; son simples enlaces (`<a>`) que redirigen al usuario a la aplicación `app-erp`.
+
+### 3. `apps/app-erp`
+
+- **Propósito**: Es el **software ERP real**. Una aplicación privada y segura a la que solo pueden acceder los clientes autenticados. Aquí es donde se ejecutan todas las operaciones del negocio: gestión de usuarios, finanzas, inventario, etc.
+- **Audiencia**: Clientes existentes que han iniciado sesión.
+- **Conexión con Backend**: **Total y constante**. Es el consumidor principal de la API del backend. Todas las vistas, acciones y datos dentro de esta aplicación dependen de una comunicación continua y segura con la API.
+
+## Estructura Interna de Cada Aplicación
+
+Aunque cada aplicación es independiente, todas siguen una estructura de carpetas y convenciones similares para mantener la consistencia en todo el monorepo. La estructura detallada (con `components`, `hooks`, `services`, etc.) que se describía anteriormente ahora se aplica **dentro de cada uno de estos proyectos**.
+
+```
+apps/app-erp/
 ├── src/
-│   ├── components/          # Componentes reutilizables
-│   │   ├── common/         # Componentes básicos (Button, Input, Modal)
-│   │   ├── layout/         # Componentes de estructura (Header, Footer, Sidebar)
-│   │   └── ui/             # Componentes de interfaz específicos
-│   ├── pages/              # Páginas de la aplicación
-│   │   ├── HomePage.tsx    # Página principal "/"
-│   │   ├── AboutPage.tsx   # Página "Acerca de"
-│   │   └── ContactPage.tsx # Página de contacto
-│   ├── hooks/              # Custom hooks
-│   │   ├── useAuth.ts      # Hook para autenticación
-│   │   ├── useApi.ts       # Hook para llamadas API
-│   │   └── useLocalStorage.ts # Hook para localStorage
-│   ├── services/           # Servicios y API calls
-│   │   ├── api/            # Configuración de API
-│   │   ├── auth/           # Servicios de autenticación
-│   │   └── utils/          # Utilidades generales
-│   ├── context/            # React Context providers
-│   │   ├── AuthContext.tsx # Contexto de autenticación
-│   │   └── ThemeContext.tsx # Contexto de tema
-│   ├── types/              # Definiciones de TypeScript
-│   │   ├── api.ts          # Tipos para API responses
-│   │   ├── auth.ts         # Tipos para autenticación
-│   │   └── common.ts       # Tipos generales
-│   ├── assets/             # Recursos estáticos
-│   │   ├── images/         # Imágenes
-│   │   ├── icons/          # Iconos SVG
-│   │   └── styles/         # Estilos globales
-│   ├── utils/              # Funciones utilitarias
-│   │   ├── formatters.ts   # Funciones de formato
-│   │   ├── validators.ts   # Validaciones
-│   │   └── constants.ts    # Constantes de la app
-│   ├── App.tsx             # Componente principal con rutas
-│   └── main.tsx            # Punto de entrada de la aplicación
-├── public/                 # Archivos públicos estáticos
-└── dist/                   # Build de producción
+│   ├── components/
+│   ├── pages/
+│   ├── hooks/
+│   ├── services/
+│   ├── context/
+│   ├── types/
+│   ├── assets/
+│   ├── utils/
+│   ├── App.tsx
+│   └── main.tsx
+├── package.json
+└── ...
 ```
 
-## Lógica de Cada Carpeta
+## Ventajas de esta Arquitectura
 
-### 📄 `/pages`
-
-**Propósito**: Contiene los componentes que representan páginas completas de la aplicación.
-
-**Reglas**:
-
-- Cada archivo representa una ruta específica
-- Solo maneja la estructura general de la página
-- Debe usar `React.FC` con TypeScript
-- Importa y compone componentes más pequeños
-
-```tsx
-// Ejemplo: pages/HomePage.tsx
-import React from 'react';
-import Hero from '../components/layout/Hero';
-import Features from '../components/ui/Features';
-
-const HomePage: React.FC = () => {
-  return (
-    <>
-      <Hero />
-      <Features />
-    </>
+- **Despliegue Independiente**: Cada frontend puede ser desplegado, actualizado o revertido sin afectar a los demás.
+- **Equipos Enfocados**: Diferentes equipos pueden trabajar en diferentes aplicaciones sin interferencias. El equipo de marketing en `website-erp-marketing` y el equipo de producto en `app-erp`.
+- **Optimización de Carga**: Los usuarios de la web pública no necesitan descargar el pesado código de la aplicación ERP, mejorando los tiempos de carga y la experiencia.
+- **Seguridad Mejorada**: La lógica y el código de la aplicación principal (`app-erp`) están completamente aislados de las páginas públicas.
   );
-};
+  };
 
 export default HomePage;
-```
+
+````
 
 ### 🧩 `/components`
 
@@ -120,7 +121,7 @@ const Button: React.FC<ButtonProps> = ({
     </button>
   );
 };
-```
+````
 
 ### 🎣 `/hooks`
 

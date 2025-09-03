@@ -1,4 +1,15 @@
 {
-  "*.{js,jsx,ts,tsx}": ["prettier --config .prettierc --write"],
-  "*.{json,md,css}": ["prettier --config .prettierc --write"]
+  "apps/**/*.{js,jsx,ts,tsx}": [
+    "prettier --config .prettierc --write",
+    "eslint --fix"
+  ],
+  "apps/**/*.{json,css}": [
+    "prettier --config .prettierc --write"
+  ],
+  "*.{md,yaml,yml}": [
+    "prettier --config .prettierc --write"
+  ],
+  "docs/**/*.md": [
+    "prettier --config .prettierc --write"
+  ]
 }

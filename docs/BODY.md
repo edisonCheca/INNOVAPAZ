@@ -1,397 +1,53 @@
-# Proyecto Monolito Modular - React + Django
+# Arquitectura General del Proyecto - INNOVAPAZ
 
 ## 📋 Descripción General
 
-Arquitectura **monolito modular** que organiza el código en módulos independientes pero cohesivos, combinando React.js como frontend y Django como backend en un solo repositorio.
+El proyecto INNOVAPAZ está construido sobre una arquitectura **monorepo**, que centraliza todo el código fuente en un único repositorio. Esta estructura está dividida en dos directorios principales de alto nivel: `apps/` y `backend/`, permitiendo una clara separación de responsabilidades entre el frontend y el backend, pero manteniendo un desarrollo cohesivo y centralizado.
 
-## 🏗️ Estructura del Proyecto
+## 🏗️ Estructura de Alto Nivel
 
 ```
-mi-proyecto/
+innovapaz-monorepo/
 ├── README.md
-├── .gitignore
-├── docker-compose.yml
-├── requirements.txt
+├── pnpm-workspace.yaml
+├── package.json
 │
-├── backend/                          # Django Backend
-│   ├── manage.py
-│   ├── requirements.txt
-│   │
-│   ├── project_settings/             # Configuración del proyecto
-│   │   ├── __init__.py
-│   │   ├── settings.py
-│   │   ├── urls.py
-│   │   ├── wsgi.py
-│   │   └── asgi.py
-│   │
-│   └── apps/                         # Módulos de aplicación
-│       ├── __init__.py
-│       │
-│       ├── modulo1/                  # Ejemplo: autenticación
-│       │   ├── __init__.py
-│       │   ├── models.py
-│       │   ├── views.py
-│       │   ├── serializers.py
-│       │   ├── urls.py
-│       │   ├── apps.py
-│       │   ├── admin.py
-│       │   ├── migrations/
-│       │   └── tests.py
-│       │
-│       ├── modulo2/                  # Ejemplo: empleados
-│       │   ├── __init__.py
-│       │   ├── models.py
-│       │   ├── views.py
-│       │   ├── serializers.py
-│       │   ├── urls.py
-│       │   ├── apps.py
-│       │   ├── admin.py
-│       │   ├── migrations/
-│       │   └── tests.py
-│       │
-│       ├── modulo3/                  # Ejemplo: pagos
-│       │   ├── __init__.py
-│       │   ├── models.py
-│       │   ├── views.py
-│       │   ├── serializers.py
-│       │   ├── urls.py
-│       │   ├── apps.py
-│       │   ├── admin.py
-│       │   ├── migrations/
-│       │   └── tests.py
-│       │
-│       └── core/                     # Funcionalidades compartidas
-│           ├── __init__.py
-│           ├── models.py
-│           ├── utils.py
-│           ├── permissions.py
-│           ├── validators.py
-│           └── middleware.py
+├── apps/                             # Aplicaciones de cara al usuario (Frontends)
+│   ├── website-corporate/            #   - Web institucional
+│   ├── website-erp-marketing/        #   - Web de marketing del producto
+│   └── app-erp/                      #   - Aplicación ERP principal
 │
-└── frontend/                         # React Frontend
-    ├── public/
-    │   ├── index.html
-    │   └── favicon.ico
-    │
-    ├── src/
-    │   ├── index.js
-    │   ├── App.js
-    │   │
-    │   ├── assets/                   # Recursos estáticos
-    │   │   ├── images/
-    │   │   ├── icons/
-    │   │   └── styles/
-    │   │
-    │   ├── api/                      # Configuración de API
-    │   │   ├── apiClient.js
-    │   │   ├── endpoints.js
-    │   │   └── interceptors.js
-    │   │
-    │   ├── configs/                  # Configuraciones
-    │   │   ├── constants.js
-    │   │   ├── routes.js
-    │   │   └── environment.js
-    │   │
-    │   ├── components/               # Componentes globales
-    │   │   ├── SignUpForm.tsx        # Formulario de registro
-    │   │   ├── Employees.tsx         # Lista de empleados
-    │   │   ├── PaymentForm.tsx       # Formulario de pagos
-    │   │   ├── Button.tsx            # Componente botón reutilizable
-    │   │   ├── Header.tsx
-    │   │   ├── Footer.tsx
-    │   │   ├── Layout.tsx
-    │   │   └── LoadingSpinner.tsx
-    │   │
-    │   ├── hooks/                    # Custom hooks
-    │   │   ├── useAuth.tsx           # Hook de autenticación
-    │   │   ├── useEmployees.ts       # Hook para gestión de empleados
-    │   │   ├── useUpdateEmployee.ts  # Hook para actualizar empleados
-    │   │   ├── usePayment.ts         # Hook para gestión de pagos
-    │   │   ├── useApi.ts
-    │   │   └── useLocalStorage.ts
-    │   │
-    │   ├── lib/                      # Librerías y utilidades
-    │   │   ├── axios.js
-    │   │   ├── validation.js
-    │   │   ├── formatters.js
-    │   │   └── helpers.js
-    │   │
-    │   ├── services/                 # Servicios de API
-    │   │   ├── authService.js
-    │   │   ├── employeeService.js
-    │   │   ├── paymentService.js
-    │   │   └── userService.js
-    │   │
-    │   ├── states/                   # Gestión de estado global
-    │   │   ├── authSlice.js
-    │   │   ├── employeeSlice.js
-    │   │   ├── paymentSlice.js
-    │   │   ├── store.js
-    │   │   └── index.js
-    │   │
-    │   └── utils/                    # Utilidades generales
-    │       ├── constants.js
-    │       ├── validators.js
-    │       ├── formatters.js
-    │       └── helpers.js
-    │
-    ├── package.json
-    ├── package-lock.json
-    └── .env.example
+└── backend/                          # El cerebro del sistema (Backend)
+    └── api-django/                   #   - API central construida con Django
 ```
 
-## 🧩 Arquitectura Modular
+### `apps/` - Las Aplicaciones Frontend
 
-### Backend - Estructura de Módulos
+Esta carpeta contiene todas las aplicaciones de cara al usuario. Cada subdirectorio es un proyecto de React completamente independiente, con su propio propósito y responsabilidades.
 
-Cada módulo en `/backend/apps/` representa una funcionalidad específica del negocio:
+- **`website-corporate`**: La página web institucional de la empresa.
+- **`website-erp-marketing`**: La página de marketing para atraer clientes al producto ERP.
+- **`app-erp`**: El software ERP en sí, la aplicación principal para clientes.
 
-**Estructura estándar de cada módulo:**
+Esta separación permite desarrollar y desplegar cada frontend de forma independiente. Para una explicación detallada de la responsabilidad de cada aplicación, consulta el documento de [Lógica de Frontend](./LOGICAFRONTEND.md).
 
-```python
-# models.py - Modelos de datos
-from django.db import models
+### `backend/` - La API Central
 
-class Employee(models.Model):
-    name = models.CharField(max_length=100)
-    email = models.EmailField()
-    created_at = models.DateTimeField(auto_now_add=True)
+Esta carpeta contiene el cerebro de todo el sistema: una única y robusta API construida con Django y Django REST Framework.
 
-# views.py - Lógica de endpoints
-from rest_framework import viewsets
-from .models import Employee
-from .serializers import EmployeeSerializer
+- **`api-django`**: Es el único punto de verdad y la única fuente de datos para todas las aplicaciones frontend. Centraliza toda la lógica de negocio, la gestión de datos y la seguridad.
 
-class EmployeeViewSet(viewsets.ModelViewSet):
-    queryset = Employee.objects.all()
-    serializer_class = EmployeeSerializer
+## 🎯 ¿Por qué esta arquitectura?
 
-# serializers.py - Serialización de datos
-from rest_framework import serializers
-from .models import Employee
+La elección de un monorepo con esta estructura se basa en varios principios clave:
 
-class EmployeeSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Employee
-        fields = '__all__'
+- **Separación de Preocupaciones**: El frontend y el backend están completamente desacoplados. Los frontends se ocupan exclusivamente de la experiencia del usuario, mientras que el backend maneja la lógica de negocio.
+- **Escalabilidad**: Es fácil añadir nuevas aplicaciones a la carpeta `apps/` (por ejemplo, una app móvil o una herramienta interna) sin afectar los proyectos existentes. La API del backend puede escalar de forma independiente.
+- **Mantenibilidad**: Tener todo el código en un solo lugar facilita la gestión de dependencias, la aplicación de estándares de calidad y la refactorización a gran escala.
+- **Desarrollo Colaborativo**: Los equipos pueden trabajar en diferentes aplicaciones simultáneamente, compartiendo tipos y configuraciones desde la raíz del proyecto para mantener la consistencia.
 
-# urls.py - Rutas del módulo
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from . import views
+Este documento sirve como una visión general. Para obtener detalles más profundos sobre cada parte del sistema, por favor consulta la documentación específica:
 
-router = DefaultRouter()
-router.register(r'employees', views.EmployeeViewSet)
-
-urlpatterns = [
-    path('api/', include(router.urls)),
-]
-```
-
-### Frontend - Organización Funcional
-
-**Arquitectura basada en funcionalidades:**
-
-```javascript
-// hooks/useEmployees.ts - Lógica de negocio
-import { useState, useEffect } from 'react';
-import { employeeService } from '../services/employeeService';
-
-export const useEmployees = () => {
-  const [employees, setEmployees] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  const fetchEmployees = async () => {
-    setLoading(true);
-    try {
-      const data = await employeeService.getAll();
-      setEmployees(data);
-    } catch (error) {
-      console.error('Error fetching employees:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  return { employees, loading, fetchEmployees };
-};
-
-// components/Employees.tsx - Componente de presentación
-import React from 'react';
-import { useEmployees } from '../hooks/useEmployees';
-
-const Employees: React.FC = () => {
-  const { employees, loading, fetchEmployees } = useEmployees();
-
-  useEffect(() => {
-    fetchEmployees();
-  }, []);
-
-  if (loading) return <div>Cargando...</div>;
-
-  return (
-    <div>
-      <h2>Lista de Empleados</h2>
-      {employees.map(employee => (
-        <div key={employee.id}>
-          {employee.name} - {employee.email}
-        </div>
-      ))}
-    </div>
-  );
-};
-
-export default Employees;
-
-// services/employeeService.js - Comunicación con API
-import { apiClient } from '../api/apiClient';
-
-export const employeeService = {
-  getAll: () => apiClient.get('/api/employees/'),
-  getById: (id) => apiClient.get(`/api/employees/${id}/`),
-  create: (data) => apiClient.post('/api/employees/', data),
-  update: (id, data) => apiClient.put(`/api/employees/${id}/`, data),
-  delete: (id) => apiClient.delete(`/api/employees/${id}/`)
-};
-```
-
-## 🔄 Flujo de Comunicación
-
-```
-Componente → Custom Hook → Service → API Client → Django View → Serializer → Model
-    ↑                                                                            ↓
-Interface ← State Management ← Response ← JSON ← DRF Response ← Business Logic ← Database
-```
-
-## 🚀 Configuración y Ejecución
-
-### Backend Setup
-
-```bash
-# Crear entorno virtual
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-
-# Instalar dependencias
-cd backend
-pip install -r requirements.txt
-
-# Configurar base de datos
-python manage.py makemigrations
-python manage.py migrate
-
-# Ejecutar servidor
-python manage.py runserver
-```
-
-### Frontend Setup
-
-```bash
-cd frontend
-npm install
-npm start
-```
-
-### Variables de Entorno
-
-**Backend (.env):**
-```
-DEBUG=True
-SECRET_KEY=your-secret-key
-DATABASE_URL=postgresql://user:pass@localhost/db
-CORS_ALLOWED_ORIGINS=http://localhost:3000
-```
-
-**Frontend (.env):**
-```
-REACT_APP_API_URL=http://localhost:8000/api
-REACT_APP_ENV=development
-```
-
-## 📦 Tecnologías Utilizadas
-
-### Backend
-- **Django 4.2+**: Framework web principal
-- **Django REST Framework**: API REST
-- **PostgreSQL**: Base de datos
-- **Python 3.9+**: Lenguaje de programación
-
-### Frontend
-- **React 18+**: Biblioteca de interfaz de usuario
-- **TypeScript**: Tipado estático (componentes .tsx)
-- **JavaScript ES6+**: Para hooks y servicios
-- **Axios**: Cliente HTTP para API
-- **React Hooks**: Gestión de estado local
-
-## 🎯 Principios de la Arquitectura
-
-### Separación de Responsabilidades
-- **Components**: Solo presentación y UI
-- **Hooks**: Lógica de negocio y estado
-- **Services**: Comunicación con API
-- **Utils**: Funciones auxiliares reutilizables
-
-### Modularidad
-- Cada módulo del backend es independiente
-- Frontend organizado por funcionalidad
-- Componentes reutilizables en `/components`
-- Estado global en `/states`
-
-### Escalabilidad
-- Fácil agregar nuevos módulos
-- Código reutilizable y mantenible
-- Separación clara entre frontend y backend
-- API RESTful estándar
-
-## 🧪 Testing
-
-### Backend
-```bash
-# Tests por módulo
-python manage.py test apps.modulo1
-python manage.py test apps.modulo2
-
-# Tests completos
-python manage.py test
-```
-
-### Frontend
-```bash
-# Tests unitarios
-npm test
-
-# Tests específicos
-npm test -- --testPathPattern=components
-```
-
-## 📝 Convenciones
-
-### Nomenclatura
-- **Backend**: snake_case (archivos y variables Python)
-- **Frontend**: camelCase (variables JS) y PascalCase (componentes React)
-- **URLs**: kebab-case
-- **Archivos**: descriptivos y específicos
-
-### Estructura de Commits
-```
-feat(modulo1): agregar nueva funcionalidad
-fix(frontend): corregir error en componente
-docs(readme): actualizar documentación
-```
-
-## 🔐 Seguridad
-
-- Configuración CORS adecuada
-- Validación de datos en Django serializers
-- Manejo seguro de tokens de autenticación
-- Variables sensibles en archivos .env
-
----
-
-**Ventajas de esta arquitectura:**
-- ✅ Código organizado y mantenible
-- ✅ Fácil escalabilidad horizontal
-- ✅ Desarrollo en equipo eficiente
-- ✅ Reutilización de componentes
-- ✅ Testing independiente por módulos
-- ✅ Preparado para migración a microservicios
+- **Lógica de Frontend**: [LOGICAFRONTEND.md](./LOGICAFRONTEND.md)
+- **Gestión de Paquetes**: [PNPM.md](./PNPM.md)
+- **Calidad de Código**: [QUALITY.md](./QUALITY.md)
