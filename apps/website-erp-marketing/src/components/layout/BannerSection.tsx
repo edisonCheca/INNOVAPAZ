@@ -8,7 +8,10 @@ import './BannerSection.css';
 
 const BannerSection: React.FC = () => {
   const handleRevisarServicios = () => {
-    console.log('Revisar Nuestros Servicios clicked');
+    const section = document.getElementById('platform-features');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const handleVerDemo = () => {
