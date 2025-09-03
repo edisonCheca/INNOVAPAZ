@@ -1,18 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 
-// Debug function
-const debugConfig = () => {
-  if (import.meta.env.DEV) {
-    console.log('🔥 Firebase Environment Variables:');
-    console.log('API Key:', import.meta.env.VITE_FIREBASE_API_KEY ? 'Present' : 'Missing');
-    console.log('Auth Domain:', import.meta.env.VITE_FIREBASE_AUTH_DOMAIN ? 'Present' : 'Missing');
-    console.log('Project ID:', import.meta.env.VITE_FIREBASE_PROJECT_ID ? 'Present' : 'Missing');
-  }
-};
-
-debugConfig();
-
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY || 'AIzaSyCZdZmjV6lOALdD4ajQb2rmPS8kYpw2T4U',
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || 'innovapaz-auth.firebaseapp.com',
@@ -23,16 +11,23 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID || '1:922230883439:web:f46c1e884ecd3a9883b99a',
 };
 
-// Validate required fields
-const requiredFields = ['apiKey', 'authDomain', 'projectId', 'appId'];
-const missingFields = requiredFields.filter(
-  (field) => !firebaseConfig[field as keyof typeof firebaseConfig]
-);
-
-if (missingFields.length > 0) {
-  console.error('🚨 Firebase config missing required fields:', missingFields);
-  throw new Error(`Firebase configuration incomplete. Missing: ${missingFields.join(', ')}`);
+// Log config for debugging (only in development)
+if (import.meta.env.DEV) {
+  console.log('🔥 Firebase Config:', firebaseConfig);
 }
 
-const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
+let app;
+let auth;
+
+try {
+  app = initializeApp(firebaseConfig);
+  auth = getAuth(app);
+  console.log('✅ Firebase initialized successfully');
+} catch (error) {
+  console.error('❌ Firebase initialization failed:', error);
+  throw new Error(
+    'Failed to initialize Firebase: ' + (error instanceof Error ? error.message : String(error))
+  );
+}
+
+export { auth };
