@@ -5,7 +5,24 @@
   padding: var(--spacing-6xl) 0 var(--spacing-5xl);
   text-align: center;
   position: relative;
+  min-height: 60vh;
   overflow: hidden;
+}
+
+/* Hero Image Styles */
+.heroImageContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .heroBackground {
@@ -18,20 +35,25 @@
     radial-gradient(circle at 40% 80%, var(--color-primary) 0%, transparent 50%),
     radial-gradient(circle at 70% 20%, var(--color-accent) 0%, transparent 50%);
   opacity: 0.3;
+  z-index: 1;
 }
 
 .heroContent {
   position: relative;
-  z-index: 2;
+  min-height: 60vh;
+  z-index: 3;
 }
 
 .heroTitle {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   font-size: clamp(var(--font-size-3xl), 4vw, var(--font-size-5xl));
   font-weight: var(--font-weight-extrabold);
   margin-bottom: var(--spacing-lg);
 }
 
 .heroSubtitle {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   font-size: var(--font-size-xl);
   opacity: 0.9;
   max-width: 600px;
@@ -357,16 +379,42 @@
 
 /* CTA Section */
 .ctaSection {
+  position: relative;
   background: var(--gradient-primary);
   color: white;
   padding: var(--spacing-6xl) 0;
   text-align: center;
+  overflow: hidden;
+}
+
+.ctaBackgroundContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.ctaBackgroundImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ctaSection .container {
+  position: relative;
+  z-index: 10;
 }
 
 .ctaTitle {
   font-size: clamp(var(--font-size-2xl), 4vw, var(--font-size-4xl));
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--spacing-lg);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+  color: white !important;
+  position: relative;
+  z-index: 15;
 }
 
 .ctaDescription {
@@ -376,6 +424,10 @@
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+  color: rgba(255, 255, 255, 0.95) !important;
+  position: relative;
+  z-index: 15;
 }
 
 .ctaActions {
@@ -383,6 +435,8 @@
   gap: var(--spacing-md);
   justify-content: center;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 15;
 }
 
 /* Emergency Contact */
@@ -489,4 +543,26 @@
 
 .socialLink:active {
   transform: translateY(0);
+}
+
+/* Hero Image Styles */
+.heroImageContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Make hero section relative */
+.hero {
+  position: relative;
+  min-height: 60vh;
 }

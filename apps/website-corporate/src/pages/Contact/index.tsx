@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { OptimizedImage } from '../../components/UI/OptimizedImage';
 import { motion } from 'framer-motion';
 import {
   MapPin,
@@ -93,6 +94,16 @@ export const Contact: React.FC = () => {
       {/* Hero Section */}
       <section className={styles.hero}>
         <div className={styles.heroBackground} />
+        <div className={styles.heroImageContainer}>
+          <OptimizedImage
+            src='/images/hero/contact-hero.jpg'
+            alt='Profesional revisando comunicaciones y contacto'
+            className={styles.heroImage}
+            priority={true}
+            overlay={true}
+            overlayOpacity={0.3}
+          />
+        </div>
         <div className='container'>
           <div className={styles.heroContent}>
             <motion.h1 className={styles.heroTitle} {...fadeInUp}>
@@ -450,6 +461,15 @@ export const Contact: React.FC = () => {
 
       {/* CTA Section */}
       <section className={styles.ctaSection}>
+        <div className={styles.ctaBackgroundContainer}>
+          <OptimizedImage
+            src='/images/office-life/workplace-discussion.jpg'
+            alt='Equipo discutiendo proyectos en oficina moderna'
+            className={styles.ctaBackgroundImage}
+            overlay={true}
+            overlayOpacity={0.7}
+          />
+        </div>
         <div className='container'>
           <motion.div
             initial={{ opacity: 0, y: 50 }}
