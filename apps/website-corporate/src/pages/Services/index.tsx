@@ -21,6 +21,7 @@ import {
 } from 'lucide-react';
 import { Button } from '../../components/UI/Button';
 import { SEO } from '../../components/UI/SEO';
+import { OptimizedImage } from '../../components/UI/OptimizedImage';
 import type { Service } from '../../types';
 import styles from './Services.module.css';
 
@@ -222,6 +223,16 @@ export const Services: React.FC = () => {
       {/* Hero Section */}
       <section className={styles.hero}>
         <div className={styles.heroBackground} />
+        <div className={styles.heroImageContainer}>
+          <OptimizedImage
+            src='/images/hero/services-hero.jpg'
+            alt='Equipo de desarrollo trabajando en soluciones tecnológicas'
+            className={styles.heroImage}
+            priority={true}
+            overlay={true}
+            overlayOpacity={0.5}
+          />
+        </div>
         <div className='container'>
           <div className={styles.heroContent}>
             <motion.h1 className={styles.heroTitle} {...fadeInUp}>
@@ -298,12 +309,23 @@ export const Services: React.FC = () => {
               </motion.div>
             ))}
           </motion.div>
+
+          {/* Technology Showcase */}
         </div>
       </section>
 
       {/* ERP InnovaPaz Highlight */}
       <section id='erp' className={styles.erpHighlight}>
         <div className={styles.erpBackground} />
+        <div className={styles.erpImageContainer}>
+          <OptimizedImage
+            src='/images/technology/erp-dashboard.jpg'
+            alt='Dashboard del sistema ERP InnovaPaz'
+            className={styles.erpBackgroundImage}
+            overlay={true}
+            overlayOpacity={0.7}
+          />
+        </div>
         <div className='container'>
           <div className={styles.erpContent}>
             <div className={styles.erpText}>
@@ -462,32 +484,44 @@ export const Services: React.FC = () => {
             </p>
           </div>
 
-          <motion.div
-            className={styles.benefitsGrid}
-            variants={staggerContainer}
-            initial='initial'
-            whileInView='animate'
-            viewport={{ once: true }}
-          >
-            {benefits.map((benefit, index) => (
-              <motion.div key={index} className={styles.benefitCard} variants={fadeInUp}>
-                <div className={styles.benefitIcon}>{benefit.icon}</div>
-                <h3 className={styles.benefitTitle}>{benefit.title}</h3>
-                <p className={styles.benefitDescription}>{benefit.description}</p>
-              </motion.div>
-            ))}
-          </motion.div>
+          <div className={styles.benefitsSection}>
+            <motion.div
+              className={styles.benefitsGrid}
+              variants={staggerContainer}
+              initial='initial'
+              whileInView='animate'
+              viewport={{ once: true }}
+            >
+              {benefits.map((benefit, index) => (
+                <motion.div key={index} className={styles.benefitCard} variants={fadeInUp}>
+                  <div className={styles.benefitIcon}>{benefit.icon}</div>
+                  <h3 className={styles.benefitTitle}>{benefit.title}</h3>
+                  <p className={styles.benefitDescription}>{benefit.description}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className={styles.ctaSection}>
+        <div className={styles.ctaImageContainer}>
+          <OptimizedImage
+            src='/images/technology/developer-working.jpg'
+            alt='Desarrollador trabajando en soluciones innovadoras'
+            className={styles.ctaBackgroundImage}
+            overlay={true}
+            overlayOpacity={0.6}
+          />
+        </div>
         <div className='container'>
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
+            style={{ position: 'relative', zIndex: 2 }}
           >
             <h2 className={styles.ctaTitle}>¿Listo para Digitalizar tu Empresa?</h2>
             <p className={styles.ctaDescription}>

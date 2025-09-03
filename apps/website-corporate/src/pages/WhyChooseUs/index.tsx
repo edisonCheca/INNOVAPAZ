@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { Button } from '../../components/UI/Button';
 import { SEO } from '../../components/UI/SEO';
+import { OptimizedImage } from '../../components/UI/OptimizedImage';
 import type { SuccessCase, Certification } from '../../types';
 import styles from './WhyChooseUs.module.css';
 
@@ -289,6 +290,16 @@ export const WhyChooseUs: React.FC = () => {
 
       {/* Hero Section */}
       <section className={styles.hero}>
+        <div className={styles.heroImageContainer}>
+          <OptimizedImage
+            src='/images/hero/why-choose-us.jpg'
+            alt='Equipo exitoso celebrando logros tecnológicos'
+            className={styles.heroImage}
+            priority={true}
+            overlay={true}
+            overlayOpacity={0.4}
+          />
+        </div>
         <div className={styles.heroBackground} />
         <div className='container'>
           <div className={styles.heroContent}>
@@ -323,7 +334,7 @@ export const WhyChooseUs: React.FC = () => {
             variants={staggerContainer}
             initial='initial'
             whileInView='animate'
-            viewport={{ once: true }}
+            viewport={{ once: false, margin: '-100px' }}
           >
             {experienceData.map((item, index) => (
               <motion.div key={index} className={styles.experienceCard} variants={fadeInUp}>
@@ -338,7 +349,16 @@ export const WhyChooseUs: React.FC = () => {
       </section>
 
       {/* Methodology Section */}
-      <section id='methodology' className={`${styles.section} ${styles.sectionAlternate}`}>
+      <section id='methodology' className={`${styles.section} ${styles.methodologySection}`}>
+        <div className={styles.methodologyImageBackground}>
+          <OptimizedImage
+            src='/images/process/agile-development.jpg'
+            alt='Metodología de desarrollo ágil'
+            className={styles.methodologyBackgroundImage}
+            overlay={true}
+            overlayOpacity={0.7}
+          />
+        </div>
         <div className='container'>
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Nuestra Metodología</h2>
@@ -354,7 +374,7 @@ export const WhyChooseUs: React.FC = () => {
               variants={staggerContainer}
               initial='initial'
               whileInView='animate'
-              viewport={{ once: true }}
+              viewport={{ once: false, margin: '-100px' }}
             >
               {methodologySteps.map((step, index) => (
                 <motion.div key={index} className={styles.methodologyStep} variants={fadeInUp}>
@@ -384,7 +404,7 @@ export const WhyChooseUs: React.FC = () => {
             variants={staggerContainer}
             initial='initial'
             whileInView='animate'
-            viewport={{ once: true }}
+            viewport={{ once: false, margin: '-100px' }}
           >
             {technologiesData.map((category, index) => (
               <motion.div key={index} className={styles.techCategory} variants={fadeInUp}>
@@ -407,6 +427,15 @@ export const WhyChooseUs: React.FC = () => {
 
       {/* Success Cases Section */}
       <section id='success-cases' className={`${styles.section} ${styles.sectionAlternate}`}>
+        <div className={styles.successCasesImageBackground}>
+          <OptimizedImage
+            src='/images/office-life/startup-vibes.jpg'
+            alt='Casos de éxito en ambiente startup'
+            className={styles.successCasesBackgroundImage}
+            overlay={true}
+            overlayOpacity={0.7}
+          />
+        </div>
         <div className='container'>
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Casos de Éxito</h2>
@@ -421,7 +450,7 @@ export const WhyChooseUs: React.FC = () => {
             variants={staggerContainer}
             initial='initial'
             whileInView='animate'
-            viewport={{ once: true }}
+            viewport={{ once: false, margin: '-100px' }}
           >
             {successCases.map((case_) => (
               <motion.div key={case_.id} className={styles.caseCard} variants={fadeInUp}>
@@ -474,7 +503,7 @@ export const WhyChooseUs: React.FC = () => {
             variants={staggerContainer}
             initial='initial'
             whileInView='animate'
-            viewport={{ once: true }}
+            viewport={{ once: false, margin: '-100px' }}
           >
             {certifications.map((cert) => (
               <motion.div key={cert.id} className={styles.certificationCard} variants={fadeInUp}>
@@ -492,12 +521,21 @@ export const WhyChooseUs: React.FC = () => {
 
       {/* CTA Section */}
       <section className={styles.ctaSection}>
+        <div className={styles.ctaImageBackground}>
+          <OptimizedImage
+            src='/images/backgrounds/office-building.jpg'
+            alt='Edificio de oficinas moderno'
+            className={styles.ctaBackgroundImage}
+            overlay={true}
+            overlayOpacity={0.6}
+          />
+        </div>
         <div className='container'>
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, margin: '-100px' }}
           >
             <h2 className={styles.ctaTitle}>¿Listo para Transformar tu Organización?</h2>
             <p className={styles.ctaDescription}>
