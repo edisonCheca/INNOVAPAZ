@@ -17,16 +17,23 @@ function TrustSection() {
             descripcionMaxWidth='600px'
           />
           <div className='trust-section__button'>
-            <Button
-              title='Conoce más sobre nosotros'
-              size='large'
-              containerWidth='fit-content'
-              backgroundColor='var(--white)'
-              borderColor='var(--acc-600)'
-              textColor='var(--acc-600)'
-              hasBackground={false}
-              className='trust-section__cta-btn'
-            />
+            <a
+              href='https://illustrious-lolly-59ea54.netlify.app/'
+              target='_blank'
+              rel='noopener noreferrer'
+              style={{ textDecoration: 'none' }}
+            >
+              <Button
+                title='Conoce más sobre nosotros'
+                size='large'
+                containerWidth='fit-content'
+                backgroundColor='var(--white)'
+                borderColor='var(--acc-600)'
+                textColor='var(--acc-600)'
+                hasBackground={false}
+                className='trust-section__cta-btn'
+              />
+            </a>
           </div>
         </div>
         <div className='trust-section__right'>
