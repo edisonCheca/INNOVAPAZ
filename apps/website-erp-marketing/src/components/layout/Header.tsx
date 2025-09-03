@@ -21,22 +21,22 @@ const Header: React.FC = () => {
     setIsMobileMenuOpen(false);
     switch (section) {
       case 'home':
-        navigate('/innovapaz');
+        navigate('/');
         break;
       case 'sobre-nosotros':
-        navigate('/innovapaz/about');
+        navigate('/about');
         break;
       case 'politicas':
         navigate('/privacy');
         break;
       case 'contacto':
-        navigate('/innovapaz/contacto');
+        navigate('/contacto');
         break;
       case 'login':
-        window.open('/innovapaz/login', '_blank');
+        window.open('/login', '_blank');
         break;
       case 'register':
-        window.open('/innovapaz/register', '_blank');
+        window.open('/register', '_blank');
         break;
       default:
         break;
@@ -62,10 +62,9 @@ const Header: React.FC = () => {
   const handleLogout = () => {
     logout();
     setIsUserMenuOpen(false);
-    navigate('/innovapaz');
+    navigate('/');
   };
 
-  // Cerrar el menú al hacer clic fuera de él
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (userMenuRef.current && !userMenuRef.current.contains(event.target as Node)) {

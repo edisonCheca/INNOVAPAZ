@@ -372,10 +372,11 @@
   .contact-bg {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-auto-rows: min-content;
-    gap: 3rem 4rem;
+    grid-template-rows: 95vh auto auto;
+    gap: 2rem 4rem;
     margin: 0 auto;
-    padding: 6rem 11rem;
+    padding: 4rem 14rem;
+    min-height: 100vh;
   }
 
   .contact-header-row {
@@ -388,12 +389,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0;
   }
 
   .contact-img {
     margin: 0;
-    width: 400px;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
   }
 
   .contact-header-info {
@@ -403,6 +405,7 @@
     flex-direction: column;
     justify-content: center;
     text-align: left;
+    padding: 2rem 0;
   }
 
   .contact-info-box {
@@ -432,12 +435,15 @@
   }
 
   .contact-title {
-    font-size: 48px;
+    font-size: 56px;
     margin: 0;
+    line-height: 1.2;
   }
 
   .contact-subtitle {
-    margin: 1rem 0 0 0;
+    margin: 1.5rem 0 0 0;
+    font-size: 22px;
+    line-height: 1.4;
   }
 
   .contact-form {

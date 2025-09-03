@@ -5,6 +5,7 @@ import FrequentQuestions from '../components/layout/FrequentQuestions';
 import BannerSection from '../components/layout/BannerSection';
 import PricingSection from '../components/layout/PricingSection';
 import ContactSection from '../components/layout/ContactSection';
+import TrustSection from '../components/layout/TrustSection';
 
 const HomePage: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const HomePage: React.FC = () => {
       <PricingSection />
       <FrequentQuestions />
       <CommentSection />
+      <TrustSection />
       <ContactSection />
     </>
   );

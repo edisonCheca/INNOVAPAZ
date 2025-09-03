@@ -7,6 +7,13 @@
   box-sizing: border-box;
 }
 
+.custom-input-container,
+.custom-input-container label,
+.custom-input-container input,
+.custom-input-container textarea {
+  font-family: var(--font);
+}
+
 .custom-input-container label {
   font-size: 13px;
   color: var(--pri-100);

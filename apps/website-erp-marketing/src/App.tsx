@@ -12,40 +12,29 @@ import PrivacyPage from './pages/PrivacyPage';
 import DocumentsPage from './pages/DocumentsPage';
 import { UserProvider } from './context/UserContext.tsx';
 import ScrollToTop from './components/common/ScrollToTop';
-import LandingPage from './pages/LandingPage.tsx';
 
 const AppContent: React.FC = () => {
   const location = useLocation();
-  const isInstitutionalPage = location.pathname === '/';
   const hideSystemHeader =
-    location.pathname === '/login' || location.pathname === '/register' || isInstitutionalPage;
-  const hideSystemFooter = isInstitutionalPage;
+    location.pathname.endsWith('/login') || location.pathname.endsWith('/register');
+
   return (
     <>
       <ScrollToTop />
-
-      {/* Header del sistema - Solo para rutas del sistema */}
       {!hideSystemHeader && <Header />}
-
-      <div className={isInstitutionalPage ? 'institutional-app' : 'app'}>
+      <div className='app'>
         <Routes>
-          <Route path='/' element={<LandingPage />} />
-          <Route path='/innovapaz' element={<HomePage />} />
-          <Route path='/innovapaz/login' element={<LoginPage />} />
-          <Route path='/innovapaz/register' element={<RegisterPage />} />
-          <Route path='/innovapaz/about' element={<AboutPage />} />
-          <Route path='/innovapaz/contacto' element={<ContactPage />} />
-          <Route path='/innovapaz/documentacion' element={<DocumentsPage />} />
-
-          <Route path='/terms' element={<TermsPage />} />
-          <Route path='/privacy' element={<PrivacyPage />} />
-
+          <Route path='/' element={<HomePage />} />
           <Route path='/login' element={<LoginPage />} />
           <Route path='/register' element={<RegisterPage />} />
+          <Route path='/about' element={<AboutPage />} />
+          <Route path='/contacto' element={<ContactPage />} />
+          <Route path='/documentacion' element={<DocumentsPage />} />
+          <Route path='/terms' element={<TermsPage />} />
+          <Route path='/privacy' element={<PrivacyPage />} />
         </Routes>
       </div>
-
-      {!hideSystemFooter && <Footer />}
+      <Footer />
     </>
   );
 };

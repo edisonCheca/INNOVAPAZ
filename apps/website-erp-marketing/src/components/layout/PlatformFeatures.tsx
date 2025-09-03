@@ -8,7 +8,7 @@ import reportes from '../../assets/images/Gestionreportes.svg';
 import HeroTitle from '../common/HeroTitle';
 
 const PlatformFeatures: React.FC = () => (
-  <section className='platform-features'>
+  <section className='platform-features' id='platform-features'>
     <div className='platform-features__container'>
       <div className='platform-features__title'>
         <HeroTitle
