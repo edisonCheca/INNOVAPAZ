@@ -27,30 +27,40 @@ const teamMembers: TeamMember[] = [
     name: 'Edison Clever Checa Tito',
     position: 'Miembro del Equipo',
     description: 'SAGA: A28145-X - Miembro del equipo directivo de CorpsCode.',
+    image: '../../../public/images/team-photos/edison.jpg', // Imagen específica para Edison
+    imageAlt: 'Edison Clever Checa Tito - Miembro del Equipo CorpsCode',
   },
   {
     id: '2',
     name: 'Adalid Jesús Condori Velasco',
     position: 'Miembro del Equipo',
     description: 'SAGA: A27351-1 - Miembro del equipo directivo de CorpsCode.',
+    image: '../../../public/images/team-photos/adalid.jpg', // Imagen específica para Adalid
+    imageAlt: 'Adalid Jesús Condori Velasco - Miembro del Equipo CorpsCode',
   },
   {
     id: '3',
     name: 'Jesús Ario Soto Mercado',
     position: 'Miembro del Equipo',
     description: 'SAGA: A26805-4 - Miembro del equipo directivo de CorpsCode.',
+    image: '../../../public/images/team-photos/jesus.jpg', // Imagen específica para Jesús
+    imageAlt: 'Jesús Ario Soto Mercado - Miembro del Equipo CorpsCode',
   },
   {
     id: '4',
     name: 'Izai Alejandro Zalles Merino',
     position: 'Miembro del Equipo',
     description: 'SAGA: A27006-7 - Miembro del equipo directivo de CorpsCode.',
+    image: '../../../public/images/team-photos/izai.jpg', // Imagen específica para Izai
+    imageAlt: 'Izai Alejandro Zalles Merino - Miembro del Equipo CorpsCode',
   },
   {
     id: '5',
     name: 'José Ángel Mamani Pinto',
     position: 'Miembro del Equipo',
     description: 'SAGA: A28095-X - Miembro del equipo directivo de CorpsCode.',
+    image: '../../../public/images/team-photos/angel.jpg', // Imagen específica para José
+    imageAlt: 'José Ángel Mamani Pinto - Miembro del Equipo CorpsCode',
   },
 ];
 
@@ -309,8 +319,8 @@ export const Home: React.FC = () => {
               >
                 <div className={styles.teamImage}>
                   <OptimizedImage
-                    src='/images/technology/innovation.jpg'
-                    alt={`${member.name} - ${member.position}`}
+                    src={member.image}
+                    alt={member.imageAlt}
                     className={styles.teamPhoto}
                     width={120}
                     height={120}

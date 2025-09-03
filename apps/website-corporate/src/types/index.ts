@@ -48,7 +48,8 @@ export interface TeamMember {
   name: string;
   position: string;
   description: string;
-  image?: string;
+  image: string;
+  imageAlt: string; // Texto alternativo para la imagen
 }
 
 // Tipos para certificaciones
