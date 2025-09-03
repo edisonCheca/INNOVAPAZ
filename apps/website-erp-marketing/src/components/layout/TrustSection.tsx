@@ -31,13 +31,11 @@ function TrustSection() {
         </div>
         <div className='trust-section__right'>
           <div className='trust-section__card'>
-            <div className='trust-section__circle'>
-              <span className='trust-section__circle-text'>IP</span>
-            </div>
-            <h3 className='trust-section__card-title'>Equipo INNOVAPAZ</h3>
-            <p className='trust-section__card-desc'>
-              Desarrolladores expertos comprometidos con tu éxito
-            </p>
+            <img
+              src={equipodesarrollo}
+              alt='Equipo de desarrollo de INNOVAPAZ'
+              className='trust-section__image'
+            />
           </div>
         </div>
       </div>

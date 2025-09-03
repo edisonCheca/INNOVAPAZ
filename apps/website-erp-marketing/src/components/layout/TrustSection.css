@@ -55,7 +55,6 @@
 .trust-section__card {
   background: linear-gradient(135deg, var(--acc-100) 0%, var(--acc-50) 100%);
   border-radius: 24px;
-  padding: 15px 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -94,6 +93,15 @@
   margin: 0;
 }
 
+.trust-section__image {
+  width: 540px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 2px 16px rgba(252, 119, 83, 0.1);
+}
+
 /* Desktop: 1120px - 1440px */
 @media (min-width: 1120px) and (max-width: 1440px) {
   .trust-section__container {
@@ -102,7 +110,6 @@
   }
   .trust-section__card {
     min-width: 300px;
-    padding: 40px 24px 24px 24px;
   }
   .trust-section__circle {
     width: 90px;
@@ -113,6 +120,10 @@
   }
   .trust-section__card-desc {
     font-size: 1rem;
+  }
+  .trust-section__image {
+    width: 380px;
+    border-radius: 16px;
   }
 }
 
@@ -137,7 +148,6 @@
   }
   .trust-section__card {
     min-width: 260px;
-    padding: 32px 16px 16px 16px;
   }
   .trust-section__circle {
     width: 70px;
@@ -149,6 +159,10 @@
   }
   .trust-section__card-desc {
     font-size: 0.95rem;
+  }
+  .trust-section__image {
+    width: 420px;
+    border-radius: 14px;
   }
 }
 
@@ -173,7 +187,6 @@
   }
   .trust-section__card {
     min-width: 180px;
-    padding: 16px 8px 8px 8px;
     border-radius: 16px;
   }
   .trust-section__circle {
@@ -190,6 +203,9 @@
   }
   .trust-section__card-desc {
     font-size: 0.8rem;
+  }
+  .trust-section__image {
+    width: 320px;
   }
 }
 
