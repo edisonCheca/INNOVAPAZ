@@ -84,13 +84,13 @@
 .sectionTitle {
   font-size: clamp(var(--font-size-2xl), 4vw, var(--font-size-4xl));
   font-weight: var(--font-weight-bold);
-  color: var(--color-secondary);
+  color: var(--color-white);
   margin-bottom: var(--spacing-md);
 }
 
 .sectionSubtitle {
   font-size: var(--font-size-lg);
-  color: var(--color-neutral-medium);
+  color: var(--color-white);
   line-height: 1.6;
 }
 
