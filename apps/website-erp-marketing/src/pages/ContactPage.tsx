@@ -49,9 +49,9 @@ const ContactPage: React.FC = () => {
         </div>
         <div className='contact-header-info'>
           <HeroTitle
-            titulo='Contactanos'
-            descripcion='¡Estamos aquí para ayudarte! Contáctanos si tienes alguna pregunta o inquietud y te responderemos lo antes posible.'
-            gradientText='tanos'
+            titulo='Contáctanos'
+            descripcion='Tu voz es importante para nosotros. Si tienes dudas, ideas o necesitas asesoría, nuestro equipo está listo para ayudarte en cada paso. Escríbenos y haremos todo lo posible por darte una respuesta rápida y clara.'
+            gradientText='táctanos'
           />
         </div>
       </div>
