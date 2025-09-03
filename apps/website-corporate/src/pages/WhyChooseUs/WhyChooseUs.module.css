@@ -1,0 +1,728 @@
+/* Hero Section */
+.hero {
+  background: var(--gradient-secondary);
+  color: var(--color-white);
+  padding: var(--spacing-6xl) 0 var(--spacing-5xl);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 60vh;
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 70% 20%, var(--color-primary) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, var(--color-accent) 0%, transparent 50%);
+  opacity: 0.3;
+  z-index: 1;
+}
+
+/* Hero Image Styles */
+.heroImageContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 3;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: clamp(var(--font-size-3xl), 4vw, var(--font-size-5xl));
+  font-weight: var(--font-weight-extrabold);
+  margin-bottom: var(--spacing-lg);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.heroSubtitle {
+  font-size: var(--font-size-xl);
+  opacity: 0.95;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Section Styles */
+.section {
+  padding: var(--spacing-6xl) 0;
+  position: relative;
+}
+
+.sectionAlternate {
+  background: var(--color-neutral-light);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--spacing-5xl);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.sectionTitle {
+  font-size: clamp(var(--font-size-2xl), 4vw, var(--font-size-4xl));
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  margin-bottom: var(--spacing-md);
+}
+
+.sectionSubtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-white);
+  line-height: 1.6;
+}
+
+/* Experience Section */
+#experience {
+  position: relative;
+  overflow: hidden;
+}
+
+.experienceImageContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.experienceBackgroundImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.experienceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-2xl);
+  position: relative;
+  z-index: 2;
+}
+
+.experienceCard {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: var(--spacing-2xl);
+  border-radius: var(--border-radius-2xl);
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+  transition: var(--transition-normal);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.experienceCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.experienceIcon {
+  width: 80px;
+  height: 80px;
+  background: var(--gradient-primary);
+  border-radius: var(--border-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--spacing-lg);
+  color: white;
+}
+
+.experienceNumber {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-primary);
+  display: block;
+  margin-bottom: var(--spacing-sm);
+}
+
+.experienceTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+.experienceDescription {
+  color: var(--color-neutral-medium);
+  line-height: 1.6;
+}
+
+/* Methodology Section */
+.methodologyContent {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Methodology Image - Same style as Technology Showcase in Services */
+.methodologyImageContainer {
+  display: flex;
+  justify-content: center;
+  margin: var(--spacing-4xl) auto;
+  padding: var(--spacing-2xl);
+  max-width: 800px;
+}
+
+.methodologyImage {
+  border-radius: var(--border-radius-2xl);
+  box-shadow: var(--shadow-xl);
+  transition: var(--transition-normal);
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+.methodologyImage:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-2xl);
+}
+
+.methodologySteps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-3xl);
+  margin-top: var(--spacing-4xl);
+}
+
+@media (min-width: 768px) {
+  .methodologySteps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .methodologySteps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.methodologyStep {
+  background: white;
+  padding: var(--spacing-2xl);
+  border-radius: var(--border-radius-2xl);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  transition: var(--transition-normal);
+}
+
+.methodologyStep:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.stepNumber {
+  position: absolute;
+  top: -15px;
+  left: var(--spacing-xl);
+  width: 40px;
+  height: 40px;
+  background: var(--gradient-primary);
+  border-radius: var(--border-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-bold);
+  color: white;
+  font-size: var(--font-size-lg);
+}
+
+.stepTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-secondary);
+  margin: var(--spacing-lg) 0 var(--spacing-md);
+}
+
+.stepDescription {
+  color: var(--color-neutral-medium);
+  line-height: 1.6;
+}
+
+/* Technologies Grid */
+.techGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-4xl);
+  position: relative;
+  z-index: 2;
+}
+
+.techCategory {
+  background: white;
+  padding: var(--spacing-2xl);
+  border-radius: var(--border-radius-2xl);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-normal);
+}
+
+.techCategory:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.techCategoryTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.techCategoryIcon {
+  width: 40px;
+  height: 40px;
+  background: var(--gradient-primary);
+  border-radius: var(--border-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.techItem {
+  background: var(--color-neutral-light);
+  color: var(--color-secondary);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  transition: var(--transition-fast);
+}
+
+.techItem:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+/* Success Cases */
+.casesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-3xl);
+  margin-top: var(--spacing-4xl);
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .casesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.caseCard {
+  background: white;
+  border-radius: var(--border-radius-2xl);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  transition: var(--transition-normal);
+}
+
+.caseCard:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+}
+
+.caseHeader {
+  background: var(--gradient-primary);
+  color: white;
+  padding: var(--spacing-xl);
+  text-align: center;
+}
+
+.caseClient {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-sm);
+}
+
+.caseTitle {
+  font-size: var(--font-size-base);
+  opacity: 0.9;
+}
+
+.caseContent {
+  padding: var(--spacing-xl);
+}
+
+.caseDescription {
+  color: var(--color-neutral-medium);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-lg);
+}
+
+.caseTechnologies {
+  margin-bottom: var(--spacing-lg);
+}
+
+.caseTechnologies h4 {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.caseResults {
+  border-top: 1px solid var(--color-neutral-light);
+  padding-top: var(--spacing-lg);
+}
+
+.caseResults h4 {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.resultsList {
+  list-style: none;
+  padding: 0;
+}
+
+.resultsList li {
+  color: var(--color-neutral-medium);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-xs);
+  padding-left: var(--spacing-lg);
+  position: relative;
+}
+
+.resultsList li::before {
+  content: '✓';
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+  position: absolute;
+  left: 0;
+}
+
+/* Certifications Grid */
+.certificationsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-2xl);
+  margin-top: var(--spacing-4xl);
+  position: relative;
+  z-index: 2;
+}
+
+.certificationCard {
+  background: white;
+  padding: var(--spacing-2xl);
+  border-radius: var(--border-radius-2xl);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  transition: var(--transition-normal);
+  border: 2px solid transparent;
+}
+
+.certificationCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+}
+
+.certificationIcon {
+  width: 80px;
+  height: 80px;
+  background: var(--color-neutral-light);
+  border-radius: var(--border-radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--spacing-lg);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+
+.certificationTitle {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.certificationIssuer {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--spacing-xs);
+}
+
+.certificationYear {
+  color: var(--color-neutral-medium);
+  font-size: var(--font-size-sm);
+}
+
+/* CTA Section */
+.ctaSection {
+  background: var(--gradient-primary);
+  color: white;
+  padding: var(--spacing-6xl) 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaTitle {
+  font-size: clamp(var(--font-size-2xl), 4vw, var(--font-size-4xl));
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-lg);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 2;
+}
+
+.ctaDescription {
+  font-size: var(--font-size-lg);
+  opacity: 0.95;
+  margin-bottom: var(--spacing-2xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+}
+
+.ctaActions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero {
+    padding: var(--spacing-5xl) 0 var(--spacing-4xl);
+    min-height: 50vh;
+  }
+
+  .section {
+    padding: var(--spacing-4xl) 0;
+  }
+
+  .experienceGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .methodologySteps {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2xl);
+  }
+
+  .methodologyImageContainer {
+    margin-bottom: var(--spacing-2xl);
+    padding: var(--spacing-lg);
+  }
+
+  .methodologyImage {
+    max-width: 100%;
+  }
+
+  .techGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .casesGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2xl);
+  }
+}
+
+@media (max-width: 640px) {
+  .experienceGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Methodology Section Background */
+#methodology {
+  position: relative;
+  overflow: hidden;
+}
+
+.methodologyImageBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.methodologyBackgroundImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Success Cases Section Background */
+#success-cases {
+  position: relative;
+  overflow: hidden;
+}
+
+.successCasesImageBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.successCasesBackgroundImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* CTA Section Background */
+.ctaImageBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.ctaBackgroundImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Update content z-index for sections with backgrounds */
+.methodologyContent,
+.casesGrid {
+  position: relative;
+  z-index: 2;
+}
+
+.casesGrid .caseCard {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.casesGrid .caseCard:hover {
+  background: rgba(255, 255, 255, 0.98);
+}
+
+/* Text color overrides for sections with background images */
+#methodology .sectionTitle {
+  color: white !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+#methodology .sectionSubtitle {
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+#success-cases .sectionTitle {
+  color: white !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+#success-cases .sectionSubtitle {
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+/* Higher specificity for white text in sections with background images */
+section#methodology .sectionTitle,
+section#methodology h2.sectionTitle {
+  color: white !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6) !important;
+}
+
+section#methodology .sectionSubtitle,
+section#methodology p.sectionSubtitle {
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
+}
+
+section#success-cases .sectionTitle,
+section#success-cases h2.sectionTitle {
+  color: white !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6) !important;
+}
+
+section#success-cases .sectionSubtitle,
+section#success-cases p.sectionSubtitle {
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Specific classes for sections with background images */
+.methodologySection {
+  background: var(--color-neutral-light);
+}
+
+.methodologySection .sectionTitle {
+  color: white !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6) !important;
+}
+
+.methodologySection .sectionSubtitle {
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
+}
+
+.successCasesSection {
+  background: var(--color-neutral-light);
+}
+
+.successCasesSection .sectionTitle {
+  color: white !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6) !important;
+}
+
+.successCasesSection .sectionSubtitle {
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
+}

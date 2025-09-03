@@ -1,0 +1,57 @@
+{
+  "name": "innovapaz",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"pnpm run dev:corporate\" \"pnpm run dev:marketing\" \"pnpm run dev:app\"",
+    "dev:corporate": "pnpm --filter website-corporate dev",
+    "dev:marketing": "pnpm --filter website-erp-marketing dev",
+    "dev:app": "pnpm --filter app-erp dev",
+    "build": "pnpm run build:corporate && pnpm run build:marketing && pnpm run build:app",
+    "build:corporate": "pnpm --filter website-corporate build",
+    "build:marketing": "pnpm --filter website-erp-marketing build",
+    "build:app": "pnpm --filter app-erp build",
+    "lint": "eslint apps/**/*.{ts,tsx} --max-warnings=0",
+    "lint:fix": "eslint apps/**/*.{ts,tsx} --fix",
+    "format": "prettier --config .prettierc --write .",
+    "format:check": "prettier --config .prettierc --check .",
+    "type-check": "pnpm run type-check:corporate && pnpm run type-check:marketing && pnpm run type-check:app",
+    "type-check:corporate": "pnpm --filter website-corporate type-check",
+    "type-check:marketing": "pnpm --filter website-erp-marketing type-check",
+    "type-check:app": "pnpm --filter app-erp type-check",
+    "quality": "pnpm run lint && pnpm run format:check && pnpm run type-check",
+    "quality:fix": "pnpm run lint:fix && pnpm run format",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edisonCheca/INNOVAPAZ.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edisonCheca/INNOVAPAZ/issues"
+  },
+  "homepage": "https://github.com/edisonCheca/INNOVAPAZ#readme",
+  "description": "",
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@eslint/js": "^9.34.0",
+    "concurrently": "^9.2.1",
+    "eslint": "^9.34.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.5",
+    "prettier": "^3.6.2",
+    "typescript-eslint": "^8.42.0"
+  },
+  "dependencies": {
+    "react-icons": "^5.5.0"
+  }
+}

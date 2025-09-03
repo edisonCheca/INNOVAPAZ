@@ -1,0 +1,8 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Hook post-commit: notifica commit exitoso y muestra información útil
+
+echo "✅ Commit exitoso: $(git log -1 --pretty=format:%s)"
+echo "📊 Branch actual: $(git branch --show-current)"
+echo "🏷️ Último commit: $(git log -1 --pretty=format:%h)"
