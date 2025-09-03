@@ -42,10 +42,10 @@ const LoginPage: React.FC = () => {
     setError(null);
     setLoading(true);
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      await signInWithEmailAndPassword(auth, email, password);
       // Usuario logueado
       navigate('/');
-    } catch (err) {
+    } catch (err: any) {
       if (err.code === 'auth/user-not-found') {
         setError('No existe una cuenta con ese correo.');
       } else if (err.code === 'auth/wrong-password') {
@@ -120,7 +120,6 @@ const LoginPage: React.FC = () => {
               titleFontWeight='normal'
               containerWidth='full'
               height='small'
-              type='submit'
               disabled={loading}
             />
           </div>

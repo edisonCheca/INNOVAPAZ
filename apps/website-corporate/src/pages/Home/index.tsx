@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Users, Target, Eye, Building2 } from 'lucide-react';
+import { ArrowRight, Target, Eye, Building2 } from 'lucide-react';
 import { Button } from '../../components/UI/Button';
 import { SEO } from '../../components/UI/SEO';
 import { OptimizedImage } from '../../components/UI/OptimizedImage';

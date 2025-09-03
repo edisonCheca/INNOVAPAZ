@@ -38,7 +38,7 @@ const RegisterPage: React.FC = () => {
       setSuccess('¡Cuenta creada exitosamente!');
       setTimeout(() => navigate('/'), 1500);
     } else {
-      setError('Error al crear la cuenta. ' + (error?.message || 'Inténtalo de nuevo.'));
+      setError('Error al crear la cuenta. ' + ((error as any)?.message || 'Inténtalo de nuevo.'));
     }
     setLoading(false);
   };
@@ -144,7 +144,6 @@ const RegisterPage: React.FC = () => {
               titleFontWeight='normal'
               containerWidth='full'
               height='large'
-              type='submit'
               disabled={loading}
             />
           </div>
