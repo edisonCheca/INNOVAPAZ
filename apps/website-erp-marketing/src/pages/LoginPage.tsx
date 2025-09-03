@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Input from '../components/common/Input';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import Button from '../components/common/Button';
-import illustrationPicture from '@/assets/icons/illustrationPicture.svg';
+import illustrationPicture from '../assets/icons/illustrationPicture.svg';
 import Logo from '../components/ui/Logo';
 import GoogleButton from '../components/common/GoogleButton';
 import './LoginPage.css';
