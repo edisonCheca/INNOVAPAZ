@@ -7,6 +7,9 @@ settings:
 importers:
   .:
     dependencies:
+      firebase:
+        specifier: ^12.2.1
+        version: 12.2.1
       react-icons:
         specifier: ^5.5.0
         version: 5.5.0(react@19.1.1)
