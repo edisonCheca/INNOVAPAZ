@@ -16,9 +16,11 @@
 
 .frequent-questions__grid {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+  max-width: 1120px;
+  margin: 0 auto;
 }
 
 .frequent-questions__action {
