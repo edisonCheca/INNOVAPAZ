@@ -98,6 +98,7 @@ const RegisterPage: React.FC = () => {
             label='Correo electrónico'
             placeholder='ejemplo@email.com'
             type='email'
+            validate='email'
             containerWidth='full'
             size='medium'
             value={email}
