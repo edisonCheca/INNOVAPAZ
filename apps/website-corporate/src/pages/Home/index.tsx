@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Users, Target, Eye, Building2 } from 'lucide-react';
 import { Button } from '../../components/UI/Button';
 import { SEO } from '../../components/UI/SEO';
+import { OptimizedImage } from '../../components/UI/OptimizedImage';
 import type { TeamMember } from '../../types';
 import styles from './Home.module.css';
 
@@ -23,24 +24,33 @@ const staggerContainer = {
 const teamMembers: TeamMember[] = [
   {
     id: '1',
-    name: 'Carlos Mendoza',
-    position: 'CEO & Fundador',
-    description:
-      'Ingeniero en Sistemas con 15+ años de experiencia en desarrollo de software y gestión empresarial en La Paz.',
+    name: 'Edison Clever Checa Tito',
+    position: 'Miembro del Equipo',
+    description: 'SAGA: A28145-X - Miembro del equipo directivo de CorpsCode.',
   },
   {
     id: '2',
-    name: 'María Quispe',
-    position: 'CTO',
-    description:
-      'Especialista en arquitectura de software y tecnologías emergentes, líder en proyectos de transformación digital.',
+    name: 'Adalid Jesús Condori Velasco',
+    position: 'Miembro del Equipo',
+    description: 'SAGA: A27351-1 - Miembro del equipo directivo de CorpsCode.',
   },
   {
     id: '3',
-    name: 'Jorge Mamani',
-    position: 'Director de Proyectos',
-    description:
-      'Experto en metodologías ágiles y gestión de equipos de desarrollo con enfoque en el mercado boliviano.',
+    name: 'Jesús Ario Soto Mercado',
+    position: 'Miembro del Equipo',
+    description: 'SAGA: A26805-4 - Miembro del equipo directivo de CorpsCode.',
+  },
+  {
+    id: '4',
+    name: 'Izai Alejandro Zalles Merino',
+    position: 'Miembro del Equipo',
+    description: 'SAGA: A27006-7 - Miembro del equipo directivo de CorpsCode.',
+  },
+  {
+    id: '5',
+    name: 'José Ángel Mamani Pinto',
+    position: 'Miembro del Equipo',
+    description: 'SAGA: A28095-X - Miembro del equipo directivo de CorpsCode.',
   },
 ];
 
@@ -62,7 +72,16 @@ export const Home: React.FC = () => {
 
       {/* Hero Section */}
       <section className={styles.hero}>
-        <div className={styles.heroBackground} />
+        <div className={styles.heroImageContainer}>
+          <OptimizedImage
+            src='/images/hero/team-collaboration.jpg'
+            alt='Equipo de desarrollo trabajando en colaboración'
+            className={styles.heroImage}
+            priority={true}
+            overlay={true}
+            overlayOpacity={0.4}
+          />
+        </div>
         <div className='container'>
           <motion.div
             className={styles.heroContent}
@@ -289,10 +308,14 @@ export const Home: React.FC = () => {
                 viewport={{ once: true }}
               >
                 <div className={styles.teamImage}>
-                  {member.name
-                    .split(' ')
-                    .map((n) => n[0])
-                    .join('')}
+                  <OptimizedImage
+                    src='/images/technology/innovation.jpg'
+                    alt={`${member.name} - ${member.position}`}
+                    className={styles.teamPhoto}
+                    width={120}
+                    height={120}
+                    objectFit='cover'
+                  />
                 </div>
                 <div className={styles.teamInfo}>
                   <h3 className={styles.teamName}>{member.name}</h3>
@@ -302,23 +325,6 @@ export const Home: React.FC = () => {
               </motion.div>
             ))}
           </div>
-
-          <motion.div
-            style={{ textAlign: 'center', marginTop: 'var(--spacing-4xl)' }}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            <Button
-              as='link'
-              to='/why-choose-us#experience'
-              variant='outline'
-              icon={<Users size={20} />}
-            >
-              Conoce Todo Nuestro Equipo
-            </Button>
-          </motion.div>
         </div>
       </section>
     </>
