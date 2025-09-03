@@ -63,7 +63,9 @@ export const Footer: React.FC = () => {
             {/* Sección de la Empresa */}
             <div className={styles.companySection}>
               <div className={styles.logo}>
-                <div className={styles.logoIcon}>CC</div>
+                <div className={styles.logoIcon}>
+                  <img src='/logo_blanco.png' alt='logo de la imagen' />
+                </div>
                 <span>CorpsCode</span>
               </div>
 

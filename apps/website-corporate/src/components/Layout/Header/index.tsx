@@ -126,7 +126,9 @@ export const Header: React.FC = () => {
         <div className='container'>
           <nav className={styles.nav}>
             <Link to='/' className={styles.logo}>
-              <div className={styles.logoIcon}>CC</div>
+              <div className={styles.logoIcon}>
+                <img src='/logo_blanco.png' alt='logo de la empresa' />
+              </div>
               <span>CorpsCode</span>
             </Link>
 
