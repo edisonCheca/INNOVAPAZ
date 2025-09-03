@@ -1,4 +1,8 @@
-# React.FC en TypeScript: ¿Por qué es ideal?
+# React.FC en TypeScript: ¿Por qué es ideal para nuestro Monorepo?
+
+En el monorepo de INNOVAPAZ, mantenemos múltiples aplicaciones React (`website-corporate`, `website-erp-marketing`, `app-erp`). Para garantizar la consistencia, la calidad y la mantenibilidad del código a través de todos estos proyectos, hemos estandarizado el uso de `React.FC` para la creación de componentes funcionales.
+
+Este documento describe las ventajas y las mejores prácticas asociadas con `React.FC`, que se aplican de manera uniforme a **todos los componentes React** dentro de la carpeta `apps/`.
 
 ## ¿Qué es React.FC?
 
