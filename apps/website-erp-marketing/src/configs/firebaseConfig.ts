@@ -1,5 +1,5 @@
-import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
+import { initializeApp, type FirebaseApp } from 'firebase/app';
+import { getAuth, type Auth } from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY || 'AIzaSyCZdZmjV6lOALdD4ajQb2rmPS8kYpw2T4U',
@@ -16,8 +16,8 @@ if (import.meta.env.DEV) {
   console.log('🔥 Firebase Config:', firebaseConfig);
 }
 
-let app;
-let auth;
+let app: FirebaseApp;
+let auth: Auth;
 
 try {
   app = initializeApp(firebaseConfig);
