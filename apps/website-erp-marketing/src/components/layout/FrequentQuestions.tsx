@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import HeroTitle from '../common/HeroTitle';
 import FaqCard from '../common/FaqCard';
 import Button from '../common/Button';
 import './FrequentQuestions.css';
 
 const FrequentQuestions: React.FC = () => {
-  const faqData = [
+  const initialFaqData = [
     {
       category: 'Implementación',
       question: '¿Cuánto tiempo tarda la implementación del sistema ERP?',
@@ -32,8 +32,56 @@ const FrequentQuestions: React.FC = () => {
     },
   ];
 
+  const moreFaqData = [
+    {
+      category: 'Seguridad',
+      question: '¿Cómo se protege la información en el sistema ERP?',
+      answer:
+        'Utilizamos protocolos de seguridad avanzados, cifrado de datos y autenticación de usuarios para garantizar la protección de tu información.',
+    },
+    {
+      category: 'Actualizaciones',
+      question: '¿El sistema recibe actualizaciones automáticas?',
+      answer:
+        'Sí, todas las actualizaciones y mejoras se aplican automáticamente sin afectar el funcionamiento diario.',
+    },
+    {
+      category: 'Integraciones',
+      question: '¿Se puede integrar el ERP con otros sistemas?',
+      answer:
+        'Nuestro ERP permite integraciones con sistemas contables, CRM, e-commerce y más mediante APIs y conectores estándar.',
+    },
+    {
+      category: 'Capacitación',
+      question: '¿Ofrecen capacitación para los usuarios?',
+      answer:
+        'Sí, ofrecemos sesiones de capacitación presenciales y virtuales para asegurar el correcto uso del sistema.',
+    },
+    {
+      category: 'Accesibilidad',
+      question: '¿Puedo acceder al ERP desde dispositivos móviles?',
+      answer:
+        'El sistema es accesible desde cualquier dispositivo con conexión a internet, incluyendo móviles y tablets.',
+    },
+    {
+      category: 'Escalabilidad',
+      question: '¿El ERP es escalable si mi empresa crece?',
+      answer:
+        'Por supuesto, el sistema está diseñado para crecer junto con tu empresa, permitiendo agregar usuarios y módulos según lo necesites.',
+    },
+  ];
+
+  const [faqData, setFaqData] = useState(initialFaqData);
+  const [showMore, setShowMore] = useState(false);
+
   const handleViewMore = (): void => {
-    console.log('Botón "ver más" clickeado');
+    setFaqData([...initialFaqData, ...moreFaqData]);
+    setShowMore(true);
+  };
+
+  const handleViewLess = (): void => {
+    setFaqData(initialFaqData);
+    setShowMore(false);
   };
 
   return (
@@ -62,15 +110,27 @@ const FrequentQuestions: React.FC = () => {
         </div>
 
         <div className='frequent-questions__action'>
-          <Button
-            title='ver más'
-            hasBackground={true}
-            backgroundColor='var(--acc-600)'
-            textColor='var(--white)'
-            size='small'
-            onClick={handleViewMore}
-            className='frequent-questions__button'
-          />
+          {!showMore ? (
+            <Button
+              title='ver más'
+              hasBackground={true}
+              backgroundColor='var(--acc-600)'
+              textColor='var(--white)'
+              size='small'
+              onClick={handleViewMore}
+              className='frequent-questions__button'
+            />
+          ) : (
+            <Button
+              title='ver menos'
+              hasBackground={true}
+              backgroundColor='var(--acc-600)'
+              textColor='var(--white)'
+              size='small'
+              onClick={handleViewLess}
+              className='frequent-questions__button'
+            />
+          )}
         </div>
       </div>
     </section>

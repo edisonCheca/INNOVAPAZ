@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import HeroTitle from '../common/HeroTitle';
 import CommentCard from '../common/CommentCard';
 import Button from '../common/Button';
@@ -51,6 +51,33 @@ const defaultComments: Comment[] = [
   },
 ];
 
+const moreComments: Comment[] = [
+  {
+    id: 4,
+    message:
+      'La integración con nuestro sistema contable fue sencilla y rápida. Ahora todo está centralizado y el equipo financiero ahorra mucho tiempo. Además, hemos podido automatizar procesos que antes requerían mucho trabajo manual, como la conciliación bancaria y la generación de informes mensuales. El ERP nos ha permitido tener una visión mucho más clara de la salud financiera de la empresa y tomar decisiones informadas en tiempo real.',
+    userName: 'Carlos Méndez',
+    userPosition: 'Distribuidora La Central',
+    rating: 5,
+  },
+  {
+    id: 5,
+    message:
+      'La capacitación fue excelente, todos los empleados aprendieron a usar el sistema en pocos días y la curva de adaptación fue mínima. El equipo de soporte nos acompañó durante todo el proceso y resolvió cada duda que tuvimos. Ahora podemos gestionar inventarios, ventas y compras desde una sola plataforma, lo que ha reducido los errores y mejorado la comunicación entre departamentos. Sin duda, ha sido una inversión que ha transformado nuestra operación.',
+    userName: 'Lucía Ramírez',
+    userPosition: 'Servicios Ramírez',
+    rating: 5,
+  },
+  {
+    id: 6,
+    message:
+      'El acceso móvil nos permite gestionar la empresa desde cualquier lugar, incluso cuando estamos de viaje. Esto ha sido fundamental para supervisar operaciones y aprobar solicitudes sin importar la ubicación. Además, la interfaz es intuitiva y fácil de usar, lo que facilita que todos los colaboradores puedan acceder a la información que necesitan en el momento adecuado. La flexibilidad y seguridad del sistema nos da mucha tranquilidad.',
+    userName: 'Pedro Torres',
+    userPosition: 'Agropecuaria El Campo',
+    rating: 5,
+  },
+];
+
 const CommentSection: React.FC<CommentSectionProps> = ({
   title = 'Lo que dicen Nuestros Clientes',
   description = 'Conoce casos de éxito, beneficios obtenidos y cómo nuestros clientes han optimizado sus procesos',
@@ -60,15 +87,16 @@ const CommentSection: React.FC<CommentSectionProps> = ({
   maxCommentsToShow,
   className = '',
 }) => {
-  const [visibleComments] = React.useState<Comment[]>(() => {
-    if (maxCommentsToShow && maxCommentsToShow < comments.length) {
-      return comments.slice(0, maxCommentsToShow);
-    }
-    return comments;
-  });
+  const [showMore, setShowMore] = useState(false);
+
+  const visibleComments = showMore ? [...defaultComments, ...moreComments] : defaultComments;
 
   const handleViewMore = (): void => {
-    console.log('Botón "ver más" clickeado');
+    setShowMore(true);
+  };
+
+  const handleViewLess = (): void => {
+    setShowMore(false);
   };
 
   return (
@@ -100,15 +128,27 @@ const CommentSection: React.FC<CommentSectionProps> = ({
 
         {showMoreButton && (
           <div className='comment-section__action'>
-            <Button
-              title='ver más'
-              hasBackground={true}
-              backgroundColor='var(--acc-600)'
-              textColor='var(--white)'
-              size='small'
-              onClick={handleViewMore}
-              className='comment-section__button'
-            />
+            {!showMore ? (
+              <Button
+                title='ver más'
+                hasBackground={true}
+                backgroundColor='var(--acc-600)'
+                textColor='var(--white)'
+                size='small'
+                onClick={handleViewMore}
+                className='comment-section__button'
+              />
+            ) : (
+              <Button
+                title='ver menos'
+                hasBackground={true}
+                backgroundColor='var(--acc-600)'
+                textColor='var(--white)'
+                size='small'
+                onClick={handleViewLess}
+                className='comment-section__button'
+              />
+            )}
           </div>
         )}
       </div>
