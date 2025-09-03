@@ -1,5 +1,6 @@
 import { initializeApp, type FirebaseApp } from 'firebase/app';
 import { getAuth, type Auth } from 'firebase/auth';
+import { getFirestore, type Firestore } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCZdZmjV6lOALdD4ajQb2rmPS8kYpw2T4U',
@@ -17,10 +18,12 @@ if (import.meta.env.DEV) {
 
 let app: FirebaseApp;
 let auth: Auth;
+let db: Firestore;
 
 try {
   app = initializeApp(firebaseConfig);
   auth = getAuth(app);
+  db = getFirestore(app);
   console.log('✅ Firebase initialized successfully');
 } catch (error) {
   console.error('❌ Firebase initialization failed:', error);
@@ -29,4 +32,4 @@ try {
   );
 }
 
-export { auth };
+export { auth, db };

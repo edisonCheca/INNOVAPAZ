@@ -82,7 +82,9 @@ const CommentSection: React.FC<CommentSectionProps> = ({
   title = 'Lo que dicen Nuestros Clientes',
   description = 'Conoce casos de éxito, beneficios obtenidos y cómo nuestros clientes han optimizado sus procesos',
   gradientText = 'Clientes',
+  comments = defaultComments,
   showMoreButton = true,
+  maxCommentsToShow,
   className = '',
 }) => {
   const [showMore, setShowMore] = useState(false);
