@@ -58,3 +58,41 @@ html {
   background: var(--color-primary);
   color: var(--color-white);
 }
+
+/* Subtle background images for sections */
+.section-with-bg {
+  position: relative;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)),
+    url('/images/backgrounds/office-building.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Decorative elements */
+.decorative-image {
+  border-radius: var(--border-radius-2xl);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
+
+.decorative-image:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Floating elements */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.floating-element {
+  animation: float 6s ease-in-out infinite;
+}
