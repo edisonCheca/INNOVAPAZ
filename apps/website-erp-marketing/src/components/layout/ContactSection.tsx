@@ -13,7 +13,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ className = '' }) => {
   const navigate = useNavigate();
 
   const handleContact = () => {
-    navigate('/innovapaz/contacto');
+    navigate('/contacto');
   };
 
   return (
