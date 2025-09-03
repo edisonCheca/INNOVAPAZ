@@ -78,7 +78,7 @@ export const InstitutionalHeader: React.FC<InstitutionalHeaderProps> = ({ classN
             <NavigationMenu items={navigationItems} variant="desktop" />
 
             {/* Desktop CTA Button */}
-            <ActionButton variant="primary" href="/sistema" className="desktop-only">
+            <ActionButton variant="primary" href="/INNOVAPAZ" className="desktop-only">
               Acceder al Sistema
             </ActionButton>
 

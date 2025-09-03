@@ -30,12 +30,12 @@ const AppContent: React.FC = () => {
       <div className={isInstitutionalPage ? 'institutional-app' : 'app'}>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/sistema" element={<HomePage />} />
-          <Route path="/sistema/login" element={<LoginPage />} />
-          <Route path="/sistema/register" element={<RegisterPage />} />
-          <Route path="/sistema/about" element={<AboutPage />} />
-          <Route path="/sistema/contacto" element={<ContactPage />} />
-          <Route path="/sistema/documentacion" element={<DocumentsPage />} />
+          <Route path="/innovapaz" element={<HomePage />} />
+          <Route path="/innovapaz/login" element={<LoginPage />} />
+          <Route path="/innovapaz/register" element={<RegisterPage />} />
+          <Route path="/innovapaz/about" element={<AboutPage />} />
+          <Route path="/innovapaz/contacto" element={<ContactPage />} />
+          <Route path="/innovapaz/documentacion" element={<DocumentsPage />} />
 
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />

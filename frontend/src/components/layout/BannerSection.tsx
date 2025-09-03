@@ -12,7 +12,7 @@ const BannerSection: React.FC = () => {
   };
 
   const handleVerDemo = () => {
-    console.log('Ver Demo en Vivo clicked');
+    window.location.href = '/';
   };
 
   return (
