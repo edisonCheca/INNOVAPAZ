@@ -7,7 +7,6 @@ import { FaArrowRight } from 'react-icons/fa';
 import teamImage from '../../assets/images/teamImage.png';
 import DemoModal from '../layout/DemoModal';
 import './BannerSection.css';
-
 const BannerSection: React.FC = () => {
   const [showDemoModal, setShowDemoModal] = useState(false);
 

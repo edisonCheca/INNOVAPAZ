@@ -1,0 +1,55 @@
+.errorBoundary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: var(--spacing-4xl) var(--spacing-md);
+  text-align: center;
+  background: var(--color-neutral-light);
+  border-radius: var(--border-radius-xl);
+  margin: var(--spacing-xl);
+}
+
+.icon {
+  width: 64px;
+  height: 64px;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-xl);
+}
+
+.title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+.message {
+  font-size: var(--font-size-lg);
+  color: var(--color-neutral-medium);
+  margin-bottom: var(--spacing-xl);
+  max-width: 500px;
+}
+
+.actions {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.details {
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-md);
+  background: white;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--color-neutral-medium);
+  font-family: monospace;
+  font-size: var(--font-size-sm);
+  color: var(--color-secondary);
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-width: 100%;
+  overflow: auto;
+}
